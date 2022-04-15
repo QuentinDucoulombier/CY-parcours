@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Inscription eleve</title>
+        <link rel="stylesheet" type="text/css" href="formulaire.css"/>
+
+    </head>
+    <body>
+      <div class="form">
+        <h1>Inscrivez-vous</h1>
+        <form action="enregistrerEleve.php" method="POST">
+          <div class="input-container ic1">
+            <input type="text" name="prenom" class="input" placeholder=" " />
+            <div class="cut"></div>
+            <label for="prenom" class="placeholder">Prénom</label>
+            </div>
+            <div class="input-container ic2">
+              <input  type="text" name="nom" class="input" placeholder=" " />
+              <div class="cut"></div>
+              <label for="nom" class="placeholder">Nom</label>
+            </div>
+            <div class="input-container ic2">
+              <input  input type="email" id="email" name="email" pattern=".+@cy-tech.fr" size="30" class="input" placeholder=" " />
+              <div class="cut"></div>
+              <label for="email" class="placeholder">Adresse email cy</label>
+            </div>
+            <div class="input-container ic1">
+              <input input type="text" name="pseudo" class="input" placeholder=" " />
+              <div class="cut"></div>
+                <label for="pseudo" class="placeholder">pseudo</label>
+            </div>
+            <div class="input-container ic2">
+              <input type="password" name="password" class="input" placeholder=" " />
+              <div class="cut"></div>
+              <label for="password" class="placeholder">Mot de passe</label>
+            </div>
+            <p><input type="submit" value="Inscription" class="submit" required></p>
+
+        </form>
+      </div>
+
+
+
+     <!-- <form action="enregistrerEleve.php" method="POST">
+      <p> Prenom : <input type="text" name="prenom"></p>
+      <p> Nom : <input type="text" name="nom"></p>
+      <p> adresse mail cy tech : <input type="email" id="email" name="email" pattern=".+@cy-tech.fr" size="30" required>
+      <p> Pseudo : <input type="text" name="pseudo"></p>
+      <p> Password : <input type="password" name="password"></p>
+      <p><input type="submit" value="Inscription" required></p>
+      </form>
+    </body> -->
+
+</html>
