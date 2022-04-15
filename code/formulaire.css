@@ -14,7 +14,7 @@ body {
     background-color: #15172b;
     border-radius: 20px;
     box-sizing: border-box;
-    height: 90%;
+    height: 90%; /*j'ai changer ca a la mano jsp si ca rend mieux*/
     padding: 20px;
     width: 320px;
   }
