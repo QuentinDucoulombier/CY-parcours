@@ -1,4 +1,2 @@
-Prenom;Nom;Date;Maison;Points;Pseudo;mdp
-
-marc;Ribeiro;MarcRibeiro@cy-tech.fr;Ribo;Ribo
-Marine;Hamel;MarineHamel@cy-tech.fr;Marine;Lepen
+Prenom;Nom;Email;pseudo;mdp
+Susan;Sauvage;SusanSauvage@cy-tech.fr;Susan;jsp
