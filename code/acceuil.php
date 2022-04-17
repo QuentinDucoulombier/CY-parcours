@@ -14,9 +14,17 @@
     </head>
     <body>
         <?php
-            $prenom =  $_SESSION["prenom"];
+            if($_SESSION["status"] == "prof")
+            {
+                header('Location: prof/accueilProf.php');
+            }
+            else
+            {
+                header('Location: eleve/accueilEleves.php');
+            }
+            /*$prenom =  $_SESSION["prenom"];
             $nom = $_SESSION["nom"];
-            echo "<h1>Bienvenue $prenom $nom<h1>";
+            echo "<h1>Bienvenue $prenom $nom<h1>";*/
         ?>
         <p></p>
         <form method="POST" action="connexion.php">

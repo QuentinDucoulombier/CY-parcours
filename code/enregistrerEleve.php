@@ -11,7 +11,7 @@
                     if(!file_exists("../data/loginEleves.csv"))
                     {
                         $file = fopen("../data/loginEleves.csv","w");
-                        $listeTitre = array("Prenom","Nom","Email","pseudo","mdp");
+                        $listeTitre = array("Prenom","Nom","Email","pseudo","mdp","status");
                         fputcsv($file, $listeTitre, ";");
                         fclose("../data/loginEleves.csv");
         
@@ -19,7 +19,7 @@
                     
                     //on importe les infos de l'inscription dans un csv
                     $file = fopen("../data/loginEleves.csv","a");
-                    $list = array($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['pseudo'], $_POST['password']);
+                    $list = array($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['pseudo'], $_POST['password'], "eleves");
                     fputcsv($file, $list, ";");
                     fclose($file);
                     header('Location: connexion.php');
