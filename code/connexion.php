@@ -10,7 +10,7 @@
         <link rel="icon" type="image/png" href="favicon.png"/>
     </head>
     <body>
-      <!-- j'ai fait ca vitef avec une template d'interent modifier pour adapter a notre situation -->
+      <!-- j'ai fait ca vitef avec une template d'internet modifier pour adapter a notre situation -->
 
       <div class="form">
         <h1 id="titre">Bienvenue </h1>

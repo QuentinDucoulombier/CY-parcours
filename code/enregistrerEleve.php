@@ -2,7 +2,7 @@
     session_start();
     function enregistre($fichier)
     {
-        if (($handle = fopen($fichier, "r")) !== FALSE) { //TODO : etendre au autre fichier (choixEtudiantsParcours2 et choixEtudiantsParcours3)
+        if (($handle = fopen($fichier, "r")) !== FALSE) { 
             while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
         
         
