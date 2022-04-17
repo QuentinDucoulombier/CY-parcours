@@ -25,5 +25,3 @@
 
     </body>
 </html>
-
-<!-- test de la branche -->
