@@ -23,10 +23,12 @@
            $img = $_SESSION["image"];
             echo "<h1>Bienvenue $prenom $nom vous etes $status</h1>";
             //echo "<img src=../$img></img>";
-            echo "<img src=$img></img>";
+            echo "<img src=../$img></img>";
+            
         ?>
+        <!-- TODO faire un menu changement info avec 2 possibilite (via la pp et via le menu) -->
         <div id=menu>
-            Menu
+            Menu    
             <ul>
                 <li>test</li>
                 <li>test2</li>
