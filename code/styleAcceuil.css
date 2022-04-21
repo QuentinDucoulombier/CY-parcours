@@ -1,0 +1,20 @@
+h1
+{
+  text-align: center;
+}
+
+body
+{
+  color: white;
+  background-color: #15172b;
+  font-family: sans-serif;
+}
+
+img{
+    width : 3em; height : 3em;
+    border: none;
+    -moz-border-radius : 1.5em;
+    -webkit-border-radius : 1.5em;
+    border-radius : 1.5em;
+    float : right;
+}

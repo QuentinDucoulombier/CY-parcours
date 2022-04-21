@@ -14,7 +14,7 @@ body {
     background-color: #15172b;
     border-radius: 20px;
     box-sizing: border-box;
-    height: 80%; /*j'ai changer ca a la mano jsp si ca rend mieux*/
+    height: 710px; /*j'ai changer ca a la mano jsp si ca rend mieux*/
     padding: 20px;
     width: 320px;
   }
@@ -48,6 +48,19 @@ body {
   .ic2 {
     margin-top: 30px;
   }
+
+  .input2 {
+    background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+  }
   
   .input {
     background-color: #303245;
@@ -61,7 +74,7 @@ body {
     padding: 4px 20px 0;
     width: 100%;
   }
-  
+
   .cut {
     background-color: #15172b;
     border-radius: 10px;
@@ -129,9 +142,29 @@ body {
 
   a:visited {
     text-decoration: none; 
+    
+  }
+  
+  a {
+    font-family: sans-serif;
     color: purple;
   }
 
-  a {
-    font-family: sans-serif;
-  }
+  .profile-pic {
+    top : 70px;
+}
+
+.circle {
+    border-radius: 100% !important;
+    overflow: hidden;
+    width: 128px;
+    height: 128px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    position: absolute;
+    top: 30px;
+    float : right;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}

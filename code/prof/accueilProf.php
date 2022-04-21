@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <?php
   session_start();
-
+  if (!isset($_SESSION["pseudo"])){ /*pas certain que ce soit utile*/
+      header('Location: ../connexion.php');
+  }
 ?>
 <html>
     <head>
         <meta charset="utf-8">
         <title>Acceuil</title>
-        <link rel="stylesheet" type="text/css" href="../style.css"/>
+        <link rel="stylesheet" type="text/css" href="../styleAcceuil.css"/> 
         <link rel="icon" type="image/png" href="../favicon.png"/>
 
     </head>
@@ -17,8 +19,26 @@
             $prenom =  $_SESSION["prenom"];
             $nom = $_SESSION["nom"];
             $status = $_SESSION["status"];
-            echo "<h1>Bienvenue $prenom $nom vous etes $status<h1>";
+           // $img = $_SESSION["image"];
+           $img = $_SESSION["image"];
+            echo "<h1>Bienvenue $prenom $nom vous etes $status</h1>";
+            //echo "<img src=../$img></img>";
+            echo "<img src=$img></img>";
         ?>
+        <div id=menu>
+            Menu
+            <ul>
+                <li>test</li>
+                <li>test2</li>
+            </ul>
+        </div>
+        <div id=profil>
+
+        </div>
         <p></p>
+        
+        <form method="POST" action="../connexion.php">
+            <input type="submit" name="OUT" value="deconnexion"/>
+        </form>
     </body>
 </html>
