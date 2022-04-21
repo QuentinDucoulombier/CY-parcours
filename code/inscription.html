@@ -1,5 +1,5 @@
-//TODO Rajouter date de naissance et adresse je sais c'est debile
-
+<!--TODO Rajouter date de naissance et adresse je sais c'est debile-->
+<!--TODO Rajouter le fait de pouvoir voir le mdp (ca prend 10 sec en js type=paswword devient texte)-->
 
 <!DOCTYPE html>
 <html>
@@ -17,12 +17,12 @@
         <h1>Inscrivez-vous</h1>
         <form action="enregistrerEleve.php" method="POST">
           <div class="input-container ic1">
-            <input type="text" name="prenom" class="input" placeholder=" " required/>
+            <input type="text" name="prenom" id="prenom" class="input" placeholder=" " required/>
             <div class="cut"></div>
             <label for="prenom" class="placeholder">Prénom*</label>
             </div>
             <div class="input-container ic2">
-              <input  type="text" name="nom" class="input" placeholder=" " required/>
+              <input  type="text" name="nom" id="nom" class="input" placeholder=" " required/>
               <div class="cut"></div>
               <label for="nom" class="placeholder">Nom*</label>
             </div>
@@ -31,13 +31,13 @@
               <div class="cut"></div>
               <label for="email" class="placeholder">Email CY*</label>
             </div>
-            <div class="input-container ic1">
-              <input input type="text" name="pseudo" class="input" placeholder=" " required/>
+            <div class="input-container ic2">
+              <input input type="text" id="pseudo" name="pseudo" class="input" placeholder=" " required/>
               <div class="cut"></div>
                 <label for="pseudo" class="placeholder">Pseudo*</label>
             </div>
             <div class="input-container ic2">
-              <input type="password" name="password" class="input" placeholder=" " required/>
+              <input type="password" id="password" name="password" class="input" placeholder=" " required/>
               <div class="cut"></div>
               <label for="password" class="placeholder">Mot de passe*</label>
             </div>
