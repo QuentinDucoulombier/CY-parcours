@@ -19,7 +19,7 @@
               </div>
               <div class="p-image">
                 <i class="fa fa-camera upload-button"></i>
-                 <input class="input" type="file" accept="image/jpg"/>
+                 <input class="input" type="file" accept="image/*"/>
                  
               </div>
            </div>

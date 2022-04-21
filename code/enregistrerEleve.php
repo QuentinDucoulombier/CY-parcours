@@ -19,6 +19,10 @@
                     
                     //on importe les infos de l'inscription dans un csv
                     $file = fopen("../data/loginEleves.csv","a");
+                    if(!isset($_SESSION["pp"]))
+                    {
+                        $_SESSION["pp"] = "https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg";
+                    }
                     $list = array($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['pseudo'], $_POST['password'], "eleves", $_SESSION["pp"]);
                     fputcsv($file, $list, ";");
                     fclose($file);
