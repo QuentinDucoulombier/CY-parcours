@@ -1,9 +1,15 @@
+<!--TODO Rajouter date de naissance et adresse je sais c'est debile-->
+<!--TODO Rajouter le fait de pouvoir voir le mdp (ca prend 10 sec en js type=paswword devient texte)-->
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>Inscription eleve</title>
         <link rel="stylesheet" type="text/css" href="formulaire.css"/>
+        <link rel="icon" type="image/png" href="favicon.png"/>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- c'est jQuery-->
+        
 
     </head>
     <body>
@@ -11,30 +17,42 @@
         <h1>Inscrivez-vous</h1>
         <form action="enregistrerEleve.php" method="POST">
           <div class="input-container ic1">
-            <input type="text" name="prenom" class="input" placeholder=" " />
+            <input type="text" name="prenom" id="prenom" class="input" placeholder=" " required/>
             <div class="cut"></div>
-            <label for="prenom" class="placeholder">Prénom</label>
+            <label for="prenom" class="placeholder">Prénom*</label>
             </div>
             <div class="input-container ic2">
-              <input  type="text" name="nom" class="input" placeholder=" " />
+              <input  type="text" name="nom" id="nom" class="input" placeholder=" " required/>
               <div class="cut"></div>
-              <label for="nom" class="placeholder">Nom</label>
+              <label for="nom" class="placeholder">Nom*</label>
             </div>
             <div class="input-container ic2">
-              <input  input type="email" id="email" name="email" pattern=".+@cy-tech.fr" size="30" class="input" placeholder=" " />
+              <input  input type="email" id="email" name="email" pattern=".+@cy-tech.fr" size="30" class="input" placeholder=" " required/>
               <div class="cut"></div>
-              <label for="email" class="placeholder">Email CY</label>
-            </div>
-            <div class="input-container ic1">
-              <input input type="text" name="pseudo" class="input" placeholder=" " />
-              <div class="cut"></div>
-                <label for="pseudo" class="placeholder">Pseudo</label>
+              <label for="email" class="placeholder">Email CY*</label>
             </div>
             <div class="input-container ic2">
-              <input type="password" name="password" class="input" placeholder=" " />
+              <input input type="text" id="pseudo" name="pseudo" class="input" placeholder=" " required/>
               <div class="cut"></div>
-              <label for="password" class="placeholder">Mot de passe</label>
+                <label for="pseudo" class="placeholder">Pseudo*</label>
             </div>
+            <div class="input-container ic2">
+              <input type="password" id="password" name="password" class="input" placeholder=" " required/>
+              <div class="cut"></div>
+              <label for="password" class="placeholder">Mot de passe*</label>
+            </div>
+            <div class="input-container ic2">
+              
+              <div class="small-12 medium-2 large-2 columns">
+                <div class="circle">
+                  <img class="profile-pic" src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
+                </div>
+
+                <input class="input" type="file" name="pp" id="pp" accept="image/*" placeholder=" "/>
+                <div class="cut"></div>
+                <label for="pp" class="placeholder">Photo de profil</label>
+               
+              <script type="text/javascript" src="photo.js"></script>
             <p><input type="submit" value="Inscription" class="submit" required></p>
 
         </form>
