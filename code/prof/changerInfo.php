@@ -23,7 +23,7 @@
     <body>
       <div class="form">
         <h1>Modifer votre profil</h1>
-        <form action="enregistrerInfo.php" method="POST">       <!--TODO faire que l'on ne puisse pas modifier le nom/prenom et mail-->
+        <form action="enregistrerInfo.php" method="POST">       <!--TODO faire que l'on ne puisse pas modifier le nom et mail (et peut etre prenom si vous trouver ca mieux)-->
           <div class="input-container ic1">
             <?php
                 echo "<input type='text' id='prenom' name='prenom' class='input' value=$prenom>";

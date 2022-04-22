@@ -26,7 +26,7 @@
             echo "<a href=changerInfo.php><img src=$img></img></a>";
             
         ?>
-        <!-- TODO faire un menu changement info avec 2 possibilite (via la pp et via le menu dans le menu peut etre aussi mettre la deconnexion) -->
+        <!-- TODO faire un menu changement info avec 2 possibilite (via la pp et via le menu dans la pp peut etre aussi mettre la deconnexion) -->
         <div id=menu>
             Menu    
             <ul>

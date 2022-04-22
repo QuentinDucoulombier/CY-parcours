@@ -5,7 +5,7 @@
     $_SESSION["pp"] = $new;
     
     echo $new;
-    function base64_to_jpeg($base64_string, $output_file) {
+    function base64_to_jpeg($base64_string, $output_file) { /*ne sert a rien dans notre cas mais jvoulais savoir comment ca marche */
         // open the output file for writing
         $ifp = fopen( $output_file, 'wb' ); 
     

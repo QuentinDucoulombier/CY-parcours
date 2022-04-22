@@ -1,3 +1,5 @@
+/*copier coller de l'autre fonction parce qu'il arriver pas a changer de fichier mais y a moy de changer ca si vous etes deter */
+
 $(document).ready(function() {
 
     
