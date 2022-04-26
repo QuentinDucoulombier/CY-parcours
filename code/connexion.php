@@ -8,6 +8,7 @@
         <title>Connexion</title>
         <link rel="stylesheet" type="text/css" href="formulaire.css"/>
         <link rel="icon" type="image/png" href="favicon.png"/>
+        
     </head>
     <body>
       <!-- j'ai fait ca vitef avec une template d'internet modifier pour adapter a notre situation -->
