@@ -45,7 +45,7 @@
                     }
                 }
             }
-            if (($eleve = fopen('../../data/choixEtudiantsParcours3.csv','r')) && (!$verif)) {
+            if (($eleve = fopen('../../data/choixEtudiantsParcours3.csv','r')) && (!$verif)) { //on peut faire une fonction la pour que ce soit plus propre en sah
                 while (($l = fgetcsv($eleve, 1024, ";")) !== (FALSE)) {
                     if($email == $l[2]){
                         $moyenne = $l[4];
