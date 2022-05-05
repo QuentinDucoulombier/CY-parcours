@@ -15,6 +15,7 @@ function connex($fichier)
                 $_SESSION["password"] = $data[4];
                 $_SESSION["status"] = $data[5];
                 $_SESSION["image"] = $data[6];
+                $_SESSION["filiere"] = $data[7];
                 header('Location: acceuil.php');
                 exit();
             }
