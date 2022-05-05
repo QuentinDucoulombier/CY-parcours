@@ -2,35 +2,35 @@
 
 
 function Person(name) {
- 
+
     var candidateIndex = 0;
- 
+
     this.name = name;
     this.fce = null;
     this.candidates = [];
- 
+
     this.rank = function(p) {
         for (i = 0; i < this.candidates.length; i++)
             if (this.candidates[i] === p) return i;
         return this.candidates.length + 1;
     }
- 
+
     this.prefers = function(p) {
         return this.rank(p) < this.rank(this.fce);
     }
- 
+
     this.nextCandidate = function() {
         if (candidateIndex >= this.candidates.length) return null;
         return this.candidates[candidateIndex++];
     }
- 
+
     this.engageTo = function(p) {
         if (p.fce) p.fce.fce = null;
         p.fce = this;
         if (this.fce) this.fce.fce = null;
         this.fce = p;
     }
- 
+
     this.swapWith = function(p) {
         console.log("%s & %s swap partners", this.name, p.name);
         var thisFce = this.fce;
@@ -39,21 +39,21 @@ function Person(name) {
         p.engageTo(thisFce);
     }
 }
- 
-function isStable(guys, gals) {
-    for (var i = 0; i < guys.length; i++)
-        for (var j = 0; j < gals.length; j++)
-            if (guys[i].prefers(gals[j]) && gals[j].prefers(guys[i]))
+
+function isStable(eleve, spe) {
+    for (var i = 0; i < eleve.length; i++)
+        for (var j = 0; j < spe.length; j++)
+            if (eleve[i].prefers(spe[j]) && spe[j].prefers(eleve[i]))
                 return false;
     return true;
 }
- 
-function engageBIryone(guys) {
+
+function engageBIryone(eleve) {
     var done;
     do {
         done = true;
-        for (var i = 0; i < guys.length; i++) {
-            var guy = guys[i];
+        for (var i = 0; i < eleve.length; i++) {
+            var guy = eleve[i];
             if (!guy.fce) {
                 done = false;
                 var gal = guy.nextCandidate();
@@ -63,27 +63,25 @@ function engageBIryone(guys) {
         }
     } while (!done);
 }
- 
+
 function doMarriage() {
- 
-    var Dupre  = new Person("Dupre");
-    var Ribeiro  = new Person("Ribeiro");
-    var Sauvage  = new Person("Sauvage");
-    var Alves  = new Person("Alves");
-    var Levy   = new Person("Levy");
-    var Boulay = new Person("Boulay");
-    var Seguin  = new Person("Seguin");
-    var IAC  = new Person("IAC");
+
+    var Actu = new Person("Actu");
     var HPDA  = new Person("HPDA");
-    var cath = new Person("Cath");
-    var IAP  = new Person("IAP");
     var BI  = new Person("BI");
-    var VISUA  = new Person("VISUA");
+    var CS  = new Person("CS");
+    var DS = new Person("DS");
+    var IAP  = new Person("IAP");
+    var FT = new Person("FT");
+    var IAC  = new Person("IAC");
+    var IAP  = new Person("IAP");
     var ICC  = new Person("ICC");
     var INEM = new Person("INEM");
-    var CS  = new Person("CS");
- 
-    Dupre.candidates  = [IAC ,HPDA ,IAP ,BI ,VISUA ,ICC ,INEM ,CS];
+    var MMF = new Person("MMF");
+    var VISUA  = new Person("VISUA");
+
+
+    /*Dupre.candidates  = [IAC ,HPDA ,IAP ,BI ,VISUA ,ICC ,INEM ,CS];
     Ribeiro.candidates  = [ICC ,IAP ,HPDA ,IAC ,VISUA ,INEM ,CS ,BI];
     Sauvage.candidates  = [IAC ,BI ,HPDA ,IAP ,ICC ,CS ,INEM ,VISUA];
     Alves.candidates  = [BI ,IAC ,CS ,VISUA ,ICC ,INEM ,HPDA ,IAP];
@@ -99,18 +97,18 @@ function doMarriage() {
     ICC.candidates  = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
     INEM.candidates = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
     CS.candidates  = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
- 
-    var guys = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
-    var gals = [IAC, HPDA, IAP, BI, VISUA, ICC, INEM, CS];
- 
-    engageBIryone(guys);
- 
-    for (var i = 0; i < guys.length; i++) {
-        console.log("%s is engaged to %s", guys[i].name, guys[i].fce.name);
+
+    var eleve = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
+    var spe = [Actu, HPDA, BI, CS, DS, IAP, FT, IAC, IAP, ICC,INEM, MMF, VISUA];
+
+    engageBIryone(eleve);
+
+    for (var i = 0; i < eleve.length; i++) {
+        console.log("%s is engaged to %s", eleve[i].name, eleve[i].fce.name);
     }
-    console.log("Stable = %s", isStable(guys, gals) ? "Yes" : "No");
-    /*.swapWith(Boulay);
-    console.log("Stable = %s", isStable(guys, gals) ? "Yes" : "No");*/
+    console.log("Stable = %s", isStable(eleve, spe) ? "Yes" : "No");
+    .swapWith(Boulay);
+    console.log("Stable = %s", isStable(eleve, spe) ? "Yes" : "No");*/
 }
- 
+
 doMarriage();
