@@ -97,7 +97,7 @@ function doMarriage() {
     ICC.candidates  = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
     INEM.candidates = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
     CS.candidates  = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
-
+    lets go
     var eleve = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
     var spe = [Actu, HPDA, BI, CS, DS, IAP, FT, IAC, IAP, ICC,INEM, MMF, VISUA];
 
