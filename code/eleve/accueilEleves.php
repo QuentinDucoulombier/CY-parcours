@@ -38,6 +38,7 @@
         
         <form method="POST" action="../connexion.php">
             <input type="submit" name="OUT" value="deconnexion"/>
+            <!--TODO rajouter session_destroy()-->
         </form>
     </body>
 </html>
