@@ -61,18 +61,6 @@
          <!-- TODO faire un menu changement info avec 2 possibilite (via la pp et via le menu dans la pp peut etre aussi mettre la deconnexion) -->
         <div id=menu>
             Menu <br>
-            test : <?php
-                    // $pass = "partout";
-                    // $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
-                    // if (password_verify($pass, $pass_hash))
-                    // {
-                    //   echo "Mot de passe correct";
-                    // }
-                    // else
-                    // {
-                    //   echo "Mot de passe incorrect";
-                    // }
-                    ?>
             <ul>
                 <li>Votre moyenne : <span><?php echo $moyenne; ?></span></li>
                 <li>Vos ECTS : <span><?php echo $ects; ?></span></li>
@@ -94,5 +82,16 @@
         <form method="POST" action="../connexion.php">
             <input type="submit" name="OUT" value="deconnexion"/>
         </form>
+        <?php /*
+        $password = "dudule";
+        echo $password . "<br>";
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+        echo $hash . "<br>";
+        if (password_verify($password, $hash)){
+          echo "yes <br>";
+        } else {
+          echo "nope <br>";
+        }*/
+        ?>
     </body>
 </html>

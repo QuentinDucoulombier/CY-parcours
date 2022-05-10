@@ -18,9 +18,12 @@
             {
                 header('Location: prof/accueilProf.php');
             }
-            else
+            elseif($_SESSION["status"] == 'admin')
             {
-                header('Location: eleve/accueilEleves.php');
+                header('Location: eleve/accueilAdmin.php');
+            }
+            else {
+              header('Location: eleve/accueilEleves.php');
             }
             /*$prenom =  $_SESSION["prenom"];
             $nom = $_SESSION["nom"];
@@ -30,7 +33,6 @@
         <form method="POST" action="connexion.php">
             <input type="submit" name="OUT" value="deconnexion"/>
         </form>
-
     </body>
 </html>
 
