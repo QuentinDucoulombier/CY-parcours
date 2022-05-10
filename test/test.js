@@ -63,8 +63,38 @@ function engageBIryone(eleve) {
         }
     } while (!done);
 }
+/*
+function readTextFile(file, callback) {
+    var rawFile = new XMLHttpRequest();
+    rawFile.overrideMimeType("application/json");
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function() {
+        if (rawFile.readyState === 4 && rawFile.status == "200") {
+            callback(rawFile.responseText);
+        }
+    }
+    rawFile.send(null);
+}
+readTextFile("temp.json", function(text){
+      var data = JSON.parse(text);
+      console.log(data);
+  });*/
 
 function doMarriage() {
+
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function(){
+      if (this.readyState == 4 && this.status == 200) {
+          var data = JSON.parse(this.responseText);
+          console.log(data);
+      }
+  };
+
+  xhttp.open("POST", "recupJSON.php", true);
+  xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhttp.send();
+
+
 
     var Actu = new Person("Actu");
     var HPDA  = new Person("HPDA");

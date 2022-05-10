@@ -13,6 +13,8 @@
         $handle = fopen("../data/choixEtudiantsParcours3.csv", "r");
         echo "<table>";
         $raw=0;
+        $vide = "[]";
+        file_put_contents("temp.json", $vide);
           while (($data = fgetcsv($handle, 1000, ";"))) {
             if ($raw > 0) {
               echo "<tr>";
@@ -22,6 +24,7 @@
 
 
                   }
+
                   $tab = file_get_contents("temp.json");
                   $old = json_decode($tab, true);
                   array_push($old, $new);
