@@ -19,6 +19,10 @@
             {
                 header('Location: prof/accueilProf.php');
             }
+            else if($_SESSION["status"] == "admin")
+            {
+                header('Location: admin/accueilAdmin.php');
+            }
             else
             {
                 header('Location: eleve/accueilEleves.php');

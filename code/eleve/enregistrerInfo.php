@@ -9,7 +9,10 @@
     $_SESSION["pseudo"]= $_POST['pseudo'];
     $_SESSION["password"]= $_POST['password'];
     $_SESSION["status"] = "eleves";
-    $_SESSION["image"] =  $_SESSION["pp"];
+    if ($_SESSION['pp'] != NULL)
+    {
+        $_SESSION["image"] =  $_SESSION['pp'];
+    }
 
     /*On modifie les infos dans le .csv*/
     $tab = array(); //on cree un tableau temporaire
@@ -48,7 +51,7 @@
     {
         $_SESSION["pp"] = "https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg"; //cas ou l'utilisateur ne choisis pas de pp
     }
-    $list = array($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['pseudo'], $_POST['password'], "eleves", $_SESSION["pp"]);
+    $list = array($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['pseudo'], $_POST['password'], "eleves", $_SESSION["image"]);
     fputcsv($file, $list, ";");
     fclose($file);
     header('Location: changerInfo.php'); //on redirige l'utilisateur vers la meme page

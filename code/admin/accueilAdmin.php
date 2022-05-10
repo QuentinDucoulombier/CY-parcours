@@ -19,7 +19,6 @@
             $prenom =  $_SESSION["prenom"];
             $nom = $_SESSION["nom"];
             $status = $_SESSION["status"];
-           // $img = $_SESSION["image"];
            $img = $_SESSION["image"];
             echo "<h1>Bienvenue $prenom $nom vous etes $status</h1>";
             //echo "<img src=../$img></img>";
@@ -35,7 +34,8 @@
             </ul>
         </div>
         <div id=profil>
-
+        <div id=createProfilEleve>
+            en gros endroit pour generer le profil
         </div>
         <p></p>
         

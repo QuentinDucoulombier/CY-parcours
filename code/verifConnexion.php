@@ -29,5 +29,5 @@ function connex($fichier)
 }
 connex("../data/loginEleves.csv");
 connex("../data/loginProf.csv");
-
+connex("../data/loginAdmin.csv");
 ?>
