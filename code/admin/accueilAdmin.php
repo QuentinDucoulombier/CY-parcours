@@ -9,13 +9,13 @@
     <head>
         <meta charset="utf-8">
         <title>Acceuil</title>
-        <link rel="stylesheet" type="text/css" href="../styleAcceuil.css"/> 
+        <link rel="stylesheet" type="text/css" href="../styleAcceuil.css"/>
         <link rel="icon" type="image/png" href="../favicon.png"/>
 
     </head>
     <body>
         <?php
-            
+
             $prenom =  $_SESSION["prenom"];
             $nom = $_SESSION["nom"];
             $status = $_SESSION["status"];
@@ -23,11 +23,11 @@
             echo "<h1>Bienvenue $prenom $nom vous etes $status</h1>";
             //echo "<img src=../$img></img>";
             echo "<a href=changerInfo.php><img src=$img></img></a>";
-            
+
         ?>
         <!-- TODO faire un menu changement info avec 2 possibilite (via la pp et via le menu dans la pp peut etre aussi mettre la deconnexion) -->
         <div id=menu>
-            Menu    
+            Menu
             <ul>
                 <li>test</li>
                 <li>test2</li>
@@ -35,10 +35,11 @@
         </div>
         <div id=profil>
         <div id=createProfilEleve>
-            en gros endroit pour generer le profil
+            <h2>Cree un profil eleves</h2>
+            
         </div>
         <p></p>
-        
+
         <form method="POST" action="../connexion.php">
             <input type="submit" name="OUT" value="deconnexion"/>
         </form>
