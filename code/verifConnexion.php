@@ -1,7 +1,33 @@
 <?php
 session_start();
 
-function connex($fichier)
+function connexEleves($fichier)
+{
+    if (($handle = fopen($fichier, "r")) !== FALSE) {
+        while (($data = fgetcsv($handle, 1024, ";")) !== FALSE) {
+
+            if (($data[1] == $_POST["pseudo"]) && ($data[3] == $_POST["password"])){
+                //on recupere les infos dans la session
+                $_SESSION["prenom"] = $data[0];
+                $_SESSION["nom"] = $data[1];
+                $_SESSION["email"] = $data[2];
+                $_SESSION["password"] = $data[3];
+                $_SESSION["status"] = $data[4];
+                $_SESSION["image"] = $data[5];
+                header('Location: acceuil.php');
+                exit();
+            }
+            else
+            {
+            header('Location: connexion.php');
+            }
+        }
+        fclose($handle);
+
+    }
+}
+
+function connexAutre($fichier)
 {
     if (($handle = fopen($fichier, "r")) !== FALSE) {
         while (($data = fgetcsv($handle, 1024, ";")) !== FALSE) {
@@ -27,7 +53,7 @@ function connex($fichier)
 
     }
 }
-connex("../data/loginEleves.csv");
-connex("../data/loginProf.csv");
-connex("../data/loginAdmin.csv");
+connexEleves("../data/loginEleves.csv");
+connexAutre("../data/loginProf.csv");
+connexAutre("../data/loginAdmin.csv");
 ?>

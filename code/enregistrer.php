@@ -17,7 +17,7 @@
         $file = fopen($fichier,"w");
         $listeTitre = array("Prenom","Nom","Email","pseudo","mdp","status", "pp");
         fputcsv($file, $listeTitre, ";");
-        fclose("../data/loginEleves.csv");
+        fclose($file);
 
     }
     

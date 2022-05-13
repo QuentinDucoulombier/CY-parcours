@@ -1,3 +1,4 @@
-Modifier les .csv pour ce soit adapter au loginEleves.csv (en gros mettre dans le fichier le pseudo en premier)
-Regarder l'erreur quand ca genere
-Faire de l'ajax
+Done -- Modifier les .csv pour ce soit adapter au loginEleves.csv (en gros mettre dans le fichier le pseudo en premier)
+Done --Regarder l'erreur quand ca genere
+Done a moitie --Faire de l'ajax
+Done --Faire que l'on puisse lancé qu'une seule fois l'algo qui cree les comptes

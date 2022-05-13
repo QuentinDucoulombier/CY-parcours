@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
   session_start();
-  if (!isset($_SESSION["pseudo"])){ /*pas certain que ce soit utile*/
+  if (!isset($_SESSION["nom"])){ /*pas certain que ce soit utile*/
       header('Location: ../connexion.php');
   }
 ?>

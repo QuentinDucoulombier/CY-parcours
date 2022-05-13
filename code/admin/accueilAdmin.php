@@ -11,6 +11,7 @@
         <title>Acceuil</title>
         <link rel="stylesheet" type="text/css" href="../styleAcceuil.css"/>
         <link rel="icon" type="image/png" href="../favicon.png"/>
+        <script type="text/javascript" src="admin.js"></script>
 
     </head>
     <body>
@@ -36,8 +37,10 @@
         <div id=profil>
         <div id=createProfilEleve>
             <h2>Cree un profil eleves</h2>
-            <button type="button" onclick="location.href = 'createEleve.php';">Lancer le programmes</button>
-            
+            <button type="button" id="CreateEleve" onclick=test() >Lancer le programmes</button>
+            <div id="message">
+                
+            </div>
         </div>
         <p></p>
 
