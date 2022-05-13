@@ -10,7 +10,7 @@ function test()
             }
                
         };
-        xhttp.open("GET", "createEleve.php", true);
+        xhttp.open("GET", "createEleve.php", true); //jsp si on est obligé d'envoyer des trucs avec le GET
         xhttp.send();
     
 }

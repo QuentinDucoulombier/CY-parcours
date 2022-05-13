@@ -18,7 +18,7 @@
                         $file = fopen("../../data/loginEleves.csv","w");
                         $listeTitre = array("Prenom","Nom","Email","Mdp","Statut", "pp");
                         fputcsv($file, $listeTitre, ";");
-                        fclose($file);  //regarder pk il me gronde ici
+                        fclose($file);  //jsuis juste un one head
 
                     }
                     else
@@ -44,7 +44,6 @@
         else
         {
             echo "Le fichier existe deja !";
-            //header('Location: accueilAdmin.php');
             exit(); 
         }
     }

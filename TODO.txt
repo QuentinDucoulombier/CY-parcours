@@ -2,3 +2,4 @@ Done -- Modifier les .csv pour ce soit adapter au loginEleves.csv (en gros mettr
 Done --Regarder l'erreur quand ca genere
 Done a moitie --Faire de l'ajax
 Done --Faire que l'on puisse lancé qu'une seule fois l'algo qui cree les comptes
+Regarder si on peut envoyer des trucs en ajax sans le get

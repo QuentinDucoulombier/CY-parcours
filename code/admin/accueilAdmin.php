@@ -38,9 +38,6 @@
         <div id=createProfilEleve>
             <h2>Cree un profil eleves</h2>
             <button type="button" id="CreateEleve" onclick=test() >Lancer le programmes</button>
-            <div id="message">
-                
-            </div>
         </div>
         <p></p>
 
