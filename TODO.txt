@@ -1,0 +1,3 @@
+Modifier les .csv pour ce soit adapter au loginEleves.csv (en gros mettre dans le fichier le pseudo en premier)
+Regarder l'erreur quand ca genere
+Faire de l'ajax

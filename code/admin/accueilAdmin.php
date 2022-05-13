@@ -27,7 +27,7 @@
         ?>
         <!-- TODO faire un menu changement info avec 2 possibilite (via la pp et via le menu dans la pp peut etre aussi mettre la deconnexion) -->
         <div id=menu>
-            Menu
+            <h2>Menu</h2>
             <ul>
                 <li>test</li>
                 <li>test2</li>
@@ -36,6 +36,7 @@
         <div id=profil>
         <div id=createProfilEleve>
             <h2>Cree un profil eleves</h2>
+            <button type="button" onclick="location.href = 'createEleve.php';">Lancer le programmes</button>
             
         </div>
         <p></p>

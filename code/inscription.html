@@ -15,8 +15,17 @@
     <body>
       <div class="form">
         <h1>Inscrivez-vous</h1>
-        <form action="enregistrerEleve.php" method="POST">
+        <form action="enregistrer.php" method="POST">
           <div class="input-container ic1">
+            <input list="Statut" name="statut" id="statut" class="input" placeholder=" " required/>
+            <datalist id="Statut">
+              <option value="Profs">
+              <option value="Admin">
+            </datalist>
+            <div class="cut"></div>
+            <label for="statut" class="placeholder">Statut*</label>
+          </div>
+          <div class="input-container ic2">
             <input type="text" name="prenom" id="prenom" class="input" placeholder=" " required/>
             <div class="cut"></div>
             <label for="prenom" class="placeholder">Prénom*</label>
