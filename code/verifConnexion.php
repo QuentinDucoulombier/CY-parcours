@@ -53,7 +53,11 @@ function connexAutre($fichier)
 
     }
 }
-connexEleves("../data/loginEleves.csv");
+$eleve = "../data/loginEleves.csv";
+if(file_exists($eleve))
+{
+    connexEleves($eleve);
+}
 connexAutre("../data/loginProf.csv");
 connexAutre("../data/loginAdmin.csv");
 ?>
