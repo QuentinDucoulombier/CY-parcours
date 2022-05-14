@@ -18,3 +18,13 @@ img{
     border-radius : 1.5em;
     float : right;
 }
+
+#etatG
+{
+  color:green;
+}
+
+#etatB
+{
+  color: red;
+}

@@ -11,6 +11,7 @@
         <title>Acceuil</title>
         <link rel="stylesheet" type="text/css" href="../styleAcceuil.css"/>
         <link rel="icon" type="image/png" href="../favicon.png"/>
+        <script type="text/javascript" src="envoie.js"></script>
 
     </head>
     <body>
@@ -25,7 +26,7 @@
         ?>
          <!-- TODO faire un menu changement info avec 2 possibilite (via la pp et via le menu dans la pp peut etre aussi mettre la deconnexion) -->
         <div id=menu>
-            Menu
+            <h2>Menu</h2>
             <ul>
                 <li>test</li>
                 <li>test2</li>
@@ -33,6 +34,14 @@
         </div>
         <div id=profil>
 
+        </div>
+        <h2>Saisir un bug ou un probleme</h2>
+        <div id=ticket>
+            <p>Titre <input type="text" name="titre" id="titre"></p>
+            <textarea name="description" id="description" rows="12" cols="35">Faites la description de votre probleme.</textarea><br>
+            <button type="button" onclick="envoyer()">Envoyer</button>
+            <div id="etat">
+            </div>
         </div>
         <p></p>
         

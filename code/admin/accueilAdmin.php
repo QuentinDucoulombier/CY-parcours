@@ -34,10 +34,18 @@
                 <li>test2</li>
             </ul>
         </div>
-        <div id=profil>
+        
         <div id=createProfilEleve>
             <h2>Cree un profil eleves</h2>
             <button type="button" id="CreateEleve" onclick=test() >Lancer le programmes</button>
+        </div>
+
+        <div id=modif>
+            <h2>Ticket/erreur</h2>
+            <?php
+
+
+            ?>
         </div>
         <p></p>
 
