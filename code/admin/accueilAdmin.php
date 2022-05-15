@@ -36,16 +36,48 @@
         </div>
         
         <div id=createProfilEleve>
-            <h2>Cree un profil eleves</h2>
+            <h2>Cree les profil eleves</h2>
             <button type="button" id="CreateEleve" onclick=test() >Lancer le programmes</button>
         </div>
-
+        <h2>Tableau de bord</h2>
         <div id=modif>
-            <h2>Ticket/erreur</h2>
+            <h3>Ticket/erreur</h3>
             <?php
-
-
+                $row=0;
+                if (($handle = fopen("../../data/error.csv", "r")) !== FALSE) {
+                    echo "<table>";
+                    while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
+                        $num = count($data);
+                           
+                        
+                        
+                        if($row == 0)
+                        {
+                            echo "<tr>";
+                            echo "<th>Numero</th>";
+                            for ($c=0; $c < $num; $c++) {
+                                echo "<th>$data[$c]</th>";
+                            }  
+                            echo "</tr>";
+                        }
+                        else
+                        {
+                            echo "<tr>";
+                            echo "<td>$row</td>";
+                            for ($c=0; $c < $num; $c++) {
+                                echo "<td>$data[$c]</td>";
+                            }
+                            echo "</tr>";
+                        }
+                        $row++;
+                    }
+                    fclose($handle);
+                }
+                echo "</table>";
             ?>
+        </div>
+        <div id="log">
+            <h3>log des modifications des profs</h3>
         </div>
         <p></p>
 
