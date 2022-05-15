@@ -28,7 +28,7 @@
     
     fclose($file);
     $tailleApres = filesize("../../data/error.csv");
-    if($tailleAvant>$tailleApres)
+    if($tailleAvant<$tailleApres) //ca marche pas
     {
         echo "<p id='etatG'>Ticket supprimé</p>";
     }
@@ -36,4 +36,5 @@
     {
         echo "<p id='etatB'>Erreur dans la suppression du ticket</p>";
     }
+    
 ?>
