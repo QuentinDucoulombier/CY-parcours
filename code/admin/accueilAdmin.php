@@ -48,9 +48,6 @@
                     echo "<table>";
                     while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
                         $num = count($data);
-                           
-                        
-                        
                         if($row == 0)
                         {
                             echo "<tr>";
@@ -75,6 +72,31 @@
                 }
                 echo "</table>";
             ?>
+            <p>Bug resolu</p>
+            
+            <?php
+                echo "<input list='Bug' name='bug' id='bug'/>";
+                $row=0;
+                if (($handle = fopen("../../data/error.csv", "r")) !== FALSE) {
+                    echo "<datalist id='Bug'>";
+                    while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
+                        $num = count($data);
+                        if($row > 0)
+                        {
+                        echo "<option value=$data[0]>";
+                        }
+                        $row++;
+                    }
+                    fclose($handle);
+                    echo "</datalist>";
+                }
+            ?>
+            <button type="button" onclick="ticket()">Envoyer</button>
+            <div id="etat">
+            </div>
+
+        
+
         </div>
         <div id="log">
             <h3>log des modifications des profs</h3>
