@@ -28,7 +28,7 @@
     
     fclose($file);
     $tailleApres = filesize("../../data/error.csv");
-    if($tailleAvant<$tailleApres) //ca marche pas
+    if($tailleAvant<$tailleApres) //ca marche pas + s'inspirer de l'ancien ajax pour enelever en direct
     {
         echo "<p id='etatG'>Ticket supprimé</p>";
     }
