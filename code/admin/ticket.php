@@ -54,9 +54,17 @@
             }
             $row++;
         }
+        $varApres = $row;
         fclose($handle);
     }
     echo "</table>";
-    echo "<p id=etatG>Ticket supprimé avec succés</p>";
+    if($_POST["rowPost"]>$varApres) /*On compare le nombre de ligne dans le .csv avant la modification et apres*/
+    {
+        echo "<p id=etatG>Ticket supprimé avec succés</p>"; /*Si c'est bien superieur avant alors le ticket a bien etait supprimé*/
+    }    
+    else
+    {
+        echo "<p id=etatB>Erreur dans la suppression du ticket</p>"; /*Sinon il y a une eurreur*/
+    }
     
 ?>

@@ -47,6 +47,10 @@
             <div id="etat">
             </div>
         </div>
+        <div id="profil">
+            <h2>Modifier votre profil : 
+            <a href="changerInfo.php">Ici</a></h2>
+        </div>
 
         <p></p>
         

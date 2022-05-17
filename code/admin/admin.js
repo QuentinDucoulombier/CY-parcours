@@ -16,8 +16,10 @@ function test()
 }
 
 function ticket(){
+
 																
-    bug=document.getElementById("bug").value;                                  
+    bug=document.getElementById("bug").value; 
+    rowPost=document.getElementById("rowPost").value;                                 
                                                                                     
    xhttp = new XMLHttpRequest(); 
                                                                                      
@@ -28,10 +30,9 @@ function ticket(){
             document.getElementById("actualisation").innerHTML = this.responseText; //renvoyer la meme fonction pour faire le tab en html avant + rajouter l'etat en gros faire presque comme dans le td9
         }
     };
-    console.log(bug);
                                                                                       
     xhttp.open("POST", "ticket.php", true);
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhttp.send("bug="+bug);
+    xhttp.send("bug="+bug+"&rowPost="+rowPost);
                                                                                  
 }

@@ -69,6 +69,7 @@
                         }
                         $row++;
                     }
+                    echo "<input type='hidden' id='rowPost' name='rowPost' value=$row>";
                     fclose($handle);
                 }
                 echo "</table>";
@@ -104,6 +105,11 @@
             <h3>Log des modifications des profs</h3>
         </div>
         <p></p>
+
+        <div id="profil">
+            <h2>Modifier votre profil : 
+            <a href="changerInfo.php">Ici</a></h2>
+        </div>
 
         <form method="POST" action="../connexion.php">
             <input type="submit" name="OUT" value="deconnexion"/>
