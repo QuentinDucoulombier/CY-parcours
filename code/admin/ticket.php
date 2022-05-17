@@ -28,13 +28,35 @@
     
     fclose($file);
     $tailleApres = filesize("../../data/error.csv");
-    if($tailleAvant<$tailleApres) //ca marche pas + s'inspirer de l'ancien ajax pour enelever en direct
-    {
-        echo "<p id='etatG'>Ticket supprimé</p>";
+    /*on renvoie le meme programme*/
+    $row=0;
+    if (($handle = fopen("../../data/error.csv", "r")) !== FALSE) {
+        echo "<table>";
+        while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
+            $num = count($data);
+            if($row == 0)
+            {
+                echo "<tr>";
+                echo "<th>Numero</th>";
+                for ($c=0; $c < $num; $c++) {
+                    echo "<th>$data[$c]</th>";
+                }  
+                echo "</tr>";
+            }
+            else
+            {
+                echo "<tr>";
+                echo "<td>$row</td>";
+                for ($c=0; $c < $num; $c++) {
+                    echo "<td>$data[$c]</td>";
+                }
+                echo "</tr>";
+            }
+            $row++;
+        }
+        fclose($handle);
     }
-    else
-    {
-        echo "<p id='etatB'>Erreur dans la suppression du ticket</p>";
-    }
+    echo "</table>";
+    echo "<p id=etatG>Ticket supprimé avec succés</p>";
     
 ?>

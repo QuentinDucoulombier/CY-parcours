@@ -25,9 +25,10 @@ function ticket(){
 
         if (this.readyState == 4 && this.status == 200) 
         {		
-            document.getElementById("etat").innerHTML = this.responseText; //renvoyer la meme fonction pour faire le tab en html avant + rajouter l'etat en gros faire presque comme dans le td9
+            document.getElementById("actualisation").innerHTML = this.responseText; //renvoyer la meme fonction pour faire le tab en html avant + rajouter l'etat en gros faire presque comme dans le td9
         }
     };
+    console.log(bug);
                                                                                       
     xhttp.open("POST", "ticket.php", true);
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");

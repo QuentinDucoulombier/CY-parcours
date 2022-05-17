@@ -9,9 +9,10 @@
 
     }
 
+    $titre = str_replace (" ", "_",  $_POST['titre']);
     //on importe les infos de l'inscription dans un csv
     $file = fopen($fichier,"a");
-    $list = array($_POST['titre'], $_POST['description']);
+    $list = array($titre, $_POST['description']);
     fputcsv($file, $list, ";");
     fclose($file);
     echo "<p id='etatG'>Ticket envoyer avec succes !</p>";  

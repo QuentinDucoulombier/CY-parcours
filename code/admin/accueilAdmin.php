@@ -43,6 +43,7 @@
         <div id=modif>
             <h3>Ticket/erreur</h3>
             <?php
+                echo "<div id='actualisation'>";
                 $row=0;
                 if (($handle = fopen("../../data/error.csv", "r")) !== FALSE) {
                     echo "<table>";
@@ -71,9 +72,10 @@
                     fclose($handle);
                 }
                 echo "</table>";
+                echo "</div>";
             ?>
-            <p>Bug resolu</p>
-            
+            <p></p>
+            Ticket resolu :
             <?php
                 echo "<input list='Bug' name='bug' id='bug'/>";
                 $row=0;
@@ -99,7 +101,7 @@
 
         </div>
         <div id="log">
-            <h3>log des modifications des profs</h3>
+            <h3>Log des modifications des profs</h3>
         </div>
         <p></p>
 

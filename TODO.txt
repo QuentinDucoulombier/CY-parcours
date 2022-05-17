@@ -1,3 +1,2 @@
-Done a moitie --Faire de l'ajax
+Done a 3/4 --Faire de l'ajax
 Regarder si on peut envoyer des trucs en ajax sans le get
-A repare -> Rajouter le probleme de ticket dans tt les modules et la possibilité de supprimer les ticket une fois suprrimer
