@@ -1,3 +1,4 @@
 Done a 3/4 --Faire de l'ajax
 Regarder si on peut envoyer des trucs en ajax sans le get
 Rajouter + d'info dans le formulaire
+pk ca marche pas jsp frr
