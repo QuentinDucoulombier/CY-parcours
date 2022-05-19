@@ -2,35 +2,35 @@
 
 
 function Person(name) {
- 
+
     var candidateIndex = 0;
- 
+
     this.name = name;
     this.fce = null;
     this.candidates = [];
- 
+
     this.rank = function(p) {
         for (i = 0; i < this.candidates.length; i++)
             if (this.candidates[i] === p) return i;
         return this.candidates.length + 1;
     }
- 
+
     this.prefers = function(p) {
         return this.rank(p) < this.rank(this.fce);
     }
- 
+
     this.nextCandidate = function() {
         if (candidateIndex >= this.candidates.length) return null;
         return this.candidates[candidateIndex++];
     }
- 
+
     this.engageTo = function(p) {
         if (p.fce) p.fce.fce = null;
         p.fce = this;
         if (this.fce) this.fce.fce = null;
         this.fce = p;
     }
- 
+
     this.swapWith = function(p) {
         console.log("%s & %s swap partners", this.name, p.name);
         var thisFce = this.fce;
@@ -39,7 +39,7 @@ function Person(name) {
         p.engageTo(thisFce);
     }
 }
- 
+
 function isStable(guys, gals) {
     for (var i = 0; i < guys.length; i++)
         for (var j = 0; j < gals.length; j++)
@@ -47,7 +47,7 @@ function isStable(guys, gals) {
                 return false;
     return true;
 }
- 
+
 function engageBIryone(guys) {
     var done;
     do {
@@ -63,9 +63,9 @@ function engageBIryone(guys) {
         }
     } while (!done);
 }
- 
+
 function doMarriage() {
- 
+
     var Dupre  = new Person("Dupre");
     var Ribeiro  = new Person("Ribeiro");
     var Sauvage  = new Person("Sauvage");
@@ -75,14 +75,13 @@ function doMarriage() {
     var Seguin  = new Person("Seguin");
     var IAC  = new Person("IAC");
     var HPDA  = new Person("HPDA");
-    var cath = new Person("Cath");
     var IAP  = new Person("IAP");
     var BI  = new Person("BI");
     var VISUA  = new Person("VISUA");
     var ICC  = new Person("ICC");
     var INEM = new Person("INEM");
     var CS  = new Person("CS");
- 
+
     Dupre.candidates  = [IAC ,HPDA ,IAP ,BI ,VISUA ,ICC ,INEM ,CS];
     Ribeiro.candidates  = [ICC ,IAP ,HPDA ,IAC ,VISUA ,INEM ,CS ,BI];
     Sauvage.candidates  = [IAC ,BI ,HPDA ,IAP ,ICC ,CS ,INEM ,VISUA];
@@ -92,19 +91,18 @@ function doMarriage() {
     Seguin.candidates  = [CS ,ICC ,IAP ,IAC ,INEM ,VISUA ,BI ,HPDA];
     IAC.candidates  = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
     HPDA.candidates  = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
-    cath.candidates = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
     IAP.candidates  = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
     BI.candidates  = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
     VISUA.candidates  = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
     ICC.candidates  = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
     INEM.candidates = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
     CS.candidates  = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
- 
+
     var guys = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
     var gals = [IAC, HPDA, IAP, BI, VISUA, ICC, INEM, CS];
- 
+
     engageBIryone(guys);
- 
+
     for (var i = 0; i < guys.length; i++) {
         console.log("%s is engaged to %s", guys[i].name, guys[i].fce.name);
     }
@@ -112,5 +110,5 @@ function doMarriage() {
     /*.swapWith(Boulay);
     console.log("Stable = %s", isStable(guys, gals) ? "Yes" : "No");*/
 }
- 
+
 doMarriage();
