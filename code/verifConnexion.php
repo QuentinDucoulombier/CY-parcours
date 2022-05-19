@@ -6,7 +6,7 @@ function connexEleves($fichier)
     if (($handle = fopen($fichier, "r")) !== FALSE) {
         while (($data = fgetcsv($handle, 1024, ";")) !== FALSE) {
 
-            if (($data[1] == $_POST["pseudo"]) && ($data[3] == $_POST["password"])){
+            if (($data[1] == $_POST["pseudo"]) && (password_verify($_POST["password"], $data[3]))){
                 //on recupere les infos dans la session
                 $_SESSION["prenom"] = $data[0];
                 $_SESSION["nom"] = $data[1];
@@ -14,6 +14,7 @@ function connexEleves($fichier)
                 $_SESSION["password"] = $data[3];
                 $_SESSION["status"] = $data[4];
                 $_SESSION["image"] = $data[5];
+                $_SESSION["filiere"] = $data[6];
                 header('Location: acceuil.php');
                 exit();
             }
@@ -32,7 +33,7 @@ function connexAutre($fichier)
     if (($handle = fopen($fichier, "r")) !== FALSE) {
         while (($data = fgetcsv($handle, 1024, ";")) !== FALSE) {
 
-            if (($data[3] == $_POST["pseudo"]) && ($data[4] == $_POST["password"])){
+            if (($data[3] == $_POST["pseudo"]) && (password_verify($_POST["password"], $data[4]))){
                 //on recupere les infos dans la session
                 $_SESSION["prenom"] = $data[0];
                 $_SESSION["nom"] = $data[1];

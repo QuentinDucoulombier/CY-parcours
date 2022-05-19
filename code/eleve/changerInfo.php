@@ -1,11 +1,12 @@
 <?php
     session_start();
     $prenom = $_SESSION["prenom"];
-    $nom = $_SESSION["nom"]; 
+    $nom = $_SESSION["nom"];
     $email = $_SESSION["email"];
     $password = $_SESSION["password"];
     $status = $_SESSION["status"];
     $image = $_SESSION["image"];
+    $filiere = $_SESSION["filiere"];
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,7 +17,7 @@
         <link rel="icon" type="image/png" href="favicon.png"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- c'est jQuery-->
         <link rel="icon" type="image/png" href="../favicon.png"/>
-        
+
 
     </head>
     <body>
@@ -46,24 +47,24 @@
             </div>
             <div class="input-container ic2">
             <?php
-              echo "<input  type='password' id='password' name='password' class='input' value=$password placeholder=' '/>";
+              echo "<input  type='password' id='password' name='password' class='input' required placeholder=' '/>";
             ?>
               <div class="cut"></div>
               <label for="password" class="placeholder">Mot de passe*</label>
             </div>
             <div class="input-container ic2">
-              
+
               <div class="small-12 medium-2 large-2 columns">
               <?php
                 echo "<div class='circle'>";
                   echo "<img class='profile-pic' src=$image>";
                 echo "</div>";
-                
+
                     echo "<input  type='file' id='pp' name='pp' class='input' accept='image/*' placeholder=' '/>";
                 ?>
                 <div class="cut"></div>
                 <label for="pp" class="placeholder">Photo de profil</label>
-               
+
               <script type="text/javascript" src="photoModi.js"></script>
             <p><input type="submit" value="Modifier" class="submit" required></p>
             <a href="accueilEleves.php">Retour</a>
