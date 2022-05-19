@@ -39,20 +39,20 @@ function Person(name) {
     }
 }
 
-function isStable(eleve, spe) {
-    for (var i = 0; i < eleve.length; i++)
+function isStable(eleves, spe) {
+    for (var i = 0; i < eleves.length; i++)
         for (var j = 0; j < spe.length; j++)
-            if (eleve[i].prefers(spe[j]) && spe[j].prefers(eleve[i]))
+            if (eleves[i].prefers(spe[j]) && spe[j].prefers(eleves[i]))
                 return false;
     return true;
 }
 
-function engageBIryone(eleve) {
+function engageBIryone(eleves) {
     var done;
     do {
         done = true;
-        for (var i = 0; i < eleve.length; i++) {
-            var guy = eleve[i];
+        for (var i = 0; i < eleves.length; i++) {
+            var guy = eleves[i];
             if (!guy.fce) {
                 done = false;
                 var gal = guy.nextCandidate();
@@ -65,13 +65,13 @@ function engageBIryone(eleve) {
 
 
 function doMarriage() {
-  var eleve = [];
+  var eleves = [];
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function(){
       if (this.readyState == 4 && this.status == 200) {
           var data = JSON.parse(this.responseText);
 
-
+          console.log(data);
           //var Actu = new Person("Actu");
           var HPDA  = new Person("HPDA");
           var BI  = new Person("BI");
@@ -90,40 +90,58 @@ function doMarriage() {
 
           for (var i = 0; i < data.length; i++) {
             //console.log(data[i]["prenom"]+"_"+data[i]["nom"]);
-            var test = new Person(data[i]["prenom"]+"_"+data[i]["nom"]);
-            //test.candidates = [new Person(data[i]["Choix"]["Choix1"]),new Person (data[i]["Choix"]["Choix2"]),new Person (data[i]["Choix"]["Choix3"]),new Person (data[i]["Choix"]["Choix4"]),new Person (data[i]["Choix"]["Choix5"]),new Person (data[i]["Choix"]["Choix6"])];
-            eleve[i]=test;
-          }
+            var eleve = new Person(data[i]["prenom"]+"_"+data[i]["nom"]);
+            eleve.candidates = [];
+            var choix = data[i]["Choix"];
 
-          for (var i = 0; i < eleve.length; i++) {
-            for (var h = 1; h < data[i]["Choix"].length+1; h++) {
-              var j = 0;
-              while (data[i]["Choix"]["Choix"+h] != spe[j]) {
-                j++;
+            for (var j = 1; j < Object.keys(choix).length+1; j++) {
+              var choix_spe = choix["Choix"+j];
+  
+              for (var h = 0; h < spe.length; h++) {
+                var la_spe = spe[h];
+
+                if(choix_spe == la_spe.name){
+                  eleve.candidates[j-1] = la_spe;
+                }
               }
-              eleve[i].candidates[h]=spe[j];
             }
-
+            eleves[i]=eleve;
           }
+
+
+
+
+          //eleve.candidates = [new Person(data[i]["Choix"]["Choix1"]),new Person (data[i]["Choix"]["Choix2"]),new Person (data[i]["Choix"]["Choix3"]),new Person (data[i]["Choix"]["Choix4"]),new Person (data[i]["Choix"]["Choix5"]),new Person (data[i]["Choix"]["Choix6"])];
+
+          // for (var i = 0; i < eleves.length; i++) {
+          //   for (var h = 1; h < data[i]["Choix"].length+1; h++) {
+          //     for (var j = 0; j < data[i]["Choix"].length+1; j++) {
+          //       if (data[i]["Choix"]["Choix"+h] == spe[j]) {
+          //         console.log(spe[j]);
+          //       }
+          //     }
+          //     //eleves[i].candidates[h]=spe[j];
+          //   }
+          // }
 
           for (var i = 0; i < spe.length; i++) {
-            for (var j = 0; j < eleve.length; j++) {
-              spe[i].candidates[j] = eleve[j].name;
+            for (var j = 0; j < eleves.length; j++) {
+              spe[i].candidates[j] = eleves[j];
             }
           }
 
-          console.log(eleve);
+          console.log(eleves);
           console.log(spe);
 
-          engageBIryone(eleve);
+          engageBIryone(eleves);
 
-          for (var i = 0; i < eleve.length; i++) {
-              console.log("%s is engaged to %s", eleve[i].name, eleve[i].fce.name);
-              //console.log(eleve[i].fce);
+          for (var i = 0; i < eleves.length; i++) {
+              console.log("%s is engaged to %s", eleves[i].name, eleves[i].fce.name);
+              //console.log(eleves[i].fce);
           }
 
       }
-      console.log("Stable = %s", isStable(eleve, spe) ? "Yes" : "No");
+      console.log("Stable = %s", isStable(eleves, spe) ? "Yes" : "No");
   };
 
   xhttp.open("POST", "recupJSON.php", true);
