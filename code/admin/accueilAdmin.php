@@ -23,21 +23,26 @@
            $img = $_SESSION["image"];
             echo "<h1>Bienvenue $prenom $nom vous etes $status</h1>";
             //echo "<img src=../$img></img>";
-            echo "<a href=changerInfo.php><img src=$img></img></a>";
+            echo "<a href=changerInfo.php><img class='pp' src=$img></img></a>";
 
         ?>
         <!-- TODO faire un menu changement info avec 2 possibilite (via la pp et via le menu dans la pp peut etre aussi mettre la deconnexion) -->
-        <div id=menu>
-            <h2>Menu</h2>
-            <ul>
-                <li>test</li>
-                <li>test2</li>
-            </ul>
+        <div id=menu class="hidden">
+
+            <div class="loadingio-spinner-double-ring-lroiipoijrl"><div class="ldio-ys48lrawjtg">
+            <div></div>
+            <div></div>
+            <div><div></div></div>
+            <div><div></div></div>
+            </div></div>
+
         </div>
-        
+
         <div id=createProfilEleve>
             <h2>Cree les profil eleves</h2>
             <button type="button" id="CreateEleve" onclick=test() >Lancer le programmes</button>
+            <div id="charge">
+            </div>
         </div>
         <h2>Tableau de bord</h2>
         <div id=modif>
@@ -55,7 +60,7 @@
                             echo "<th>Numero</th>";
                             for ($c=0; $c < $num; $c++) {
                                 echo "<th>$data[$c]</th>";
-                            }  
+                            }
                             echo "</tr>";
                         }
                         else
@@ -86,7 +91,7 @@
                         $num = count($data);
                         if($row > 0)
                         {
-                        echo "<option value=$data[0]>";
+                        echo "<option value=$data[3]>";
                         }
                         $row++;
                     }
@@ -98,7 +103,7 @@
             <div id="etat">
             </div>
 
-        
+
 
         </div>
         <div id="log">
@@ -107,12 +112,12 @@
         <p></p>
 
         <div id="profil">
-            <h2>Modifier votre profil : 
+            <h2>Modifier votre profil :
             <a href="changerInfo.php">Ici</a></h2>
         </div>
 
         <form method="POST" action="../connexion.php">
-            <input type="submit" name="OUT" value="deconnexion"/>
+            <input type="submit" name="OUT" value="Deconnexion"/>
         </form>
     </body>
 </html>

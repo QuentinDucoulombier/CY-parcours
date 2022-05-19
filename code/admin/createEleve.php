@@ -6,7 +6,7 @@
         return substr(str_shuffle($chars),0,$length);
 
     }
-
+    
     function enregistre($fichier, $filiere)
     {
         if(filesize("../../data/loginEleves.csv")<50) //changer pour virer l'erreur

@@ -7,8 +7,8 @@
     $_SESSION["nom"] = $_POST['nom'];
     $_SESSION["email"]= $_POST['email'];
     $_SESSION["pseudo"]= $_POST['pseudo'];
-    $_SESSION["password"]= $_POST['password'];
-    $_SESSION["status"] = "admin";
+    $_SESSION["password"]= password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $_SESSION["status"] = "Admin";
     if ($_SESSION['pp'] != NULL)
     {
         $_SESSION["image"] =  $_SESSION['pp'];
@@ -51,7 +51,7 @@
     {
         $_SESSION["pp"] = "https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg"; //cas ou l'utilisateur ne choisis pas de pp
     }
-    $list = array($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['pseudo'], $_POST['password'], $_SESSION["status"] , $_SESSION["image"]);
+    $list = array($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['pseudo'], $_SESSION["password"], $_SESSION["status"] , $_SESSION["image"]);
     fputcsv($file, $list, ";");
     fclose($file);
     header('Location: accueilAdmin.php'); //on redirige l'utilisateur vers la meme page

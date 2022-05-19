@@ -24,7 +24,7 @@
             $img = $_SESSION["image"];
             $filiere = $_SESSION["filiere"];
             echo "<h1>Bienvenue $prenom $nom vous etes $status</h1>";
-            echo "<a href=changerInfo.php><img src=$img></img></a>";
+            echo "<a href=changerInfo.php><img class='pp' src=$img></img></a>";
 
 
          if (($eleve = fopen('../../data/choixEtudiantsParcours1.csv','r')) && ($filiere == "GSI")) {
@@ -77,7 +77,7 @@
  </ul>
 </div>
 
-<div>
+<div id=ticket>
   <h2>Vous rencontrez un bug ou un problème ? Remplissez un ticket <a href="sendTicket.php">ici</a>.</h2>
 </div>
 
