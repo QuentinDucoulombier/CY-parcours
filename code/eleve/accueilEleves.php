@@ -77,17 +77,10 @@
  </ul>
 </div>
 
-        <div id=profil>
+<div>
+  <h2>Vous rencontrez un bug ou un problème ? Remplissez un ticket <a href="sendTicket.php">ici</a>.</h2>
+</div>
 
-        </div>
-        <h2>Saisir un bug ou un probleme</h2>
-        <div id=ticket>
-            <p>Titre <input type="text" name="titre" id="titre"></p>
-            <textarea name="description" id="description" rows="12" cols="35">Faites la description de votre probleme.</textarea><br>
-            <button type="button" onclick="envoyer()">Envoyer</button>
-            <div id="etat">
-            </div>
-        </div>
         <div id="profil">
             <h2>Modifier votre profil :
             <a href="changerInfo.php">Ici</a></h2>
