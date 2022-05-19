@@ -33,7 +33,7 @@
         fclose($handle);
 
     }
-    /*on ecrase et recrit les ancienne info dans le loginEleves.csv*/
+    /*on ecrase et réécrit les ancienne info dans le loginEleves.csv*/
     $file = fopen("../../data/loginEleves.csv","w");
     foreach ((array_chunk($tab, ceil(count($tab) / $cpt))) as $value) { //array chunk permet de separet un tableau en plusieurs tableau (donc permet de separe le .csv en plusieurs lignes)
         fputcsv($file, $value, ";");                                    //lire https://www.php.net/manual/fr/function.array-chunk.php dans notre cas on prends la taille du tableau que l'on divise par le nombre d'utilisateur different de celui modifier

@@ -21,10 +21,11 @@
             $status = $_SESSION["status"];
             $img = $_SESSION["image"];
             $email = $_SESSION["email"];
-            $filiere = $_SESSION{"filiere"};
-            echo "<h1>Bienvenue $prenom $nom, vous êtes $status</h1>";
+            $filiere = $_SESSION["filiere"];
+            echo "<h1>Bienvenue $prenom $nom, vous êtes $status votre filiere : $filiere</h1>";
             echo "<a href=changerInfo.php><img src=$img></img></a>";
             $verif = false;
+
 
             if (($eleve = fopen('../../data/choixEtudiantsParcours1.csv','r')) && ($filiere == "GSI")) {
                 while (($l = fgetcsv($eleve, 1024, ";")) !== (FALSE)) {
@@ -37,6 +38,7 @@
                 }
             }
             if (($eleve = fopen('../../data/choixEtudiantsParcours2.csv','r')) && ($filiere == "MF")){
+              echo "test";
                 while (($l = fgetcsv($eleve, 1024, ";")) !== (FALSE)) {
                     if($email == $l[2]){
                         $moyenne = $l[4];
@@ -82,16 +84,5 @@
         <form method="POST" action="../connexion.php">
             <input type="submit" name="OUT" value="deconnexion"/>
         </form>
-        <?php /*
-        $password = "dudule";
-        echo $password . "<br>";
-        $hash = password_hash($password, PASSWORD_DEFAULT);
-        echo $hash . "<br>";
-        if (password_verify($password, $hash)){
-          echo "yes <br>";
-        } else {
-          echo "nope <br>";
-        }*/
-        ?>
     </body>
 </html>
