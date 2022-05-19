@@ -1,12 +1,9 @@
-/*test present sur le site d'ines pour Gale/Shapley algorithme https://rosettacode.org/wiki/Stable_marriage_problem#JavaScript */
-
-
 function Person(name) {
 
     var candidateIndex = 0;
 
     this.name = name;
-    this.fce = null;
+    this.fiance = null;
     this.candidates = [];
 
     this.rank = function(p) {
@@ -16,7 +13,7 @@ function Person(name) {
     }
 
     this.prefers = function(p) {
-        return this.rank(p) < this.rank(this.fce);
+        return this.rank(p) < this.rank(this.fiance);
     }
 
     this.nextCandidate = function() {
@@ -25,120 +22,96 @@ function Person(name) {
     }
 
     this.engageTo = function(p) {
-        if (p.fce) p.fce.fce = null;
-        p.fce = this;
-        if (this.fce) this.fce.fce = null;
-        this.fce = p;
+        if (p.fiance) p.fiance.fiance = null;
+        p.fiance = this;
+        if (this.fiance) this.fiance.fiance = null;
+        this.fiance = p;
     }
 
     this.swapWith = function(p) {
         console.log("%s & %s swap partners", this.name, p.name);
-        var thisFce = this.fce;
-        var pFce = p.fce;
-        this.engageTo(pFce);
-        p.engageTo(thisFce);
+        var thisFiance = this.fiance;
+        var pFiance = p.fiance;
+        this.engageTo(pFiance);
+        p.engageTo(thisFiance);
     }
 }
 
-function isStable(eleve, spe) {
-    for (var i = 0; i < eleve.length; i++)
-        for (var j = 0; j < spe.length; j++)
-            if (eleve[i].prefers(spe[j]) && spe[j].prefers(eleve[i]))
+function isStable(guys, gals) {
+    for (var i = 0; i < guys.length; i++)
+        for (var j = 0; j < gals.length; j++)
+            if (guys[i].prefers(gals[j]) && gals[j].prefers(guys[i]))
                 return false;
     return true;
 }
 
-function engageBIryone(eleve) {
+function engageEveryone(guys) {
     var done;
     do {
         done = true;
-        for (var i = 0; i < eleve.length; i++) {
-            var guy = eleve[i];
-            if (!guy.fce) {
+        for (var i = 0; i < guys.length; i++) {
+            var guy = guys[i];
+            if (!guy.fiance) {
                 done = false;
                 var gal = guy.nextCandidate();
-                if (!gal.fce || gal.prefers(guy))
+                if (!gal.fiance || gal.prefers(guy))
                     guy.engageTo(gal);
             }
         }
     } while (!done);
 }
-/*
-function readTextFile(file, callback) {
-    var rawFile = new XMLHttpRequest();
-    rawFile.overrideMimeType("application/json");
-    rawFile.open("GET", file, true);
-    rawFile.onreadystatechange = function() {
-        if (rawFile.readyState === 4 && rawFile.status == "200") {
-            callback(rawFile.responseText);
-        }
-    }
-    rawFile.send(null);
-}
-readTextFile("temp.json", function(text){
-      var data = JSON.parse(text);
-      console.log(data);
-  });*/
 
 function doMarriage() {
 
-  xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function(){
-      if (this.readyState == 4 && this.status == 200) {
-          var data = JSON.parse(this.responseText);
-          console.log(data);
-      }
-  };
+    var abe  = new Person("Abe");
+    var bob  = new Person("Bob");
+    var col  = new Person("Col");
+    var dan  = new Person("Dan");
+    var ed   = new Person("Ed");
+    var fred = new Person("Fred");
+    var gav  = new Person("Gav");
+    var hal  = new Person("Hal");
+    var ian  = new Person("Ian");
+    var jon  = new Person("Jon");
+    var abi  = new Person("Abi");
+    var bea  = new Person("Bea");
+    var cath = new Person("Cath");
+    var dee  = new Person("Dee");
+    var eve  = new Person("Eve");
+    var fay  = new Person("Fay");
+    var gay  = new Person("Gay");
+    var hope = new Person("Hope");
+    var ivy  = new Person("Ivy");
+    var jan  = new Person("Jan");
 
-  xhttp.open("POST", "recupJSON.php", true);
-  xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  xhttp.send();
+    abe.candidates  = [abi, eve, cath, ivy, jan, dee, fay, bea, hope, gay];
+    bob.candidates  = [cath, hope, abi, dee, eve, fay, bea, jan, ivy, gay];
+    col.candidates  = [hope, eve, abi, dee, bea, fay, ivy, gay, cath, jan];
+    dan.candidates  = [ivy, fay, dee, gay, hope, eve, jan, bea, cath, abi];
+    ed.candidates   = [jan, dee, bea, cath, fay, eve, abi, ivy, hope, gay];
+    fred.candidates = [bea, abi, dee, gay, eve, ivy, cath, jan, hope, fay];
+    gav.candidates  = [gay, eve, ivy, bea, cath, abi, dee, hope, jan, fay];
+    hal.candidates  = [abi, eve, hope, fay, ivy, cath, jan, bea, gay, dee];
+    ian.candidates  = [hope, cath, dee, gay, bea, abi, fay, ivy, jan, eve];
+    jon.candidates  = [abi, fay, jan, gay, eve, bea, dee, cath, ivy, hope];
+    abi.candidates  = [bob, fred, jon, gav, ian, abe, dan, ed, col, hal];
+    bea.candidates  = [bob, abe, col, fred, gav, dan, ian, ed, jon, hal];
+    cath.candidates = [fred, bob, ed, gav, hal, col, ian, abe, dan, jon];
+    dee.candidates  = [fred, jon, col, abe, ian, hal, gav, dan, bob, ed];
+    eve.candidates  = [jon, hal, fred, dan, abe, gav, col, ed, ian, bob];
+    fay.candidates  = [bob, abe, ed, ian, jon, dan, fred, gav, col, hal];
+    gay.candidates  = [jon, gav, hal, fred, bob, abe, col, ed, dan, ian];
+    hope.candidates = [gav, jon, bob, abe, ian, dan, hal, ed, col, fred];
+    ivy.candidates  = [ian, col, hal, gav, fred, bob, abe, ed, jon, dan];
+    jan.candidates  = [ed, hal, gav, abe, bob, jon, col, ian, fred, dan];
 
+    var guys = [abe, bob, col, dan, ed, fred, gav, hal, ian, jon];
+    var gals = [abi, bea, cath, dee, eve, fay, gay, hope, ivy, jan];
 
+    engageEveryone(guys);
 
-    var Actu = new Person("Actu");
-    var HPDA  = new Person("HPDA");
-    var BI  = new Person("BI");
-    var CS  = new Person("CS");
-    var DS = new Person("DS");
-    var IAP  = new Person("IAP");
-    var FT = new Person("FT");
-    var IAC  = new Person("IAC");
-    var IAP  = new Person("IAP");
-    var ICC  = new Person("ICC");
-    var INEM = new Person("INEM");
-    var MMF = new Person("MMF");
-    var VISUA  = new Person("VISUA");
-
-
-    /*Dupre.candidates  = [IAC ,HPDA ,IAP ,BI ,VISUA ,ICC ,INEM ,CS];
-    Ribeiro.candidates  = [ICC ,IAP ,HPDA ,IAC ,VISUA ,INEM ,CS ,BI];
-    Sauvage.candidates  = [IAC ,BI ,HPDA ,IAP ,ICC ,CS ,INEM ,VISUA];
-    Alves.candidates  = [BI ,IAC ,CS ,VISUA ,ICC ,INEM ,HPDA ,IAP];
-    Levy.candidates   = [IAC ,IAP ,CS ,ICC ,INEM ,VISUA ,HPDA ,BI];
-    Boulay.candidates = [IAC ,IAP ,HPDA ,BI ,CS ,VISUA ,ICC ,INEM];
-    Seguin.candidates  = [CS ,ICC ,IAP ,IAC ,INEM ,VISUA ,BI ,HPDA];
-    IAC.candidates  = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
-    HPDA.candidates  = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
-    cath.candidates = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
-    IAP.candidates  = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
-    BI.candidates  = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
-    VISUA.candidates  = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
-    ICC.candidates  = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
-    INEM.candidates = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
-    CS.candidates  = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
-    lets go
-    var eleve = [Dupre, Ribeiro, Sauvage, Alves, Levy, Boulay, Seguin];
-    var spe = [Actu, HPDA, BI, CS, DS, IAP, FT, IAC, IAP, ICC,INEM, MMF, VISUA];
-
-    engageBIryone(eleve);
-
-    for (var i = 0; i < eleve.length; i++) {
-        console.log("%s is engaged to %s", eleve[i].name, eleve[i].fce.name);
+    for (var i = 0; i < guys.length; i++) {
+        console.log("%s is engaged to %s", guys[i].name, guys[i].fiance.name);
     }
-    console.log("Stable = %s", isStable(eleve, spe) ? "Yes" : "No");
-    .swapWith(Boulay);
-    console.log("Stable = %s", isStable(eleve, spe) ? "Yes" : "No");*/
+    console.log("Stable = %s", isStable(guys, gals) ? "Yes" : "No");
 }
-
-doMarriage();
