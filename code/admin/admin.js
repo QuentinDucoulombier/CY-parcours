@@ -7,10 +7,11 @@ function test()
 
             if (this.readyState == 4 && this.status == 200) {
                 window.alert(this.responseText);
-                document.getElementById("menu").classList.add("hidden");
+                document.getElementById("loading").classList.add("hidden");
             }
             else {
-              document.getElementById("menu").classList.remove("hidden");
+                
+                document.getElementById("loading").classList.remove("hidden");
             }
 
         };

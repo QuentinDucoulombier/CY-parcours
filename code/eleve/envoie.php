@@ -1,7 +1,7 @@
 <?php
     session_start();
     $fichier = "../../data/error.csv";
-    $date = date('l jS \of F Y h:i:s A');
+    $date = date("F j, Y, g:i:s a"); 
     if(!file_exists($fichier))
     {
         $file = fopen($fichier,"w");
