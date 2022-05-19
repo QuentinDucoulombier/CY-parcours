@@ -29,21 +29,23 @@
                 echo "<input type='text' id='prenom' name='prenom' class='input' value=$prenom>";
             ?>
             <div class="cut"></div>
-            <label for="prenom" class="placeholder">Prénom*</label>
+            <label for="prenom" class="placeholder">Prénom</label>
             </div>
             <div class="input-container ic2">
             <?php
-              echo "<input  type='text' id='nom' name='nom' class='input' value=$nom placeholder=' '/>";
+              echo "<p class='input'>$nom</p>";
+              //echo "<input  type='text' id='nom' name='nom' class='input' value=$nom placeholder=' '/>";
             ?>
               <div class="cut"></div>
-              <label for="nom" class="placeholder">Nom*</label>
+              <label for="nom" class="placeholder">Login/Nom</label>
             </div>
             <div class="input-container ic2">
             <?php
-              echo "<input  type='email' id='email' name='email' pattern='.+@cy-tech.fr' size='30' class='input' value=$email placeholder=' '/>";
+              echo "<p class='input'>$email</p>";
+              //echo "<input  type='email' id='email' name='email' pattern='.+@cy-tech.fr' size='30' class='input' value=$email placeholder=' '/>";
             ?>
               <div class="cut"></div>
-              <label for="email" class="placeholder">Email CY*</label>
+              <label for="email" class="placeholder">Email CY</label>
             </div>
             <div class="input-container ic2">
             <?php
