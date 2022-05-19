@@ -62,51 +62,40 @@ function engageEveryone(guys) {
 }
 
 function doMarriage() {
+    var gals = [];
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200) {
+            var data = JSON.parse(this.responseText);
 
-    var abe  = new Person("Abe");
-    var bob  = new Person("Bob");
-    var col  = new Person("Col");
-    var dan  = new Person("Dan");
-    var ed   = new Person("Ed");
-    var fred = new Person("Fred");
-    var gav  = new Person("Gav");
-    var hal  = new Person("Hal");
-    var ian  = new Person("Ian");
-    var jon  = new Person("Jon");
-    var abi  = new Person("Abi");
-    var bea  = new Person("Bea");
-    var cath = new Person("Cath");
-    var dee  = new Person("Dee");
-    var eve  = new Person("Eve");
-    var fay  = new Person("Fay");
-    var gay  = new Person("Gay");
-    var hope = new Person("Hope");
-    var ivy  = new Person("Ivy");
-    var jan  = new Person("Jan");
 
-    abe.candidates  = [abi, eve, cath, ivy, jan, dee, fay, bea, hope, gay];
-    bob.candidates  = [cath, hope, abi, dee, eve, fay, bea, jan, ivy, gay];
-    col.candidates  = [hope, eve, abi, dee, bea, fay, ivy, gay, cath, jan];
-    dan.candidates  = [ivy, fay, dee, gay, hope, eve, jan, bea, cath, abi];
-    ed.candidates   = [jan, dee, bea, cath, fay, eve, abi, ivy, hope, gay];
-    fred.candidates = [bea, abi, dee, gay, eve, ivy, cath, jan, hope, fay];
-    gav.candidates  = [gay, eve, ivy, bea, cath, abi, dee, hope, jan, fay];
-    hal.candidates  = [abi, eve, hope, fay, ivy, cath, jan, bea, gay, dee];
-    ian.candidates  = [hope, cath, dee, gay, bea, abi, fay, ivy, jan, eve];
-    jon.candidates  = [abi, fay, jan, gay, eve, bea, dee, cath, ivy, hope];
-    abi.candidates  = [bob, fred, jon, gav, ian, abe, dan, ed, col, hal];
-    bea.candidates  = [bob, abe, col, fred, gav, dan, ian, ed, jon, hal];
-    cath.candidates = [fred, bob, ed, gav, hal, col, ian, abe, dan, jon];
-    dee.candidates  = [fred, jon, col, abe, ian, hal, gav, dan, bob, ed];
-    eve.candidates  = [jon, hal, fred, dan, abe, gav, col, ed, ian, bob];
-    fay.candidates  = [bob, abe, ed, ian, jon, dan, fred, gav, col, hal];
-    gay.candidates  = [jon, gav, hal, fred, bob, abe, col, ed, dan, ian];
-    hope.candidates = [gav, jon, bob, abe, ian, dan, hal, ed, col, fred];
-    ivy.candidates  = [ian, col, hal, gav, fred, bob, abe, ed, jon, dan];
-    jan.candidates  = [ed, hal, gav, abe, bob, jon, col, ian, fred, dan];
+            //var Actu = new Person("Actu");
+            var HPDA  = new Person("HPDA");
+            var BI  = new Person("BI");
+            //var CS  = new Person("CS");
+            var DS = new Person("DS");
+            var FT = new Person("FT");
+            var IAC  = new Person("IAC");
+            var IAP  = new Person("IAP");
+            //var ICC  = new Person("ICC");
+            //var INEM = new Person("INEM");
+            //var MMF = new Person("MMF");
+            //var VISUA  = new Person("VISUA");
 
-    var guys = [abe, bob, col, dan, ed, fred, gav, hal, ian, jon];
-    var gals = [abi, bea, cath, dee, eve, fay, gay, hope, ivy, jan];
+
+    var guys = [HPDA, BI, DS, IAP, FT, IAC];
+    for (var i = 0; i < data.length; i++) {
+      //console.log(data[i]["prenom"]+"_"+data[i]["nom"]);
+      var test = new Person(data[i]["prenom"]+"_"+data[i]["nom"]);
+      test.candidates = [data[i]["Choix"]["Choix1"],data[i]["Choix"]["Choix2"],data[i]["Choix"]["Choix3"],data[i]["Choix"]["Choix4"],data[i]["Choix"]["Choix5"],data[i]["Choix"]["Choix6"]];
+      gals[i]=test;
+    }
+
+    for (var i = 0; i < guys.length; i++) {
+      for (var j = 0; j < gals.length; j++) {
+        guys[i].candidates[j] = gals[j].name;
+      }
+    }
 
     engageEveryone(guys);
 
@@ -114,4 +103,10 @@ function doMarriage() {
         console.log("%s is engaged to %s", guys[i].name, guys[i].fiance.name);
     }
     console.log("Stable = %s", isStable(guys, gals) ? "Yes" : "No");
+
+    xhttp.open("POST", "recupJSON.php", true);
+    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhttp.send();
+  }
+}
 }

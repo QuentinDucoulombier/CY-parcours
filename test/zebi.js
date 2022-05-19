@@ -62,22 +62,7 @@ function engageBIryone(eleve) {
         }
     } while (!done);
 }
-/*
-function readTextFile(file, callback) {
-    var rawFile = new XMLHttpRequest();
-    rawFile.overrideMimeType("application/json");
-    rawFile.open("GET", file, true);
-    rawFile.onreadystatechange = function() {
-        if (rawFile.readyState === 4 && rawFile.status == "200") {
-            callback(rawFile.responseText);
-        }
-    }
-    rawFile.send(null);
-}
-readTextFile("temp.json", function(text){
-      var data = JSON.parse(text);
-      console.log(data);
-  });
+
 
 function doMarriage() {
   var eleve = [];
@@ -106,8 +91,19 @@ function doMarriage() {
           for (var i = 0; i < data.length; i++) {
             //console.log(data[i]["prenom"]+"_"+data[i]["nom"]);
             var test = new Person(data[i]["prenom"]+"_"+data[i]["nom"]);
-            test.candidates = [data[i]["Choix"]["Choix1"],data[i]["Choix"]["Choix2"],data[i]["Choix"]["Choix3"],data[i]["Choix"]["Choix4"],data[i]["Choix"]["Choix5"],data[i]["Choix"]["Choix6"]];
+            //test.candidates = [new Person(data[i]["Choix"]["Choix1"]),new Person (data[i]["Choix"]["Choix2"]),new Person (data[i]["Choix"]["Choix3"]),new Person (data[i]["Choix"]["Choix4"]),new Person (data[i]["Choix"]["Choix5"]),new Person (data[i]["Choix"]["Choix6"])];
             eleve[i]=test;
+          }
+
+          for (var i = 0; i < eleve.length; i++) {
+            for (var h = 1; h < data[i]["Choix"].length+1; h++) {
+              var j = 0;
+              while (data[i]["Choix"]["Choix"+h] != spe[j]) {
+                j++;
+              }
+              eleve[i].candidates[h]=spe[j];
+            }
+
           }
 
           for (var i = 0; i < spe.length; i++) {
@@ -123,6 +119,7 @@ function doMarriage() {
 
           for (var i = 0; i < eleve.length; i++) {
               console.log("%s is engaged to %s", eleve[i].name, eleve[i].fce.name);
+              //console.log(eleve[i].fce);
           }
 
       }
