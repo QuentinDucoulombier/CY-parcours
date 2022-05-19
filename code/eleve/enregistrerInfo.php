@@ -53,6 +53,6 @@
     $list = array($_POST['prenom'], $_POST['nom'], $_POST['email'], $_SESSION["password"], $_SESSION["status"], $_SESSION["image"], $_SESSION["filiere"]);
     fputcsv($file, $list, ";");
     fclose($file);
-    header('Location: changerInfo.php'); //on redirige l'utilisateur vers la meme page
+    header('Location: accueilEleves.php'); //on redirige l'utilisateur vers la meme page
     exit();
 ?>
