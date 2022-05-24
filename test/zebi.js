@@ -102,55 +102,57 @@ function doMarriage(filiere) {
           //var INEM = new Person("INEM");
           //var MMF = new Person("MMF");
           //var VISUA  = new Person("VISUA");
-          var data_spe = [];
           var spe;
           create_array_spe(filiere, function(text){
-            let data = JSON.parse(text);
+            let data_spe = JSON.parse(text);
             data_spe = data;
-            console.log(data_spe);
-          });
-          
-          console.log(data_spe);
 
+            for (var i = 0; i < data.length; i++) {
+              //console.log(data[i]["prenom"]+"_"+data[i]["nom"]);
+              var eleve = new Person(data[i]["prenom"]+"_"+data[i]["nom"]);
+              eleve.candidates = [];
+              var choix = data[i]["Choix"];
 
-          for (var i = 0; i < data.length; i++) {
-            //console.log(data[i]["prenom"]+"_"+data[i]["nom"]);
-            var eleve = new Person(data[i]["prenom"]+"_"+data[i]["nom"]);
-            eleve.candidates = [];
-            var choix = data[i]["Choix"];
+              for (var j = 1; j < Object.keys(choix).length+1; j++) {
+                var choix_spe = choix["Choix"+j];
 
-            for (var j = 1; j < Object.keys(choix).length+1; j++) {
-              var choix_spe = choix["Choix"+j];
-
-              for (var h = 0; h < spe.length; h++) {
-                var la_spe = spe[h];
-                if(choix_spe == la_spe.name.substring(0, 2) || choix_spe == la_spe.name){
-                  eleve.candidates.push(la_spe);
+                for (var h = 0; h < spe.length; h++) {
+                  var la_spe = spe[h];
+                  if(choix_spe == la_spe.name.substring(0, 2) || choix_spe == la_spe.name){
+                    eleve.candidates.push(la_spe);
+                  }
                 }
               }
+              eleves[i]=eleve;
             }
-            eleves[i]=eleve;
-          }
 
-          console.log(eleves);
+            console.log(eleves);
 
-          for (var i = 0; i < spe.length; i++) {
-            for (var j = 0; j < eleves.length; j++) {
-              spe[i].candidates[j] = eleves[j];
+            for (var i = 0; i < spe.length; i++) {
+              for (var j = 0; j < eleves.length; j++) {
+                spe[i].candidates[j] = eleves[j];
+              }
             }
-          }
 
 
 
-          engageBIryone(eleves);
+            engageBIryone(eleves);
 
-          for (var i = 0; i < eleves.length; i++) {
-              console.log("%s is engaged to %s", eleves[i].name, eleves[i].fce.name);
-              //console.log(eleves[i].fce);
-          }
+            for (var i = 0; i < eleves.length; i++) {
+                console.log("%s is engaged to %s", eleves[i].name, eleves[i].fce.name);
+                //console.log(eleves[i].fce);
+            }
+
+
+        console.log("Stable = %s", isStable(eleves, spe) ? "Yes" : "No");
+
+
+
+
+          });
+
 
       }
-      console.log("Stable = %s", isStable(eleves, spe) ? "Yes" : "No");
   };
 
   xhttp.open("POST", "recupJSON.php", true);
