@@ -50,7 +50,7 @@
     {
         $_SESSION["pp"] = "https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg"; //cas ou l'utilisateur ne choisis pas de pp
     }
-    $list = array($_POST['prenom'], $_POST['nom'], $_POST['email'], $_SESSION["password"], $_SESSION["status"], $_SESSION["image"], $_SESSION["filiere"]);
+    $list = array($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['pseudo'], $_SESSION["password"], $_SESSION["status"], $_SESSION["image"], $_SESSION["filiere"]);
     fputcsv($file, $list, ";");
     fclose($file);
     header('Location: accueilEleves.php'); //on redirige l'utilisateur vers la meme page

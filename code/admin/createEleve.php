@@ -6,7 +6,7 @@
         return substr(str_shuffle($chars),0,$length);
 
     }
-    
+
     function enregistre($fichier, $filiere)
     {
         if(filesize("../../data/loginEleves.csv")<50) //changer pour virer l'erreur
@@ -20,7 +20,7 @@
                     if(!file_exists("../../data/loginEleves.csv"))
                     {
                         $file = fopen("../../data/loginEleves.csv","w");
-                        $listeTitre = array("Prenom","Nom","Email","Mdp","Statut", "pp", "filiere");
+                        $listeTitre = array("Prenom","Nom","Email","Pseudo","Mdp","Statut","pp","filiere");
                         fputcsv($file, $listeTitre, ";");
                         fclose($file);  //jsuis juste un one head
 
@@ -28,10 +28,11 @@
                     else
                     {
                         $file = fopen("../../data/loginEleves.csv","a");
+                        $pseudo = $data[0].$data[1];
                         if($row > 0){
 
                             $pp = "https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg"; //cas ou l'utilisateur ne choisis pas de pp
-                            $list = array($data[0], $data[1], $data[2], password_hash($password, PASSWORD_DEFAULT), "eleves", $pp, $filiere);
+                            $list = array($data[0], $data[1], $data[2], $pseudo, password_hash($password, PASSWORD_DEFAULT), "eleves", $pp, $filiere);
                             fputcsv($file, $list, ";");
                         }
                     }
@@ -47,7 +48,7 @@
                     {
                         $file = fopen("../../data/loginElevesMail.csv","a");
                         if($row > 0){
-                            $list = array($data[1], $data[2], $password);
+                            $list = array($pseudo, $data[2], $password);
                             fputcsv($file, $list, ";");
                         }
                     }

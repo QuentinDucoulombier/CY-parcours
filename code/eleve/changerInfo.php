@@ -3,6 +3,7 @@
     $prenom = $_SESSION["prenom"];
     $nom = $_SESSION["nom"];
     $email = $_SESSION["email"];
+    $pseudo = $_SESSION["pseudo"];
     $password = $_SESSION["password"];
     $status = $_SESSION["status"];
     $image = $_SESSION["image"];
@@ -37,7 +38,7 @@
               echo "<input  type='text' id='nom' name='nom' class='input' value=$nom readonly placeholder=' '/>";
             ?>
               <div class="cut"></div>
-              <label for="nom" class="placeholder">Login/Nom</label>
+              <label for="nom" class="placeholder">Nom</label>
             </div>
             <div class="input-container ic2">
             <?php
@@ -46,6 +47,14 @@
             ?>
               <div class="cut"></div>
               <label for="email" class="placeholder">Email CY</label>
+            </div>
+            <div class="input-container ic2">
+            <?php
+              //echo "<p class='input'>$nom</p>";
+              echo "<input  type='text' id='pseudo' name='pseudo' class='input' value=$pseudo placeholder=' '/>";
+            ?>
+              <div class="cut"></div>
+              <label for="pseudo" class="placeholder">Pseudo</label>
             </div>
             <div class="input-container ic2">
             <?php

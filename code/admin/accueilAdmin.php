@@ -27,11 +27,11 @@
 
         ?>
         <!-- TODO faire un menu changement info avec 2 possibilite (via la pp et via le menu dans la pp peut etre aussi mettre la deconnexion) -->
-        
+
 
         <div id=createProfilEleve>
             <h2>Cree les profil eleves</h2>
-            <button type="button" id="CreateEleve" onclick=test() >Lancer le programmes</button>
+            <button type="button" id="CreateEleve" onclick=test() >Lancer le programme</button>
             <div id=loading class="hidden">
                 <p>Chargement merci de patienter ...</p>
                 <div class="loadingio-spinner-double-ring-lroiipoijrl"><div class="ldio-ys48lrawjtg">
