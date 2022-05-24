@@ -15,9 +15,13 @@
     </head>
     <body>
         <?php
-            if($_SESSION["status"] == "prof")
+            if($_SESSION["status"] == "Profs") /*Comment ca se fait que ca marche la */
             {
                 header('Location: prof/accueilProf.php');
+            }
+            else if($_SESSION["status"] == "Admin")
+            {
+                header('Location: admin/accueilAdmin.php');
             }
             else
             {
@@ -30,7 +34,7 @@
         <p></p>
         <form method="POST" action="connexion.php">
             <input type="submit" name="OUT" value="deconnexion"/>
-            <!--TODO rajouter session_destroy()-->
+            
         </form>
 
     </body>

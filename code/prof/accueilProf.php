@@ -9,13 +9,14 @@
     <head>
         <meta charset="utf-8">
         <title>Acceuil</title>
-        <link rel="stylesheet" type="text/css" href="../styleAcceuil.css"/> 
+        <link rel="stylesheet" type="text/css" href="../styleAcceuil.css"/>
         <link rel="icon" type="image/png" href="../favicon.png"/>
+        <script type="text/javascript" src="envoie.js"></script>
 
     </head>
     <body>
         <?php
-            
+
             $prenom =  $_SESSION["prenom"];
             $nom = $_SESSION["nom"];
             $status = $_SESSION["status"];
@@ -23,12 +24,12 @@
            $img = $_SESSION["image"];
             echo "<h1>Bienvenue $prenom $nom vous etes $status</h1>";
             //echo "<img src=../$img></img>";
-            echo "<a href=changerInfo.php><img src=$img></img></a>";
-            
+            echo "<a href=changerInfo.php><img class='pp' src=$img></img></a>";
+
         ?>
         <!-- TODO faire un menu changement info avec 2 possibilite (via la pp et via le menu dans la pp peut etre aussi mettre la deconnexion) -->
         <div id=menu>
-            Menu    
+            Menu
             <ul>
                 <li>test</li>
                 <li>test2</li>
@@ -37,10 +38,21 @@
         <div id=profil>
 
         </div>
+
+        <h2>Saisir un bug ou un probleme</h2>
+        <div id=ticket>
+            <h2>Vous rencontrez un bug ou un problème ? Remplissez un ticket <a href="sendTicket.php">ici</a>.</h2>
+        </div>
+        <div id="profil">
+            <h2>Modifier votre profil :
+            <a href="changerInfo.php">Ici</a></h2>
+        </div>
+
         <p></p>
-        
+
         <form method="POST" action="../connexion.php">
             <input type="submit" name="OUT" value="deconnexion"/>
+            <!--TODO rajouter session_destroy()-->
         </form>
     </body>
 </html>

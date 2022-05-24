@@ -7,7 +7,6 @@
     $password = $_SESSION["password"];
     $status = $_SESSION["status"];
     $image = $_SESSION["image"];
-    $filiere = $_SESSION["filiere"];
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,7 +33,6 @@
             </div>
             <div class="input-container ic2">
             <?php
-              //echo "<p class='input'>$nom</p>";
               echo "<input  type='text' id='nom' name='nom' class='input' value=$nom readonly placeholder=' '/>";
             ?>
               <div class="cut"></div>
@@ -42,19 +40,17 @@
             </div>
             <div class="input-container ic2">
             <?php
-              //echo "<p class='input'>$email</p>";
-              echo "<input  type='email' id='email' name='email' pattern='.+@cy-tech.fr' size='30' class='input' readonly value=$email  placeholder=' '/>";
+              echo "<input  type='email' id='email' name='email' pattern='.+@cy-tech.fr' size='30' readonly class='input' value=$email placeholder=' '/>";
             ?>
               <div class="cut"></div>
               <label for="email" class="placeholder">Email CY</label>
             </div>
             <div class="input-container ic2">
             <?php
-              //echo "<p class='input'>$nom</p>";
               echo "<input  type='text' id='pseudo' name='pseudo' class='input' value=$pseudo placeholder=' '/>";
             ?>
               <div class="cut"></div>
-              <label for="pseudo" class="placeholder">Pseudo</label>
+                <label for="pseudo" class="placeholder">Pseudo</label>
             </div>
             <div class="input-container ic2">
             <?php
@@ -78,6 +74,6 @@
 
               <script type="text/javascript" src="photoModi.js"></script>
             <p><input type="submit" value="Modifier" class="submit" required></p>
-            <a href="accueilEleves.php">Retour</a>
+            <a href="accueilAdmin.php">Retour</a>
         </form>
       </div>
