@@ -65,18 +65,19 @@ function engageBIryone(eleves) {
 
 
 
-function create_array_spe(filiere){
+function create_array_spe(filiere, callback){
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function(){
       if (this.readyState == 4 && this.status == 200) {
-
+        callback(this.responseText);
       }
 
+    };
 
-  xhttp.open("POST", "recupJSON.php", true);
+  xhttp.open("POST", "recup_nb_place.php", true);
   xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  xhttp.send("");
-}
+  xhttp.send("filiere="+filiere);
+
 }
 
 
@@ -101,8 +102,16 @@ function doMarriage(filiere) {
           //var INEM = new Person("INEM");
           //var MMF = new Person("MMF");
           //var VISUA  = new Person("VISUA");
+          var data_spe = [];
+          var spe;
+          create_array_spe(filiere, function(text){
+            let data = JSON.parse(text);
+            data_spe = data;
+            console.log(data_spe);
+          });
+          
+          console.log(data_spe);
 
-          var spe = create_array_spe();
 
           for (var i = 0; i < data.length; i++) {
             //console.log(data[i]["prenom"]+"_"+data[i]["nom"]);
@@ -122,7 +131,7 @@ function doMarriage(filiere) {
             }
             eleves[i]=eleve;
           }
-          console.log(spe);
+
           console.log(eleves);
 
           for (var i = 0; i < spe.length; i++) {
@@ -146,5 +155,5 @@ function doMarriage(filiere) {
 
   xhttp.open("POST", "recupJSON.php", true);
   xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  xhttp.send(filiere);
+  xhttp.send("filiere="+filiere);
 }

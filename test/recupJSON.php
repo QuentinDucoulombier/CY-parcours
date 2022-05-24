@@ -3,11 +3,11 @@
     $handle = fopen("../data/choixEtudiantsParcours1.csv", "r");
     $nb_choix = 8;
   }
-  if ($_POST["filiere"] == 2) {
+  if ($_POST["filiere"] == 3) {
     $handle = fopen("../data/choixEtudiantsParcours2.csv", "r");
     $nb_choix = 2;
   }
-  if ($_POST["filiere"] == 3) {
+  if ($_POST["filiere"] == 2) {
     $handle = fopen("../data/choixEtudiantsParcours3.csv", "r");
     $nb_choix = 6;
   }
