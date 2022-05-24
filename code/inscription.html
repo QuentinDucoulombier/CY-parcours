@@ -9,10 +9,14 @@
         <link rel="stylesheet" type="text/css" href="formulaire.css"/>
         <link rel="icon" type="image/png" href="favicon.png"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- c'est jQuery-->
-        
+
 
     </head>
     <body>
+      <div class="small-12 medium-2 large-2 columns">
+        <div class="circle">
+          <img class="profile-pic" src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
+        </div>
       <div class="form">
         <h1>Inscrivez-vous</h1>
         <form action="enregistrer.php" method="POST">
@@ -51,16 +55,13 @@
               <label for="password" class="placeholder">Mot de passe*</label>
             </div>
             <div class="input-container ic2">
-              
-              <div class="small-12 medium-2 large-2 columns">
-                <div class="circle">
-                  <img class="profile-pic" src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
-                </div>
+
+
 
                 <input class="input" type="file" name="pp" id="pp" accept="image/*" placeholder=" "/>
                 <div class="cut"></div>
                 <label for="pp" class="placeholder">Photo de profil</label>
-               
+
               <script type="text/javascript" src="photo.js"></script>
             <p><input type="submit" value="Inscription" class="submit" required></p>
 
