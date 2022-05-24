@@ -102,11 +102,27 @@ function doMarriage(filiere) {
           //var INEM = new Person("INEM");
           //var MMF = new Person("MMF");
           //var VISUA  = new Person("VISUA");
-          var spe;
-          create_array_spe(filiere, function(text){
-            let data_spe = JSON.parse(text);
-            data_spe = data;
 
+
+          create_array_spe(filiere, function(text){
+            var data_spe = [];
+            var spe = [];
+
+            data_spe = JSON.parse(text);
+            console.log(data_spe);
+            for (var i = 0; i < data_spe.length; i++) {
+              for (var j = 1; j <= data_spe[i]["nbPlace"]; j++) {
+                 var spec = new Person(data_spe[i]["spe"].toUpperCase()+"_"+j);
+                 for (var h = 0; h < spe.length; h++) {
+                   for (var l = 0; l < eleves.length; l++) {
+                     spe[h].candidates[l] = eleves[l];
+                   }
+                 }
+                 spe.push(spec);
+              }
+            }
+
+            console.log(spe);
             for (var i = 0; i < data.length; i++) {
               //console.log(data[i]["prenom"]+"_"+data[i]["nom"]);
               var eleve = new Person(data[i]["prenom"]+"_"+data[i]["nom"]);
@@ -114,11 +130,11 @@ function doMarriage(filiere) {
               var choix = data[i]["Choix"];
 
               for (var j = 1; j < Object.keys(choix).length+1; j++) {
-                var choix_spe = choix["Choix"+j];
+                var choix_spe = choix["Choix"+j].toUpperCase();
 
                 for (var h = 0; h < spe.length; h++) {
                   var la_spe = spe[h];
-                  if(choix_spe == la_spe.name.substring(0, 2) || choix_spe == la_spe.name){
+                  if(choix_spe == la_spe.name.substring(0,choix_spe.length)){
                     eleve.candidates.push(la_spe);
                   }
                 }
@@ -139,7 +155,7 @@ function doMarriage(filiere) {
             engageBIryone(eleves);
 
             for (var i = 0; i < eleves.length; i++) {
-                console.log("%s is engaged to %s", eleves[i].name, eleves[i].fce.name);
+                console.log("%s is engaged to %s", eleves[i].name, eleves[i].fce.name.split('_',1));
                 //console.log(eleves[i].fce);
             }
 
@@ -150,7 +166,6 @@ function doMarriage(filiere) {
 
 
           });
-
 
       }
   };
