@@ -37,15 +37,17 @@
             <button type="button" id="CreateEleve" onclick=test() >Lancer le programme</button>
             <div id=loading class="hidden">
                 <p>Chargement merci de patienter ...</p>
+                En attendant vous pouvez rigoler ici :<button onclick="popup()">Fun</button><br />
                 <div class="loadingio-spinner-double-ring-lroiipoijrl"><div class="ldio-ys48lrawjtg">
                 <div></div>
                 <div></div>
                 <div><div></div></div>
                 <div><div></div></div>
                 </div></div>
+
             </div>
         </div>
-        <button onclick="popup()">Fun</button>
+
         <h2>Tableau de bord</h2>
         <div id=modif>
             <h3>Ticket/erreur</h3>

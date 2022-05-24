@@ -26,6 +26,7 @@ function test()
             else {
 
                 document.getElementById("loading").classList.remove("hidden");
+                //document.getElementById("meme").classList.remove("hidden");
 
             }
 
