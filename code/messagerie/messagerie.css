@@ -1,13 +1,6 @@
 
 body{
-    display: flex;
-    justify-content: center;
-
-    position: relative;
-
-    background: grey;
-    padding: 2px;
-    margin: 0;
+    
 }
 
 #messagerie-container{

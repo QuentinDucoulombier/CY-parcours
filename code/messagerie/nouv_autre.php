@@ -22,7 +22,7 @@ function verification_bloquage($bloqueur , $bloque){
 }
 
 
-$json = file_get_contents("logs/bloquage.json",true);
+$json = file_get_contents("../messagerie/logs/bloquage.json",true);
 $bloquage_array = json_decode($json,true);
 
 

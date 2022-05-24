@@ -1,6 +1,6 @@
-<?php 
+<?php
     session_start();
-    
+
 
     function verification_auteur_destinataire($auteur_message , $destinataire_message){
         $user = json_decode($_SESSION["user"],true);
@@ -12,15 +12,15 @@
             return "recu";
         }else{
             return "false";
-        }   
+        }
     }
 
 
-    $json = file_get_contents("messages/messages.json",true);
+    $json = file_get_contents("../messagerie/messages/messages.json",true);
     $message_array = json_decode($json,true)["log_messages"];
 
     $res_array = [];
-    
+
     foreach($message_array as $message){
         $responce = verification_auteur_destinataire($message["auteur"],$message["destinataire"]);
         if($responce != "false"){
@@ -29,6 +29,6 @@
     }
 
     $res_json = json_encode($res_array);
-    
+
     echo $res_json;
 ?>

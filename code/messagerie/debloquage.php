@@ -13,7 +13,7 @@
     }
 
 
-    $json = file_get_contents("logs/bloquage.json",true);
+    $json = file_get_contents("../messagerie/logs/bloquage.json",true);
     $bloquage_array = json_decode($json,true);
 
     $res_array = [];
@@ -29,6 +29,6 @@
 
     $res_json = json_encode($res_array);
 
-    file_put_contents("logs/bloquage.json",$res_json,FILE_USE_INCLUDE_PATH);
+    file_put_contents("../messagerie/logs/bloquage.json",$res_json,FILE_USE_INCLUDE_PATH);
 
 ?>

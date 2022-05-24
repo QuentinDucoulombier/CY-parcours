@@ -26,7 +26,7 @@ const envoyer_signal = (e) => {
         }
     }
 
-    xhttp.open("POST", "nouv_ticket_signal.php", true);
+    xhttp.open("POST", "../messagerie/nouv_ticket_signal.php", true);
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhttp.send("id="+id +"&motif="+motif +"&description="+description);
 }
@@ -56,7 +56,7 @@ const plus_menu = (obj) =>{
 
         var xhttp = new XMLHttpRequest();
 
-        xhttp.open("POST", "supp_message.php", true);
+        xhttp.open("POST", "../messagerie/supp_message.php", true);
         xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhttp.send("id="+clicked_button_message_id);
 
@@ -207,7 +207,7 @@ const recup_messages = () => {
             }
         };
 
-        xhttp.open("GET", "fetch_message.php", true);
+        xhttp.open("GET", "../messagerie/fetch_message.php", true);
         xhttp.send();
     }else{
         document.getElementById("message-zone").innerHTML = "Cet utilisateur est bloqué";
@@ -226,7 +226,6 @@ const nouv_autre = (nom,prenom,mail,statut) => {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             is_blocked = parseInt(this.responseText);
-
             var button_bloque = document.getElementById("button-bloque");
             var button_debloque = document.getElementById("button-debloque");
 
@@ -243,7 +242,7 @@ const nouv_autre = (nom,prenom,mail,statut) => {
         }
     }
 
-    xhttp.open("POST", "nouv_autre.php", true);
+    xhttp.open("POST", "../messagerie/nouv_autre.php", true);
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhttp.send("nom="+nom +"&prenom="+prenom +"&mail="+mail +"&statut="+statut);
 }
@@ -260,11 +259,12 @@ const nouveau_message = () => {
 
       xhttp.onreadystatechange = function () {
           if (this.readyState == 4 && this.status == 200) {
+              console.log(this.responseText);
               recup_messages();
           }
       };
 
-      xhttp.open("POST", "nouv_message.php", true);
+      xhttp.open("POST", "../messagerie/nouv_message.php", true);
 
       xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
@@ -292,7 +292,7 @@ const bloquer_utilisateur = ()=>{
         }
     };
 
-    xhttp.open("GET", "bloquage.php", true);
+    xhttp.open("GET", "../messagerie/bloquage.php", true);
 
     xhttp.send();
 }
@@ -316,7 +316,7 @@ const debloquer_utilisateur = ()=>{
         }
     };
 
-    xhttp.open("GET", "debloquage.php", true);
+    xhttp.open("GET", "../messagerie/debloquage.php", true);
 
     xhttp.send();
 }

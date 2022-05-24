@@ -7,6 +7,7 @@ $_SESSION["user"] ='{
             "statut":"eleve"
         }';
 
+
 $_SESSION["autre"] =  '{
         "nom":"Dog",
         "prenom":"Dog",
@@ -15,7 +16,10 @@ $_SESSION["autre"] =  '{
     }';
 
 ?>
+<?php
+  echo ``
 
+ ?>
 <!DOCTYPE html>
 <html lang="fr">
 

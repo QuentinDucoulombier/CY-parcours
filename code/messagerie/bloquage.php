@@ -4,9 +4,9 @@
     $auteur = $_SESSION["user"];
     $destinataire = $_SESSION["autre"];
 
-    $json = file_get_contents("logs/bloquage.json",true);
+    $json = file_get_contents("../messagerie/logs/bloquage.json",true);
     $bloquage_array = json_decode($json,true);
-    
+
     $nouv_bloquage_json= '{
         "bloqueur":
         '.$auteur.',
@@ -19,6 +19,6 @@
 
     $new_json =json_encode($bloquage_array);
 
-    file_put_contents("logs/bloquage.json",$new_json,FILE_USE_INCLUDE_PATH);
+    file_put_contents("../messagerie/logs/bloquage.json",$new_json,FILE_USE_INCLUDE_PATH);
 
 ?>

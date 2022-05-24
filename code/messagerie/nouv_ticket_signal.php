@@ -2,7 +2,7 @@
     session_start();
 
     function recup_message($id) {
-      $json = file_get_contents("messages/messages.json",true);
+      $json = file_get_contents("../messagerie/messages/messages.json",true);
       $message_array = json_decode($json,true);
 
 
@@ -19,7 +19,7 @@
     $motif = $_POST["motif"];
     $description = $_POST["description"];
 
-    $json = file_get_contents("logs/ticket_message.json",true);
+    $json = file_get_contents("../messagerie/logs/ticket_message.json",true);
     $array = json_decode($json,true);
 
     $array["nb_ticket"] += 1;
@@ -35,7 +35,7 @@
 
     $new_json =json_encode($array);
 
-    file_put_contents("logs/ticket_message.json",$new_json,FILE_USE_INCLUDE_PATH);
+    file_put_contents("../messagerie/logs/ticket_message.json",$new_json,FILE_USE_INCLUDE_PATH);
 
     echo 1;
 ?>
