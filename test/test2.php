@@ -5,6 +5,6 @@
     <title>Plus test que ca tu meurs</title>
     <script src="zebi.js" charset="utf-8"></script>
   </head>
-  <body onload="doMarriage()">
+  <body onload="doMarriage(2)">
   </body>
 </html>

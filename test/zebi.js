@@ -63,22 +63,25 @@ function engageBIryone(eleves) {
     } while (!done);
 }
 
-function create_array_spe(){
+
+
+function create_array_spe(filiere){
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function(){
       if (this.readyState == 4 && this.status == 200) {
+
       }
 
 
   xhttp.open("POST", "recupJSON.php", true);
   xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  xhttp.send();
+  xhttp.send("");
 }
 }
 
 
 
-function doMarriage() {
+function doMarriage(filiere) {
   var eleves = [];
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function(){
@@ -143,5 +146,5 @@ function doMarriage() {
 
   xhttp.open("POST", "recupJSON.php", true);
   xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  xhttp.send();
+  xhttp.send(filiere);
 }

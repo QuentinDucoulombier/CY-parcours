@@ -1,17 +1,30 @@
 <?php
-  $handle = fopen("../data/choixEtudiantsParcours3.csv", "r");
+  if ($_POST["filiere"] == 1) {
+    $handle = fopen("../data/choixEtudiantsParcours1.csv", "r");
+    $nb_choix = 8;
+  }
+  if ($_POST["filiere"] == 2) {
+    $handle = fopen("../data/choixEtudiantsParcours2.csv", "r");
+    $nb_choix = 2;
+  }
+  if ($_POST["filiere"] == 3) {
+    $handle = fopen("../data/choixEtudiantsParcours3.csv", "r");
+    $nb_choix = 6;
+  }
 
   $raw=0;
   $array = [];
   while (($data = fgetcsv($handle, 1000, ";"))) {
     if ($raw > 0) {
+      $choix = [];
+      for ($i=1; $i < $nb_choix+1 ; $i++) {
+        $new_choix = array("Choix".$i => explode(" ",$data[4+$i])[0]);
+        $choix = array_merge($choix,$new_choix);
+      }
 
-
-      $new = array("prenom" => $data[0], "nom"=> $data[1], "Choix" => array("Choix1" => explode(" ",$data[5])[0], "Choix2" => explode(" ",$data[6])[0], "Choix3" => explode(" ",$data[7])[0],"Choix4" => explode(" ",$data[8])[0],"Choix5" => explode(" ",$data[9])[0],"Choix6" => explode(" ",$data[10])[0]));
+      $new = array("prenom" => $data[0], "nom"=> $data[1], "Choix" => $choix);
 
       array_push($array, $new);
-
-
     }
     $raw++;
   }
