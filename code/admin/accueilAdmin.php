@@ -33,6 +33,13 @@
                 "adresse_mail":"'.$email.'",
                 "statut":"'.$status.'"
             }';
+            $_SESSION["autre"] =  '{
+                "nom":"Grandisson",
+                "prenom":"Brewal",
+                "adresse_mail":"Lajeunesse@cytech.fr",
+                "statut":"eleve"
+            }';
+
 
             echo "<h1>Bienvenue $prenom $nom vous etes $status</h1>";
             //echo "<img src=../$img></img>";
