@@ -50,7 +50,7 @@ table, th, td {
   left: 28px;
   border-radius: 50%;
   border: 16px solid #000;
-  border-color: #161346 transparent #161346 transparent;
+  border-color: #754baf transparent #754baf transparent;
   animation: ldio-ys48lrawjtg 1s linear infinite;
 }
 
@@ -79,14 +79,14 @@ table, th, td {
   height: 16px;
   top: -16px;
   left: 48px;
-  background: #161346;
+  background: #754baf;
   border-radius: 50%;
-  box-shadow: 0 128px 0 0 #161346;
+  box-shadow: 0 128px 0 0 #754baf;
 }
 .ldio-ys48lrawjtg > div:nth-child(3) div:after {
   left: -16px;
   top: 48px;
-  box-shadow: 128px 0 0 0 #161346;
+  box-shadow: 128px 0 0 0 #754baf;
 }
 
 .ldio-ys48lrawjtg > div:nth-child(4) { border-color: transparent; }
