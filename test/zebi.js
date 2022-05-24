@@ -63,6 +63,20 @@ function engageBIryone(eleves) {
     } while (!done);
 }
 
+function create_array_spe(){
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function(){
+      if (this.readyState == 4 && this.status == 200) {
+      }
+
+
+  xhttp.open("POST", "recupJSON.php", true);
+  xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhttp.send();
+}
+}
+
+
 
 function doMarriage() {
   var eleves = [];
@@ -70,11 +84,11 @@ function doMarriage() {
   xhttp.onreadystatechange = function(){
       if (this.readyState == 4 && this.status == 200) {
           var data = JSON.parse(this.responseText);
-
-          console.log(data);
           //var Actu = new Person("Actu");
           var HPDA  = new Person("HPDA");
-          var BI  = new Person("BI");
+          var BI_1  = new Person("BI_1");
+          var BI_2  = new Person("BI_2");
+          var BI_3  = new Person("BI_3");
           //var CS  = new Person("CS");
           var DS = new Person("DS");
           var FT = new Person("FT");
@@ -85,8 +99,7 @@ function doMarriage() {
           //var MMF = new Person("MMF");
           //var VISUA  = new Person("VISUA");
 
-          var spe = [HPDA, BI, DS, IAP, FT, IAC];
-
+          var spe = create_array_spe();
 
           for (var i = 0; i < data.length; i++) {
             //console.log(data[i]["prenom"]+"_"+data[i]["nom"]);
@@ -96,33 +109,18 @@ function doMarriage() {
 
             for (var j = 1; j < Object.keys(choix).length+1; j++) {
               var choix_spe = choix["Choix"+j];
-  
+
               for (var h = 0; h < spe.length; h++) {
                 var la_spe = spe[h];
-
-                if(choix_spe == la_spe.name){
-                  eleve.candidates[j-1] = la_spe;
+                if(choix_spe == la_spe.name.substring(0, 2) || choix_spe == la_spe.name){
+                  eleve.candidates.push(la_spe);
                 }
               }
             }
             eleves[i]=eleve;
           }
-
-
-
-
-          //eleve.candidates = [new Person(data[i]["Choix"]["Choix1"]),new Person (data[i]["Choix"]["Choix2"]),new Person (data[i]["Choix"]["Choix3"]),new Person (data[i]["Choix"]["Choix4"]),new Person (data[i]["Choix"]["Choix5"]),new Person (data[i]["Choix"]["Choix6"])];
-
-          // for (var i = 0; i < eleves.length; i++) {
-          //   for (var h = 1; h < data[i]["Choix"].length+1; h++) {
-          //     for (var j = 0; j < data[i]["Choix"].length+1; j++) {
-          //       if (data[i]["Choix"]["Choix"+h] == spe[j]) {
-          //         console.log(spe[j]);
-          //       }
-          //     }
-          //     //eleves[i].candidates[h]=spe[j];
-          //   }
-          // }
+          console.log(spe);
+          console.log(eleves);
 
           for (var i = 0; i < spe.length; i++) {
             for (var j = 0; j < eleves.length; j++) {
@@ -130,8 +128,7 @@ function doMarriage() {
             }
           }
 
-          console.log(eleves);
-          console.log(spe);
+
 
           engageBIryone(eleves);
 
@@ -148,5 +145,3 @@ function doMarriage() {
   xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhttp.send();
 }
-
-//doMarriage();
