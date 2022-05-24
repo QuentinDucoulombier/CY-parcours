@@ -11,10 +11,13 @@
         <title>Acceuil</title>
         <link rel="stylesheet" type="text/css" href="../styleAcceuil.css"/>
         <link rel="icon" type="image/png" href="../favicon.png"/>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script type="text/javascript" src="admin.js"></script>
+
 
     </head>
     <body>
+
         <?php
 
             $prenom =  $_SESSION["prenom"];
@@ -42,6 +45,7 @@
                 </div></div>
             </div>
         </div>
+        <button onclick="popup()">Fun</button>
         <h2>Tableau de bord</h2>
         <div id=modif>
             <h3>Ticket/erreur</h3>
