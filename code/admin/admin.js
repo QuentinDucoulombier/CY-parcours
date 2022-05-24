@@ -4,14 +4,13 @@ function getRandomInt(max) {
 
 function popup()
 {
-  let fruits = ['http://ide.perso.eisti.fr/images/meme/FB_IMG_1602107646849.jpg', 'http://ide.perso.eisti.fr/images/meme/FB_IMG_1603379068877.jpg', 'http://ide.perso.eisti.fr/images/meme/ei.png', 'http://ide.perso.eisti.fr/images/meme/FB_IMG_1606602264414.jpg', 'http://ide.perso.eisti.fr/images/meme/FB_IMG_1616618850067.jpg', 'http://ide.perso.eisti.fr/images/meme/localhost.jpg'];
+  let memes = ['http://ide.perso.eisti.fr/images/meme/FB_IMG_1603379068877.jpg', 'http://ide.perso.eisti.fr/images/meme/FB_IMG_1633586363675.jpg', 'http://ide.perso.eisti.fr/images/meme/code.jpg', 'http://ide.perso.eisti.fr/images/meme/FB_IMG_1634585807659.jpg', 'http://ide.perso.eisti.fr/images/meme/FB_IMG_1595858106610.jpg','http://ide.perso.eisti.fr/images/meme/FB_IMG_1603379027833.jpg', 'http://ide.perso.eisti.fr/images/meme/cotelf1qxem51.jpg', 'http://ide.perso.eisti.fr/images/meme/FB_IMG_1616618850067.jpg', 'http://ide.perso.eisti.fr/images/meme/FB_IMG_1630136333764.jpg', 'http://ide.perso.eisti.fr/images/meme/FB_IMG_1602319185874.jpg','http://ide.perso.eisti.fr/images/meme/css_meme.jpg', 'http://ide.perso.eisti.fr/images/meme/lol.jpg', 'http://ide.perso.eisti.fr/images/meme/FB_IMG_1595085874321.jpg', 'http://ide.perso.eisti.fr/images/meme/jack.jpg', 'http://ide.perso.eisti.fr/images/meme/ei.png','http://ide.perso.eisti.fr/images/meme/FB_IMG_1603745428295.jpg', 'http://ide.perso.eisti.fr/images/meme/FB_IMG_1606602264414.jpg', 'http://ide.perso.eisti.fr/images/meme/java.jpg', 'http://ide.perso.eisti.fr/images/meme/FB_IMG_1602107646849.jpg', 'http://ide.perso.eisti.fr/images/meme/strong.jpg','http://ide.perso.eisti.fr/images/meme/localhost.jpg'];
   Swal.fire({
-    imageUrl: fruits[getRandomInt(5)],
+    imageUrl: memes[getRandomInt(20)],
     //imageHeight: 1500,
-    imageAlt: 'A tall image'
+    imageAlt: 'A really nice meme'
   })
 }
-
 
 function test()
 {
