@@ -1,1 +1,1 @@
-{"id_dernier_message":-1,"log_messages":[]}
+{"id_dernier_message":0,"log_messages":[{"id":0,"infos":{"date":"25\/05\/2022","heure":"18:54:05"},"auteur":{"nom":"Test","prenom":"Lucie","adresse_mail":"lucieTest@cy-tech.fr","statut":"Profs"},"destinataire":{"nom":"admin","prenom":"admin","adresse_mail":"admin@cy-tech.fr","statut":"Admin"},"message":"ttez","supprime":false}]}

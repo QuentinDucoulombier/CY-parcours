@@ -1,1 +1,1 @@
-{"nb_ticket":0,"tickets":[]}
+{"nb_ticket":1,"tickets":[{"message":{"id":0,"infos":{"date":"25\/05\/2022","heure":"18:54:05"},"auteur":{"nom":"Test","prenom":"Lucie","adresse_mail":"lucieTest@cy-tech.fr","statut":"Profs"},"destinataire":{"nom":"admin","prenom":"admin","adresse_mail":"admin@cy-tech.fr","statut":"Admin"},"message":"ttez","supprime":false},"motif":"Vraiment tr\u00e8s m\u00e9chant \ud83d\ude21 GRAOUU !","description":"aaaaaaaaaaaaah"}]}

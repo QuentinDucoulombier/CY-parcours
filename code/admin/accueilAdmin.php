@@ -130,6 +130,16 @@
         <div id="log">
             <h3>Log des modifications des profs</h3>
         </div>
+
+        <div id="report">
+            <h3>Signalement messagerie</h3>
+            <?php
+                $json = file_get_contents("../messagerie/logs/ticket_message.json",true);
+                $array = json_decode($json,true);
+                var_dump($array);
+            ?>
+
+        </div>
         <p></p>
 
         <div id="profil">
@@ -253,5 +263,6 @@
             }
             verification_message();
         </script>
+        
     </body>
 </html>
