@@ -138,7 +138,8 @@
                
                 $data = file_get_contents("../messagerie/logs/ticket_message.json");
                 $data_json = json_decode($data,TRUE);
-                /*foreach($data_json as $report){
+                echo $data_json["tickets"]["message1"]["auteur"]["nom"];
+                //foreach($data_json as $report){
                     //$json_array['nb_ticket'][0];
                     /*echo "<tr>";
                     echo "<td>".$report['nb_ticket']."</td>";
@@ -259,7 +260,7 @@
 
 
         <script>
-
+/*
             function sleep(ms) {
                 return new Promise(resolve => setTimeout(resolve, ms));
             }
@@ -270,7 +271,7 @@
                 await sleep(1000);
                 verification_message();
             }
-            verification_message();
+            verification_message();*/
         </script>
         
     </body>
