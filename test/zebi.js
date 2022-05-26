@@ -69,7 +69,7 @@ function create_array_spe(filiere, callback){
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function(){
       if (this.readyState == 4 && this.status == 200) {
-        callback(this.responseText);
+        callback(this.responseText, filiere);
       }
 
     };
@@ -88,28 +88,13 @@ function doMarriage(filiere) {
   xhttp.onreadystatechange = function(){
       if (this.readyState == 4 && this.status == 200) {
           var data = JSON.parse(this.responseText);
-          //var Actu = new Person("Actu");
-          var HPDA  = new Person("HPDA");
-          var BI_1  = new Person("BI_1");
-          var BI_2  = new Person("BI_2");
-          var BI_3  = new Person("BI_3");
-          //var CS  = new Person("CS");
-          var DS = new Person("DS");
-          var FT = new Person("FT");
-          var IAC  = new Person("IAC");
-          var IAP  = new Person("IAP");
-          //var ICC  = new Person("ICC");
-          //var INEM = new Person("INEM");
-          //var MMF = new Person("MMF");
-          //var VISUA  = new Person("VISUA");
 
 
-          create_array_spe(filiere, function(text){
+          create_array_spe(filiere, function(text,filiere){
             var data_spe = [];
             var spe = [];
 
             data_spe = JSON.parse(text);
-            console.log(data_spe);
             for (var i = 0; i < data_spe.length; i++) {
               for (var j = 1; j <= data_spe[i]["nbPlace"]; j++) {
                  var spec = new Person(data_spe[i]["spe"].toUpperCase()+"_"+j);
@@ -122,7 +107,6 @@ function doMarriage(filiere) {
               }
             }
 
-            console.log(spe);
             for (var i = 0; i < data.length; i++) {
               //console.log(data[i]["prenom"]+"_"+data[i]["nom"]);
               var eleve = new Person(data[i]["prenom"]+"_"+data[i]["nom"]);
@@ -142,7 +126,6 @@ function doMarriage(filiere) {
               eleves[i]=eleve;
             }
 
-            console.log(eleves);
 
             for (var i = 0; i < spe.length; i++) {
               for (var j = 0; j < eleves.length; j++) {
@@ -154,18 +137,33 @@ function doMarriage(filiere) {
 
             engageBIryone(eleves);
 
+            
+            var resultat_marriage = [];
             for (var i = 0; i < eleves.length; i++) {
-                console.log("%s is engaged to %s", eleves[i].name, eleves[i].fce.name.split('_',1));
-                //console.log(eleves[i].fce);
+              resultat_marriage[i]={ eleve : eleves[i].name , option: eleves[i].fce.name.split('_',1)[0]};
             }
 
+            resultat_marriage = JSON.stringify(resultat_marriage);
+            console.log(resultat_marriage);
+            console.log(filiere);
 
-        console.log("Stable = %s", isStable(eleves, spe) ? "Yes" : "No");
+            resultat = new XMLHttpRequest();
+            resultat.open("POST", "resultat.php", true);
+            resultat.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            resultat.send("resultat="+resultat_marriage+"&filiere="+filiere);
+
+            /*for (var i = 0; i < eleves.length; i++) {
+                console.log("%s is engaged to %s", eleves[i].name, eleves[i].fce.name.split('_',1));
+                //console.log(eleves[i].fce);
+            }*/
+
+
+          console.log("Stable = %s", isStable(eleves, spe) ? "Yes" : "No");
 
 
 
 
-          });
+        });
 
       }
   };

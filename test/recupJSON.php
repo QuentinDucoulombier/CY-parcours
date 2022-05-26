@@ -31,7 +31,6 @@
   fclose($handle);
 
   $final = json_encode($array);
-  file_put_contents("temp.json", $final);
 
   echo $final;
  ?>
