@@ -15,7 +15,7 @@ function popup()
 function test()
 {
     xhttp = new XMLHttpRequest();
-    xhttp = new XMLHttpRequest();
+    
 
         xhttp.onreadystatechange = function() {
 
@@ -26,6 +26,7 @@ function test()
             else {
 
                 document.getElementById("loading").classList.remove("hidden");
+
                 //document.getElementById("meme").classList.remove("hidden");
 
             }

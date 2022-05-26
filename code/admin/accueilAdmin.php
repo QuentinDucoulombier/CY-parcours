@@ -138,14 +138,28 @@
                
                 $data = file_get_contents("../messagerie/logs/ticket_message.json");
                 $data_json = json_decode($data,TRUE);
-                echo $data_json["tickets"]["message1"]["auteur"]["nom"];
-                //foreach($data_json as $report){
-                    //$json_array['nb_ticket'][0];
-                    /*echo "<tr>";
-                    echo "<td>".$report['nb_ticket']."</td>";
-                    
+                $taille = $data_json["nb_ticket"];
+                
+                echo "<table>";
+                echo "<tr>";
+                echo "<th>Date</th>";
+                echo "<th>Auteur</th>";
+                echo "<th>Signalé par</th>";
+                echo "<th>Motif</th>";
+                echo "<th>Description</th>";
+                
+                echo "</tr>";
+                for ($i=0; $i < $taille ; $i++) { 
+                    echo "<tr>";
+                    echo "<td>".$data_json['tickets'][$i]['message']['infos']['date']." ".$data_json['tickets'][$i]['message']['infos']['heure']."</td>";
+                    echo "<td>".$data_json['tickets'][$i]['message']['auteur']['statut']." : ".$data_json['tickets'][$i]['message']['auteur']['nom']." ".$data_json['tickets'][$i]['message']['auteur']['prenom']."</td>";
+                    echo "<td>".$data_json['tickets'][$i]['message']['destinataire']['statut']." : ".$data_json['tickets'][$i]['message']['destinataire']['nom']." ".$data_json['tickets'][$i]['message']['destinataire']['prenom']."</td>";
+                    echo "<td>".$data_json['tickets'][$i]['motif']."</td>";
+                    echo "<td>".$data_json['tickets'][$i]['description']."</td>";
                     echo "</tr>";
-                }*/
+                }
+                echo "</table>";
+                
                    
             ?>
 
@@ -260,7 +274,7 @@
 
 
         <script>
-/*
+
             function sleep(ms) {
                 return new Promise(resolve => setTimeout(resolve, ms));
             }
@@ -271,7 +285,7 @@
                 await sleep(1000);
                 verification_message();
             }
-            verification_message();*/
+            verification_message();
         </script>
         
     </body>

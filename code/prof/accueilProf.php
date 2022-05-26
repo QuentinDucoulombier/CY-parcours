@@ -53,6 +53,11 @@
             <h2>Modifier votre profil :
             <a href="changerInfo.php">Ici</a></h2>
         </div>
+
+        <div id=mariage>
+            <button onclick="myFunction()">Lancer le mariage stable</button>
+        </div>
+        <p></p>
         
         <div id="messagerie-container">
             <div id="option-plus"  class="hidden">
