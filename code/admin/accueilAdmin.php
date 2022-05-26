@@ -134,9 +134,18 @@
         <div id="report">
             <h3>Signalement messagerie</h3>
             <?php
-                $json = file_get_contents("../messagerie/logs/ticket_message.json",true);
-                $array = json_decode($json,true);
-                var_dump($array);
+                
+               
+                $data = file_get_contents("../messagerie/logs/ticket_message.json");
+                $data_json = json_decode($data,TRUE);
+                /*foreach($data_json as $report){
+                    //$json_array['nb_ticket'][0];
+                    /*echo "<tr>";
+                    echo "<td>".$report['nb_ticket']."</td>";
+                    
+                    echo "</tr>";
+                }*/
+                   
             ?>
 
         </div>
