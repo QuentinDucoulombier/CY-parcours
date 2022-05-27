@@ -57,7 +57,7 @@
 
         <div id=mariage>
             <button onclick="doMarriage(1)">Lancer le mariage stable GSI</button>
-            <button onclick="doMarriage(2)">Lancer le mariage stable MI</button>
+            <button onclick="doMarriage(2)">Lancer le mariage stable MF</button>
             <button onclick="doMarriage(3)">Lancer le mariage stable MI</button>
         </div>
         <p></p>

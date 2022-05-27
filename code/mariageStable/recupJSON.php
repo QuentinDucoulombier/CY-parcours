@@ -22,7 +22,7 @@
         $choix = array_merge($choix,$new_choix);
       }
 
-      $new = array("prenom" => $data[0], "nom"=> $data[1], "Choix" => $choix);
+      $new = array("prenom" => $data[0], "nom"=> $data[1], "moyenne" => $data[4], "Choix" => $choix);
 
       array_push($array, $new);
     }

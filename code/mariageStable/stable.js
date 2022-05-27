@@ -1,9 +1,10 @@
 //test present sur le site d'ines pour Gale/Shapley algorithme https://rosettacode.org/wiki/Stable_marriage_problem#JavaScript
 
-function Person(name) {
+function Person(name, moyenne) {
 
     var candidateIndex = 0;
 
+    this.moyenne = moyenne;
     this.name = name;
     this.fce = null;
     this.candidates = [];
@@ -97,7 +98,7 @@ function doMarriage(filiere) {
             data_spe = JSON.parse(text);
             for (var i = 0; i < data_spe.length; i++) {
               for (var j = 1; j <= data_spe[i]["nbPlace"]; j++) {
-                 var spec = new Person(data_spe[i]["spe"].toUpperCase()+"_"+j);
+                 var spec = new Person(data_spe[i]["spe"].toUpperCase()+"_"+j, 0);
                  for (var h = 0; h < spe.length; h++) {
                    for (var l = 0; l < eleves.length; l++) {
                      spe[h].candidates[l] = eleves[l];
@@ -109,7 +110,7 @@ function doMarriage(filiere) {
 
             for (var i = 0; i < data.length; i++) {
               //console.log(data[i]["prenom"]+"_"+data[i]["nom"]);
-              var eleve = new Person(data[i]["prenom"]+"_"+data[i]["nom"]);
+              var eleve = new Person(data[i]["prenom"]+"_"+data[i]["nom"], data[i]["moyenne"]);
               eleve.candidates = [];
               var choix = data[i]["Choix"];
 
@@ -140,7 +141,7 @@ function doMarriage(filiere) {
             
             var resultat_marriage = [];
             for (var i = 0; i < eleves.length; i++) {
-              resultat_marriage[i]={ eleve : eleves[i].name , option: eleves[i].fce.name.split('_')};
+              resultat_marriage[i]={ eleve : eleves[i].name , option: eleves[i].fce.name.split('_'), moyenne: eleves[i].moyenne};
             }
 
             resultat_marriage = JSON.stringify(resultat_marriage);
