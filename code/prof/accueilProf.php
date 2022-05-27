@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="../styleAcceuil.css"/>
         <link rel="icon" type="image/png" href="../favicon.png"/>
         <script type="text/javascript" src="envoie.js"></script>
+        <script type="text/javascript" src="../mariageStable/stable.js"></script>
         
         <link rel="stylesheet" href="../messagerie/messagerie.css">
         <script src="../messagerie/messagerie.js"></script>
@@ -55,7 +56,9 @@
         </div>
 
         <div id=mariage>
-            <button onclick="myFunction()">Lancer le mariage stable</button>
+            <button onclick="doMarriage(1)">Lancer le mariage stable GSI</button>
+            <button onclick="doMarriage(2)">Lancer le mariage stable MI</button>
+            <button onclick="doMarriage(3)">Lancer le mariage stable MI</button>
         </div>
         <p></p>
         

@@ -74,7 +74,7 @@ function create_array_spe(filiere, callback){
 
     };
 
-  xhttp.open("POST", "recup_nb_place.php", true);
+  xhttp.open("POST", "../mariageStable/recup_nb_place.php", true);
   xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhttp.send("filiere="+filiere);
 
@@ -148,7 +148,7 @@ function doMarriage(filiere) {
             console.log(filiere);
 
             resultat = new XMLHttpRequest();
-            resultat.open("POST", "resultat.php", true);
+            resultat.open("POST", "../mariageStable/resultat.php", true);
             resultat.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             resultat.send("resultat="+resultat_marriage+"&filiere="+filiere);
 
@@ -168,7 +168,7 @@ function doMarriage(filiere) {
       }
   };
 
-  xhttp.open("POST", "recupJSON.php", true);
+  xhttp.open("POST", "../mariageStable/recupJSON.php", true);
   xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhttp.send("filiere="+filiere);
 }
