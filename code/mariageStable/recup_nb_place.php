@@ -1,5 +1,5 @@
 <?php
-    $handle = fopen("../data/nbPLacesParcours.csv", "r");
+    $handle = fopen("../../data/nbPLacesParcours.csv", "r");
     $filiere = $_POST["filiere"];
   $raw=0;
   $array = [];

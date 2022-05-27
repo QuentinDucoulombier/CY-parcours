@@ -140,7 +140,7 @@ function doMarriage(filiere) {
             
             var resultat_marriage = [];
             for (var i = 0; i < eleves.length; i++) {
-              resultat_marriage[i]={ eleve : eleves[i].name , option: eleves[i].fce.name.split('_',1)[0]};
+              resultat_marriage[i]={ eleve : eleves[i].name , option: eleves[i].fce.name.split('_')};
             }
 
             resultat_marriage = JSON.stringify(resultat_marriage);
