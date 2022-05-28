@@ -90,7 +90,14 @@ function doMarriage(filiere) {
       if (this.readyState == 4 && this.status == 200) {
           var data = JSON.parse(this.responseText);
 
+          console.log(data);
 
+          data.sort((a,b)=>{
+            return  parseFloat(a["moyenne"].replace(",",".")) - parseFloat(b["moyenne"].replace(",","."));
+          });
+          data.reverse();
+
+          console.log(data);
           create_array_spe(filiere, function(text,filiere){
             var data_spe = [];
             var spe = [];
@@ -145,8 +152,7 @@ function doMarriage(filiere) {
             }
 
             resultat_marriage = JSON.stringify(resultat_marriage);
-            console.log(resultat_marriage);
-            console.log(filiere);
+            
 
             resultat = new XMLHttpRequest();
             resultat.open("POST", "../mariageStable/resultat.php", true);
