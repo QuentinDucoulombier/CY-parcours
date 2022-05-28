@@ -13,7 +13,7 @@
         <link rel="icon" type="image/png" href="../favicon.png"/>
         <script type="text/javascript" src="envoie.js"></script>
         <script type="text/javascript" src="../mariageStable/stable.js"></script>
-        <script type="text/javascript" src="stats.js"></script>
+        <script type="text/javascript" src="prof.js"></script>
         
         <link rel="stylesheet" href="../messagerie/messagerie.css">
         <script src="../messagerie/messagerie.js"></script>
@@ -58,16 +58,32 @@
 
         <div id=mariage>
             <button onclick="doMarriage(1)">Lancer le mariage stable GSI</button>
-            <button onclick="doMarriage(2)">Lancer le mariage stable MF</button>
-            <button onclick="doMarriage(3)">Lancer le mariage stable MI</button>
+            <button onclick="doMarriage(2)">Lancer le mariage stable MI</button>
+            <button onclick="doMarriage(3)">Lancer le mariage stable MF</button>
         </div>
-
-        <button onclick="moyennes('GSI')">Afficher les stats GSI</button>
-        <button onclick="moyennes('MI')">Afficher les stats MF</button>
-        <button onclick="moyennes('MF')">Afficher les stats MI</button>
-        <div id="stats">
+        
+        <div id=stats>
+            <button onclick="moyennes('GSI')">Afficher les stats GSI</button>
+            <button onclick="moyennes('MI')">Afficher les stats MI</button>
+            <button onclick="moyennes('MF')">Afficher les stats MF</button>
+            <p></p>
+            <div id="resultatStats">
+            </div>
+        </div>
+        <div id="change">
+            <select name='filiere' id='filiere' size=4>
+                <option value=''>Choisir la specialité de l'eleve</option>
+                <option value='GSI' onclick="filiere('GSI')">GSI</option>
+                <option value='MI' onclick="filiere('MI')">MI</option>
+                <option value='MF' onclick="filiere('MF')">MF</option>
+            </select>
+            <div id="listEleveFiliere">
+            </div>
+            <div id="filiereEleve">
+            </div>
+            <div id="etat">
+            </div>
             
-
         </div>
 
         <div id="messagerie-container">
