@@ -107,6 +107,7 @@
                 function moyenne_des_moyennes($fichier, $filiere, $option){
                     $dividende = 0;
                     $diviseur = 0;
+                    $bassemoyenne = 0;
 
                     $data = file_get_contents($fichier);
                     $data_json = json_decode($data,TRUE);
@@ -115,9 +116,11 @@
                         if ($data_json[$i]['option'][0] == $option) {
                             $dividende = $dividende + floatval(str_replace(',','.',$data_json[$i]['moyenne']));
                             $diviseur++;
+                            $bassemoyenne = floatval(str_replace(',','.',$data_json[$i]['moyenne']));
                         }
                     }
-                    echo "La moyenne des " . $option . " (" . $filiere .  ") est " . ($dividende / $diviseur);
+                    echo "La moyenne des " . $option . " (" . $filiere .  ") est " . ($dividende / $diviseur) . ":";
+                    echo "La moyenne du dernier admis est " . $bassemoyenne . ":";
                 }
 
             ?>
