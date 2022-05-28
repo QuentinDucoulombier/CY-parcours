@@ -13,6 +13,7 @@
         <link rel="icon" type="image/png" href="../favicon.png"/>
         <script type="text/javascript" src="envoie.js"></script>
         <script type="text/javascript" src="../mariageStable/stable.js"></script>
+        <script type="text/javascript" src="stats.js"></script>
         
         <link rel="stylesheet" href="../messagerie/messagerie.css">
         <script src="../messagerie/messagerie.js"></script>
@@ -60,70 +61,12 @@
             <button onclick="doMarriage(2)">Lancer le mariage stable MF</button>
             <button onclick="doMarriage(3)">Lancer le mariage stable MI</button>
         </div>
-        
-        <div id="Stats">
-            <p>Test stats</p>
-            <?php 
-                echo "Moyenne des moyennes des GSI";
 
-                echo "<ul>";
-                echo "<li>";
-                echo moyenne_des_moyennes("../../data/resultat1.json", "GSI", "HPDA");
-                echo "</li>";
-                echo "<li>";
-                echo moyenne_des_moyennes("../../data/resultat1.json", "GSI", "BI");
-                echo "</li>";
-                echo "<li>";
-                echo moyenne_des_moyennes("../../data/resultat1.json", "GSI", "CS");
-                echo "</li>";
-                echo "<li>";
-                echo moyenne_des_moyennes("../../data/resultat1.json", "GSI", "IAC");
-                echo "</li>";
-                echo "<li>";
-                echo moyenne_des_moyennes("../../data/resultat1.json", "GSI", "IAP");
-                echo "</li>";
-                echo "<li>";
-                echo moyenne_des_moyennes("../../data/resultat1.json", "GSI", "ICC");
-                echo "</li>";
-                echo "<li>";
-                echo moyenne_des_moyennes("../../data/resultat1.json", "GSI", "INEM");
-                echo "</li>";
-                echo "<li>";
-                echo moyenne_des_moyennes("../../data/resultat1.json", "GSI", "VISUA");
-                echo "</li>";
-                echo "</ul>";
-                echo "<br>";
-                echo "<ul>";
-                echo "<li>" . moyenne_des_moyennes("../../data/resultat2.json", "MI", "HPDA") . "</li>";
-                echo "<li>" . moyenne_des_moyennes("../../data/resultat2.json", "MI", "BI") . "</li>";
-                echo "<li>" . moyenne_des_moyennes("../../data/resultat2.json", "MI", "DS") . "</li>";
-                echo "<li>" . moyenne_des_moyennes("../../data/resultat2.json", "MI", "FT") . "</li>";
-                echo "<li>" . moyenne_des_moyennes("../../data/resultat2.json", "MI", "IAC") . "</li>";
-                echo "<li>" . moyenne_des_moyennes("../../data/resultat2.json", "MI", "IAP") . "</li>";
-                echo "<br>";
-                echo "<li>" . moyenne_des_moyennes("../../data/resultat3.json", "MF", "ACTU") . "</li>";
-                echo "<li>" . moyenne_des_moyennes("../../data/resultat3.json", "MF", "MMF") . "</li>";
-
-                function moyenne_des_moyennes($fichier, $filiere, $option){
-                    $dividende = 0;
-                    $diviseur = 0;
-                    $bassemoyenne = 0;
-
-                    $data = file_get_contents($fichier);
-                    $data_json = json_decode($data,TRUE);
-
-                    for ($i=0; $i < count($data_json); $i++) {
-                        if ($data_json[$i]['option'][0] == $option) {
-                            $dividende = $dividende + floatval(str_replace(',','.',$data_json[$i]['moyenne']));
-                            $diviseur++;
-                            $bassemoyenne = floatval(str_replace(',','.',$data_json[$i]['moyenne']));
-                        }
-                    }
-                    echo "La moyenne des " . $option . " (" . $filiere .  ") est " . ($dividende / $diviseur) . ":";
-                    echo "La moyenne du dernier admis est " . $bassemoyenne . ":";
-                }
-
-            ?>
+        <button onclick="moyennes('GSI')">Afficher les stats GSI</button>
+        <button onclick="moyennes('MI')">Afficher les stats MF</button>
+        <button onclick="moyennes('MF')">Afficher les stats MI</button>
+        <div id="stats">
+            
 
         </div>
 
