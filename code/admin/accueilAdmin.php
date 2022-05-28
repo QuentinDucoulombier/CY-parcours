@@ -104,21 +104,23 @@
             <p></p>
             Ticket resolu :
             <?php
-                echo "<input list='Bug' name='bug' id='bug'/>";
+                echo "<select name='bug' id='bug'>";
+                echo "<option value=''>Ticket à supprimer</option>";
                 $row=0;
                 if (($handle = fopen("../../data/error.csv", "r")) !== FALSE) {
-                    echo "<datalist id='Bug'>";
+                    
                     while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
                         $num = count($data);
                         if($row > 0)
                         {
-                        echo "<option value=$data[3]>";
+                        echo "<option value=$data[3]>$data[3]</option>";
                         }
                         $row++;
                     }
                     fclose($handle);
-                    echo "</datalist>";
+                    
                 }
+                echo "</select>";
             ?>
             <button type="button" onclick="ticket()">Envoyer</button>
             <div id="etat">
