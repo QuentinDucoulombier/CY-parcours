@@ -43,6 +43,8 @@
             }
         }
     ?>
+    <img src="https://acegif.com/wp-content/uploads/2020/05/confetti.gif" alt="confetti">
 </div>
+
 </body>
 </html>
