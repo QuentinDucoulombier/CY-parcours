@@ -1,3 +1,12 @@
+<?php
+session_start();
+ $prenom =  $_SESSION["prenom"];
+ $nom = $_SESSION["nom"];
+ $email = $_SESSION["email"];
+ $status = $_SESSION["status"];
+ $img = $_SESSION["image"];
+ $filiere = $_SESSION["filiere"]; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,19 +40,22 @@
             echo "<h2>Vos resultats</h2>";
             if ($filiere == 'GSI') {
                 affichOption("../../data/resultat1.json", $prenom, $nom);
+                echo "<img src='https://acegif.com/wp-content/uploads/2020/05/confetti.gif' alt='confetti'>";
             }
             elseif ($filiere == 'MI') {
                 affichOption("../../data/resultat2.json", $prenom, $nom);
+                echo "<img src='https://acegif.com/wp-content/uploads/2020/05/confetti.gif' alt='confetti'>";
             }
             elseif ($filiere == 'MF') {
                 affichOption("../../data/resultat3.json", $prenom, $nom);
+                echo "<img src='https://acegif.com/wp-content/uploads/2020/05/confetti.gif' alt='confetti'>";
             }
             else {
                 echo "<p id ='etatB'>Erreur</p>";
             }
         }
     ?>
-    <img src="https://acegif.com/wp-content/uploads/2020/05/confetti.gif" alt="confetti">
+    
 </div>
 
 </body>
