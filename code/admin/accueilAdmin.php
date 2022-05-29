@@ -40,7 +40,7 @@
 
 
             echo "<h1>Bienvenue $prenom $nom vous etes $status</h1>";
-            //echo "<img src=../$img></img>";
+            echo "<a href=changerInfo.php><img class='pp' src=$img></img></a>";
 
         ?>
         <!-- TODO faire un menu changement info avec 2 possibilite (via la pp et via le menu dans la pp peut etre aussi mettre la deconnexion) -->
