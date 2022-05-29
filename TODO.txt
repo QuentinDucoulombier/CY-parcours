@@ -1,4 +1,0 @@
-Done a 3/4 --Faire de l'ajax
-Rajouter + d'info dans le formulaire
-Normalement c'est bon -pk ca marche pas jsp frr (connexion.php)
-Regler le probleme des log identique
