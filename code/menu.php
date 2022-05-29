@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,11 +19,11 @@
         <ul class="nav-links">
         <li>
             <a href="#">
-            <i class='bx bx-food-menu' onclick="window.location.href='accueilAdmin.php';"></i>
-            <span class="link_name" onclick="window.location.href='accueilAdmin.php';">Tableau de bord</span>
+            <i class='bx bx-food-menu' onclick="window.location.href='../acceuil.php';"></i>
+            <span class="link_name" onclick="window.location.href='../acceuil.php';">Tableau de bord</span>
             </a>
             <ul class="sub-menu blank">
-            <li><a class="link_name" href="accueilAdmin.php">Tableau de bord</a></li>
+            <li><a class="link_name" href="../acceuil.php">Tableau de bord</a></li>
             </ul>
         </li>
         
@@ -39,11 +40,11 @@
         </li>
         <li>
             <a href="#">
-            <i class='bx bx-conversation' onclick="window.location.href='messagerie.php';"></i>
-            <span class="link_name" onclick="window.location.href='messagerie.php';">Messagerie</span>
+            <i class='bx bx-conversation' onclick="window.location.href='../messagerie/messagerie.php';"></i>
+            <span class="link_name" onclick="window.location.href='../messagerie/messagerie.php';">Messagerie</span>
             </a>
             <ul class="sub-menu blank">
-            <li><a class="link_name" href="messagerie.php">Messagerie</a></li>
+            <li><a class="link_name" href="../messagerie/messagerie.php">Messagerie</a></li>
             </ul>
         </li>
         

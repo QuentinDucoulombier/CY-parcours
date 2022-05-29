@@ -20,7 +20,7 @@
     </head>
     <body>
         <?php
-            include "menu.php";
+            include "../menu.php";
             $prenom =  $_SESSION["prenom"];
             $nom = $_SESSION["nom"];
             $status = $_SESSION["status"];
