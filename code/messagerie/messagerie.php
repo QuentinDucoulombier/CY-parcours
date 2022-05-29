@@ -9,7 +9,29 @@
     <script src="../messagerie/messagerie.js"></script>
 </head>
 <body>
-    <?php include "../menu.php"; ?>
+    <?php
+    session_start();
+
+    $prenom =  $_SESSION["prenom"];
+    $nom = $_SESSION["nom"];
+    $status = $_SESSION["status"];
+    $img = $_SESSION["image"];
+    $email = $_SESSION["email"];
+    $_SESSION["user"] ='{
+        "nom":"'.$nom.'",
+        "prenom":"'.$prenom.'",
+        "adresse_mail":"'.$email.'",
+        "statut":"'.$status.'"
+    }';
+    $_SESSION["autre"] =  '{
+        "nom":"Grandisson",
+        "prenom":"Brewal",
+        "adresse_mail":"Lajeunesse@cytech.fr",
+        "statut":"eleve"
+    }';
+
+    ?>
+
     <div id="messagerie-container">
             <div id="option-plus"  class="hidden">
                 <div id="supprimer" class="">Suprimer</div>
@@ -19,9 +41,9 @@
             <form id="signalement" class="hidden">
                 <p>Motif du signalement:</p>
                 <select id="motif" >
-                    <option>Méchant !</option>
-                    <option>Très méchant :< </option>
-                    <option>Vraiment très méchant 😡 GRAOUU ! </option>
+                    <option>Insulte</option>
+                    <option>Harcelement </option>
+                    <option>Autre</option>
                 </select>
                 <p>Descrition du signalement(facultatif):</p>
                 <textarea id="description" rows="5" cols="33"></textarea>
@@ -103,7 +125,11 @@
                 </div>
             </div>
         </div>
+
+        <button id="aaaeaeae" onclick="window.location.href='../acceuil.php'">Retour</button>
 </body>
+
+
 <script>
 
             function sleep(ms) {
