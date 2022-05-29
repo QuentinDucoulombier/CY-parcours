@@ -102,6 +102,7 @@
                 }
                 echo "</table>";
                 echo "</div>";
+                echo "</div>";
             ?>
             
             Ticket resolu :
@@ -216,35 +217,7 @@
             ?>
 
         </div>
-
-
-        
-
-
-
-        <script>
-
-            function sleep(ms) {
-                return new Promise(resolve => setTimeout(resolve, ms));
-            }
-
-            async function verification_message() {
-                recup_messages();
-                //console.log(id_dernier_message);
-                await sleep(1000);
-                verification_message();
-            }
-            verification_message();
-        </script>
-    </section>
-
-    
-
-
-
-
-
-        
+     
         
     </body>
 </html>

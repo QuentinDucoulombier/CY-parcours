@@ -31,26 +31,31 @@
     /*on renvoie le meme programme*/
     $row=0;
     if (($handle = fopen("../../data/error.csv", "r")) !== FALSE) {
-        echo "<table>";
+        echo "<div class='table-wrapper'>";
+        echo "<table class='fl-table'>";
         while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
             $num = count($data);
             if($row == 0)
             {
+                echo "<thead>";
                 echo "<tr>";
                 echo "<th>Numero</th>";
                 for ($c=0; $c < $num; $c++) {
                     echo "<th>$data[$c]</th>";
                 }
                 echo "</tr>";
+                echo "</thead>";
             }
             else
             {
+                echo "<tbody>";
                 echo "<tr>";
                 echo "<td>$row</td>";
                 for ($c=0; $c < $num; $c++) {
                     echo "<td>$data[$c]</td>";
                 }
                 echo "</tr>";
+                echo "<tbody>";
             }
             $row++;
         }
@@ -59,6 +64,8 @@
         fclose($handle);
     }
     echo "</table>";
+    echo "</div>";
+    
     if($_POST["rowPost"]>$varApres) /*On compare le nombre de ligne dans le .csv avant la modification et apres*/
     {
         echo "<p id=etatG>Ticket supprimé avec succés</p>"; /*Si c'est bien superieur avant alors le ticket a bien etait supprimé*/
