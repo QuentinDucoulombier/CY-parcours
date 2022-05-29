@@ -44,9 +44,10 @@ const plus_menu = (obj) =>{
     var supp_button = option_plus.children[0];
     var signal_button = option_plus.children[1];
 
-    let posx = obj.pageX //clicked_button.getBoundingClientRect().left;
-    let posy = obj.pageY     //clicked_button.getBoundingClientRect().top;
+    let posx = obj.layerX //clicked_button.getBoundingClientRect().left;
+    let posy = obj.layerY     //clicked_button.getBoundingClientRect().top;
 
+    console.log(obj);
 
     option_plus.classList.remove("hidden");
     option_plus.style.left = posx + "px";

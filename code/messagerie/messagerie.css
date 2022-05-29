@@ -1,11 +1,8 @@
 
-body{
-    
-}
 
 #messagerie-container{
     /* margin-top: 5px; */
-
+    position: relative;
 
     display: flex;
     flex-direction: row;
@@ -16,6 +13,9 @@ body{
 
     width: 600px;
     height: 700px;
+
+
+    color :#000000;
 }
 
 #les-discussions{
@@ -152,8 +152,8 @@ body{
 
 #option-plus{
     position: absolute;
-    top: 50px ;
-    left: 50px;
+    top: 0px ;
+    left: 0px;
 
     background: burlywood;
     border: 2px solid #000000;
