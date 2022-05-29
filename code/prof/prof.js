@@ -97,3 +97,10 @@ function Valider()
     xhttp.open("GET", "confirmation.php", true); //jsp si on est obligé d'envoyer des trucs avec le GET
     xhttp.send();
 }
+
+
+function message(filiere)
+{
+    window.alert("Mariage stable effectué pour les "+filiere+".");
+    
+}

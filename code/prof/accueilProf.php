@@ -45,9 +45,9 @@
         <!-- TODO faire un menu changement info avec 2 possibilite (via la pp et via le menu dans la pp peut etre aussi mettre la deconnexion) -->
         
         <div id=mariage>
-        <button class="bouton" onclick="doMarriage(1)">Lancer le mariage stable GSI</button>
-        <button class="bouton" onclick="doMarriage(2)">Lancer le mariage stable MI</button>
-        <button class="bouton" onclick="doMarriage(3)">Lancer le mariage stable MF</button>
+            <button onclick="doMarriage(1), message('GSI')">Lancer le mariage stable GSI</button>
+            <button onclick="doMarriage(2), message('MI')">Lancer le mariage stable MI</button>
+            <button onclick="doMarriage(3), message('MF')">Lancer le mariage stable MF</button>
         </div>
 
         
