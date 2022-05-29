@@ -1,4 +1,12 @@
+body{
+    display: flex;
 
+    flex-direction: row;
+}
+
+#aaaeaeae{
+    height: 50px;
+}
 
 #messagerie-container{
     /* margin-top: 5px; */
@@ -14,6 +22,7 @@
     width: 600px;
     height: 700px;
 
+    
 
     color :#000000;
 }
