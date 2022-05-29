@@ -8,78 +8,17 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Acceuil</title>
-        <link rel="stylesheet" type="text/css" href="../styleAcceuil.css"/> 
+        <title>Acceuil</title> 
         <link rel="icon" type="image/png" href="../favicon.png"/>
-        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script type="text/javascript" src="admin.js"></script>
 
-        <link rel="stylesheet" href="../messagerie/messagerie.css">
-        <script src="../messagerie/messagerie.js"></script>
+        
     </head>
     <body>
 
-        <div class="sidebar close">
-        <div class="logo-details">
-            <img src="../../data/CY_Tech.svg.png" alt="CY TECH">
-            <span class="logo_name">TECH</span>
-        </div>
-        <ul class="nav-links">
-        <li>
-            <a href="#">
-            <i class='bx bx-food-menu'></i>
-            <span class="link_name">Tableau de bord</span>
-            </a>
-            <ul class="sub-menu blank">
-            <li><a class="link_name" href="#">Tableau de bord</a></li>
-            </ul>
-        </li>
-        <li>
-            <div class="iocn-link">
-            <a href="#">
-            <i class='bx bx-library'></i>
-            <span class="link_name">Fonctionnalité</span>
-            </a>
-            </div>
-            <ul class="sub-menu blank">
-            <li><a class="link_name" href="#">Fonctionnalité</a></li>
-            </ul>
-        </li>
-        <li>
-            <div class="iocn-link">
-            <a href="#">
-            <i class='bx bx-user'></i>
-            <span class="link_name">Profils</span>
-            </a>
-            </div>
-            <ul class="sub-menu">
-            <li><a class="link_name" href="#">Profils</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">
-            <i class='bx bx-conversation'></i>
-            <span class="link_name">Messagerie</span>
-            </a>
-            <ul class="sub-menu blank">
-            <li><a class="link_name" href="#">Messagerie</a></li>
-            </ul>
-        </li>
-        
-        <li>
-        <div class="profile-details">
-        <div class="profile-content">
-        <i class='bx bxs-log-out' ></i>
-    </li>
-    </ul>
-    </div>
-    <section class="home-section">
-        <div class="home-content">
-        <i class='bx bx-menu' ></i>
-        </div>
         <?php
-
+            include "menu.php";
             $prenom =  $_SESSION["prenom"];
             $nom = $_SESSION["nom"];
             $status = $_SESSION["status"];
@@ -258,107 +197,7 @@
             ?>
 
         </div>
-        <p></p>
 
-        <div id="profil">
-            <h2>Modifier votre profil :
-            <a href="changerInfo.php">Ici</a></h2>
-        </div>
-
-
-        <div id="messagerie-container">
-            <div id="option-plus"  class="hidden">
-                <div id="supprimer" class="">Suprimer</div>
-                <div id="signaler" class="hidden">Signaler</div>
-            </div>
-
-            <form id="signalement" class="hidden">
-                <p>Motif du signalement:</p>
-                <select id="motif" >
-                    <option>Méchant !</option>
-                    <option>Très méchant :< </option>
-                    <option>Vraiment très méchant 😡 GRAOUU ! </option>
-                </select>
-                <p>Descrition du signalement(facultatif):</p>
-                <textarea id="description" rows="5" cols="33"></textarea>
-                <div id="les-boutons">
-                    <div>Signaler</div> <div onclick="annuler_signal()">Annuler</div>
-                </div>
-            </form>
-
-            <div id="les-discussions">
-
-                <select id="select-discussion" size="5">
-                    <optgroup label="Professeurs">
-                    <?php
-                    if (($handle = fopen("../../data/loginProf.csv", "r")) !== FALSE) {
-                        $data = fgetcsv($handle, 1000, ";");
-                        while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
-                            echo '<option onclick=nouv_autre("'.$data[1].'","'. $data[0].'","'.$data[2].'","'.$data[5].'") value="'.$data[0].' '. $data[1].'">'.$data[0].' '. $data[1].'</option>' ;
-                        }
-                        fclose($handle);
-                    }
-                    ?>
-                    </optgroup>
-                    <optgroup label="Eleves">
-                    <?php
-                    if (($handle = fopen("../../data/loginEleves.csv", "r")) !== FALSE) {
-                        $data = fgetcsv($handle, 1000, ";");
-                        while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
-                            echo '<option onclick=nouv_autre("'.$data[1].'","'. $data[0].'","'.$data[2].'","'.$data[5].'") value="'.$data[0].' '. $data[1].'">'.$data[0].' '. $data[1].'</option>' ;
-                        }
-
-                        fclose($handle);
-                    }
-                    ?>
-                    </optgroup>
-                    <optgroup label="Admins">
-                      <?php
-                      if (($handle = fopen("../../data/loginAdmin.csv", "r")) !== FALSE) {
-                          $data = fgetcsv($handle, 1000, ";");
-                          while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
-                              echo '<option onclick=nouv_autre("'.$data[1].'","'. $data[0].'","'.$data[2].'","'.$data[5].'") value="'.$data[0].' '. $data[1].'">'.$data[0].' '. $data[1].'</option>' ;
-                          }
-
-                          fclose($handle);
-                      }
-                      ?>
-                    </optgroup>
-                </select>
-
-            </div>
-
-            <div id="la-discussion">
-                <div id="message-zone">
-                    <div class="message envoye">
-                        <div class="premiere-ligne">
-                            <p class="auteur">Jean Michel</p>
-                            <div class="plus">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                        </div>
-
-                        <p class="infos">18/04/2022 23:17:03</p>
-
-                        <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde veniam aspernatur ducimus, dolor, temporibus magni explicabo voluptatem non totam itaque atque aut quos? Numquam, Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet inventore repellendus exercitationem corrupti excepturi! Veniam hic omnis, vel unde quos blanditiis atque perferendis! Nemo veritatis magnam laudantium incidunt. Autem, neque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim temporibus inventore sit adipisci ducimus deleniti quos nam repellendus asperiores. Eos alias, deserunt aperiam cum quisquam dolores iusto hic iste numquam? fugiat nesciunt deleniti doloremque reiciendis delectus. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam libero numquam vel illum dignissimos. Consectetur maiores repellendus quas placeat velit nemo atque ipsa earum! Modi quaerat itaque nisi quos consequatur. !</p>
-                    </div>
-                </div>
-                <div id="bas-messagerie">
-                    <div id="nouv-message">
-                        <input id="message-text" type="text" value="">
-                        <button onclick="nouveau_message()">Envoyer</button>
-                    </div>
-                    <div class="button-bloque-debloque" id="button-bloque" onclick="bloquer_utilisateur()">
-                        Bloquer l'utilisateur
-                    </div>
-                    <div class="button-bloque-debloque hidden" id="button-debloque" onclick="debloquer_utilisateur()">
-                        Débloquer l'utilisateur
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
         <form method="POST" action="../connexion.php">
@@ -383,14 +222,7 @@
         </script>
     </section>
 
-    <script>
-        let sidebar = document.querySelector(".sidebar");
-        let sidebarBtn = document.querySelector(".bx-menu");
-        console.log(sidebarBtn);
-        sidebarBtn.addEventListener("click", ()=>{
-            sidebar.classList.toggle("close");
-        });
-    </script>
+    
 
 
 
