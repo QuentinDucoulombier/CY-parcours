@@ -11,7 +11,7 @@
                     $data_json = json_decode($data,TRUE);
                     $tailleJson = count($data_json) + 1;
                     echo "<input type='hidden' id='spe'  value=$spe>";
-                    echo "<select name='listEleve' id='listEleve' size=$tailleJson>";
+                    echo "<select name='listEleve' id='listEleve' size=10>";
                     echo "<option value=''>Eleves de la spécialité $spe</option>"; //pas sur de l'orthographe
                     
                     for ($i=0; $i < count($data_json); $i++) { 

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +10,13 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-<div class="sidebar close">
+    
+    <?php
+        session_start();
+        $status = $_SESSION["status"];
+        if ($status == "Admin") {
+            ?>
+            <div class="sidebar close">
         <div class="logo-details">
             <img src="../../data/CY_Tech.svg.png" alt="CY TECH">
             <span class="logo_name">TECH</span>
@@ -69,6 +74,87 @@
         <div class="home-content">
         <i class='bx bx-menu' style='color:#ffffff'  ></i>
         </div>
+        <?php
+        }
+
+        if ($status == "Profs") {
+        ?>
+
+            <div class="sidebar close">
+        <div class="logo-details">
+            <img src="../../data/CY_Tech.svg.png" alt="CY TECH">
+            <span class="logo_name">TECH</span>
+        </div>
+        <ul class="nav-links">
+        <li>
+            <a href="#">
+            <i class='bx bx-food-menu' onclick="window.location.href='../acceuil.php';"></i>
+            <span class="link_name" onclick="window.location.href='../acceuil.php';">Tableau de bord</span>
+            </a>
+            <ul class="sub-menu blank">
+            <li><a class="link_name" href="../acceuil.php">Tableau de bord</a></li>
+            </ul>
+        </li>
+        
+        <li>
+            <div class="iocn-link">
+            <a href="#">
+            <i class='bx bx-user' onclick="window.location.href='changerInfo.php';"></i>
+            <span class="link_name" onclick="window.location.href='changerInfo.php';">Profils</span>
+            </a>
+            </div>
+            <ul class="sub-menu">
+            <li><a class="link_name" href="changerInfo.php">Profils</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <div class="iocn-link">
+            <a href="#">
+            <i class='bx bx-bug-alt' style='color:#f3eeee' onclick="window.location.href='sendTicket.php';"></i>
+            <span class="link_name" onclick="window.location.href='sendTicket.php';">Tickets</span>
+            </a>
+            </div>
+            <ul class="sub-menu">
+            <li><a class="link_name" href="sendTicket.php">Tickets</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#">
+            <i class='bx bx-conversation' onclick="window.location.href='../messagerie/messagerie.php';"></i>
+            <span class="link_name" onclick="window.location.href='../messagerie/messagerie.php';">Messagerie</span>
+            </a>
+            <ul class="sub-menu blank">
+            <li><a class="link_name" href="../messagerie/messagerie.php">Messagerie</a></li>
+            </ul>
+        </li>
+        
+       
+        <li>
+            <div class="profile-details">
+            <div class="profile-content">
+            <a href="#">
+            <i class='bx bxs-log-out' ></i>
+            <span class="link_name"><form method="POST" action="../connexion.php">
+            <input class="bouton" type="submit" name="OUT" value="Deconnexion"/>
+            </form></span>
+            </a>
+            
+            
+        </li>
+        </ul>
+        </div>
+    <section class="home-section">
+        <div class="home-content">
+        <i class='bx bx-menu' style='color:#ffffff'  ></i>
+        </div>
+        <?php
+        }
+        ?>
+
+
+
 
     <script>
         let sidebar = document.querySelector(".sidebar");

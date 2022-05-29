@@ -1,11 +1,10 @@
-<!DOCTYPE html>
 <?php
   session_start();
   if (!isset($_SESSION["nom"])){ /*pas certain que ce soit utile*/
       header('Location: ../connexion.php');
     }
  ?>
-
+<!DOCTYPE html>
  <html>
      <head>
          <meta charset="utf-8">
@@ -16,6 +15,9 @@
 
      </head>
      <body>
+     <?php
+          include "../menu.php";
+      ?>
        <div id=profil>
 
        </div>
@@ -28,6 +30,5 @@
            </div>
        </div>
 
-       <a href="accueilProf.php">Retour</a>
      </body>
 </html>

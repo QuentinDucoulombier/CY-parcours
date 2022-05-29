@@ -91,6 +91,10 @@ button:active {
   padding-bottom: 0.5em;
 }
 
+#mariage, #stats, #change, #ticket{
+  margin-top: 3em;
+  text-align: center;
+}
 
 
 
