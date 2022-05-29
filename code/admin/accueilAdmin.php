@@ -70,26 +70,31 @@
                 echo "<div id='actualisation'>";
                 $row=0;
                 if (($handle = fopen("../../data/error.csv", "r")) !== FALSE) {
-                    echo "<table>";
+                    echo "<div class='table-wrapper'>";
+                    echo "<table class='fl-table'>";
                     while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
                         $num = count($data);
                         if($row == 0)
                         {
+                            echo "<thead>";
                             echo "<tr>";
                             echo "<th>Numero</th>";
                             for ($c=0; $c < $num; $c++) {
                                 echo "<th>$data[$c]</th>";
                             }
                             echo "</tr>";
+                            echo "</thead>";
                         }
                         else
                         {
+                            echo "<tbody>";
                             echo "<tr>";
                             echo "<td>$row</td>";
                             for ($c=0; $c < $num; $c++) {
                                 echo "<td>$data[$c]</td>";
                             }
                             echo "</tr>";
+                            echo "<tbody>";
                         }
                         $row++;
                     }
@@ -127,6 +132,7 @@
 
 
         </div>
+        <p></p>
         <div id="log">
             
             <?php
@@ -134,31 +140,38 @@
                 if(file_exists("../../data/logOption.csv"))
                 {
                     echo "<h3>Log des modifications des profs</h3>";
+
                     if (($handle = fopen("../../data/logOption.csv", "r")) !== FALSE) {
-                        echo "<table>";
+                        echo "<div class='table-wrapper'>";
+                        echo "<table class='fl-table'>";
                         while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
                             $num = count($data);
                             if($row == 0)
                             {
+                                echo "<thead>";
                                 echo "<tr>";
                                 for ($c=0; $c < $num; $c++) {
                                     echo "<th>$data[$c]</th>";
                                 }
                                 echo "</tr>";
+                                echo "</thead>";
                             }
                             else
                             {
+                                echo "<tbody>";
                                 echo "<tr>";
                                 for ($c=0; $c < $num; $c++) {
                                     echo "<td>$data[$c]</td>";
                                 }
                                 echo "</tr>";
+                                echo "</tbody>";
                             }
                             $row++;
                         }
                         fclose($handle);
                     }
                     echo "</table>";
+                    echo "</tab>";
                 }
                 
             ?>
@@ -173,16 +186,20 @@
                 $data_json = json_decode($data,TRUE);
                 $taille = $data_json["nb_ticket"];
                 
-                echo "<table>";
+                echo "<div class='table-wrapper'>";
+                echo "<table class='fl-table'>";
+                echo "<thead>";
                 echo "<tr>";
                 echo "<th>Date</th>";
                 echo "<th>Auteur</th>";
                 echo "<th>Signalé par</th>";
                 echo "<th>Motif</th>";
                 echo "<th>Description</th>";
-                
                 echo "</tr>";
+                echo "</thead>";
+
                 for ($i=0; $i < $taille ; $i++) { 
+                    echo "<tbody>";
                     echo "<tr>";
                     echo "<td>".$data_json['tickets'][$i]['message']['infos']['date']." ".$data_json['tickets'][$i]['message']['infos']['heure']."</td>";
                     echo "<td>".$data_json['tickets'][$i]['message']['auteur']['statut']." : ".$data_json['tickets'][$i]['message']['auteur']['nom']." ".$data_json['tickets'][$i]['message']['auteur']['prenom']."</td>";
@@ -190,14 +207,14 @@
                     echo "<td>".$data_json['tickets'][$i]['motif']."</td>";
                     echo "<td>".$data_json['tickets'][$i]['description']."</td>";
                     echo "</tr>";
+                    echo "</tbody>";
                 }
                 echo "</table>";
-                
+                echo "</tab>";                
                    
             ?>
 
         </div>
-
 
 
         <form method="POST" action="../connexion.php">
