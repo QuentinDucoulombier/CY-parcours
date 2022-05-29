@@ -77,7 +77,7 @@
         <?php
         }
 
-        if ($status == "Profs") {
+        if ($status == "Profs") {i
         ?>
 
             <div class="sidebar close">
@@ -99,24 +99,24 @@
         <li>
             <div class="iocn-link">
             <a href="#">
-            <i class='bx bx-user' onclick="window.location.href='changerInfo.php';"></i>
-            <span class="link_name" onclick="window.location.href='changerInfo.php';">Profils</span>
+            <i class='bx bx-user' onclick="window.location.href='../prof/changerInfo.php';"></i>
+            <span class="link_name" onclick="window.location.href='../prof/changerInfo.php';">Profils</span>
             </a>
             </div>
             <ul class="sub-menu">
-            <li><a class="link_name" href="changerInfo.php">Profils</a></li>
+            <li><a class="link_name" href="../prof/changerInfo.php">Profils</a></li>
             </ul>
         </li>
 
         <li>
             <div class="iocn-link">
             <a href="#">
-            <i class='bx bx-bug-alt' style='color:#f3eeee' onclick="window.location.href='sendTicket.php';"></i>
-            <span class="link_name" onclick="window.location.href='sendTicket.php';">Tickets</span>
+            <i class='bx bx-bug-alt' style='color:#f3eeee' onclick="window.location.href='../prof/sendTicket.php';"></i>
+            <span class="link_name" onclick="window.location.href='../prof/sendTicket.php';">Tickets</span>
             </a>
             </div>
             <ul class="sub-menu">
-            <li><a class="link_name" href="sendTicket.php">Tickets</a></li>
+            <li><a class="link_name" href="../prof/sendTicket.php">Tickets</a></li>
             </ul>
         </li>
 
@@ -150,7 +150,7 @@
         <i class='bx bx-menu' style='color:#ffffff'  ></i>
         </div>
         <?php
-        }
+        } if ($status == "eleves") {}
         ?>
 
 
