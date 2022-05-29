@@ -218,9 +218,7 @@
         </div>
 
 
-        <form method="POST" action="../connexion.php">
-            <input class="bouton" type="submit" name="OUT" value="Deconnexion"/>
-        </form>
+        
 
 
 
