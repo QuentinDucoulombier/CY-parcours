@@ -41,7 +41,6 @@
 
             echo "<h1>Bienvenue $prenom $nom vous etes $status</h1>";
             //echo "<img src=../$img></img>";
-            echo "<a href=changerInfo.php><img class='pp' src=$img></img></a>";
 
         ?>
         <!-- TODO faire un menu changement info avec 2 possibilite (via la pp et via le menu dans la pp peut etre aussi mettre la deconnexion) -->
@@ -49,7 +48,7 @@
 
         <div id=createProfilEleve>
             <h2>Cree les profil eleves</h2>
-            <button type="button" id="CreateEleve" onclick=test() >Lancer le programme</button>
+            <button class="bouton"  type="button" id="CreateEleve" onclick=test() >Lancer le programme</button>
             <div id=loading class="hidden">
                 <p>Chargement merci de patienter ...</p>
                 En attendant vous pouvez rigoler ici :<button onclick="popup()">Fun</button><br />
@@ -104,8 +103,9 @@
                 echo "</table>";
                 echo "</div>";
             ?>
-            <p></p>
+            
             Ticket resolu :
+            
             <?php
                 echo "<select name='bug' id='bug'>";
                 echo "<option value=''>Ticket à supprimer</option>";
@@ -125,7 +125,7 @@
                 }
                 echo "</select>";
             ?>
-            <button type="button" onclick="ticket()">Envoyer</button>
+            <button class="bouton" id="envoyer" type="button" onclick="ticket()">Envoyer</button>
             <div id="etat">
             </div>
 
@@ -134,7 +134,7 @@
         </div>
         <p></p>
         <div id="log">
-            
+        <p></p>
             <?php
                 $row=0;
                 if(file_exists("../../data/logOption.csv"))
@@ -175,6 +175,7 @@
                 }
                 
             ?>
+            </div>
         </div>
 
         <div id="report">
@@ -218,7 +219,7 @@
 
 
         <form method="POST" action="../connexion.php">
-            <input type="submit" name="OUT" value="Deconnexion"/>
+            <input class="bouton" type="submit" name="OUT" value="Deconnexion"/>
         </form>
 
 

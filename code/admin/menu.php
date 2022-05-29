@@ -67,7 +67,6 @@
             </ul>
             <div class="profile-details">
             <div class="profile-content">
-            
         </li>
         </ul>
         </div>
