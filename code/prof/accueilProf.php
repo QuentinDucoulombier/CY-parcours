@@ -85,6 +85,10 @@
             </div>
             
         </div>
+        
+        <div id=validation>
+            <button onclick="Valider()">Valider les choix et envoyer le resultat aux etudiants</button>
+        </div>
 
         <div id="messagerie-container">
             <div id="option-plus"  class="hidden">

@@ -189,7 +189,40 @@
 
         </div>
         <div id="log">
-            <h3>Log des modifications des profs</h3>
+            
+            <?php
+                $row=0;
+                if(file_exists("../../data/logOption.csv"))
+                {
+                    echo "<h3>Log des modifications des profs</h3>";
+                    if (($handle = fopen("../../data/logOption.csv", "r")) !== FALSE) {
+                        echo "<table>";
+                        while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
+                            $num = count($data);
+                            if($row == 0)
+                            {
+                                echo "<tr>";
+                                for ($c=0; $c < $num; $c++) {
+                                    echo "<th>$data[$c]</th>";
+                                }
+                                echo "</tr>";
+                            }
+                            else
+                            {
+                                echo "<tr>";
+                                for ($c=0; $c < $num; $c++) {
+                                    echo "<td>$data[$c]</td>";
+                                }
+                                echo "</tr>";
+                            }
+                            $row++;
+                        }
+                        fclose($handle);
+                    }
+                    echo "</table>";
+                }
+                
+            ?>
         </div>
 
         <div id="report">

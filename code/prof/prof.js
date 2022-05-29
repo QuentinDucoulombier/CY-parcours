@@ -79,3 +79,21 @@ function final()
     xhttp.send("option="+option+"&oldOption="+oldOption+"&fil="+fil+"&eleve="+eleve);
     
 }
+
+
+function Valider()
+{
+    xhttp = new XMLHttpRequest();
+    
+
+    xhttp.onreadystatechange = function() {
+
+        if (this.readyState == 4 && this.status == 200) {
+            window.alert(this.responseText);
+            
+        }
+
+    };
+    xhttp.open("GET", "confirmation.php", true); //jsp si on est obligé d'envoyer des trucs avec le GET
+    xhttp.send();
+}

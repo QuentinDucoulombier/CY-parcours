@@ -42,6 +42,7 @@ function ticket(){
 
     bug=document.getElementById("bug").value;
     rowPost=document.getElementById("rowPost").value;
+    console.log(document.getElementById("bug").value);
 
    xhttp = new XMLHttpRequest();
 

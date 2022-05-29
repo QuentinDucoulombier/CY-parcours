@@ -54,6 +54,7 @@
             }
             $row++;
         }
+        echo "<input type='hidden' id='rowPost' name='rowPost' value=$row>";
         $varApres = $row;
         fclose($handle);
     }
