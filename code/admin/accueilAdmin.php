@@ -9,8 +9,9 @@
     <head>
         <meta charset="utf-8">
         <title>Acceuil</title>
-        <link rel="stylesheet" type="text/css" href="../styleAcceuil.css"/>
+        <link rel="stylesheet" type="text/css" href="../styleAcceuil.css"/> 
         <link rel="icon" type="image/png" href="../favicon.png"/>
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script type="text/javascript" src="admin.js"></script>
 
@@ -19,6 +20,64 @@
     </head>
     <body>
 
+        <div class="sidebar close">
+        <div class="logo-details">
+            <img src="../../data/CY_Tech.svg.png" alt="CY TECH">
+            <span class="logo_name">TECH</span>
+        </div>
+        <ul class="nav-links">
+        <li>
+            <a href="#">
+            <i class='bx bx-food-menu'></i>
+            <span class="link_name">Tableau de bord</span>
+            </a>
+            <ul class="sub-menu blank">
+            <li><a class="link_name" href="#">Tableau de bord</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+            <a href="#">
+            <i class='bx bx-library'></i>
+            <span class="link_name">Fonctionnalité</span>
+            </a>
+            </div>
+            <ul class="sub-menu blank">
+            <li><a class="link_name" href="#">Fonctionnalité</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+            <a href="#">
+            <i class='bx bx-user'></i>
+            <span class="link_name">Profils</span>
+            </a>
+            </div>
+            <ul class="sub-menu">
+            <li><a class="link_name" href="#">Profils</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+            <i class='bx bx-conversation'></i>
+            <span class="link_name">Messagerie</span>
+            </a>
+            <ul class="sub-menu blank">
+            <li><a class="link_name" href="#">Messagerie</a></li>
+            </ul>
+        </li>
+        
+        <li>
+        <div class="profile-details">
+        <div class="profile-content">
+        <i class='bx bxs-log-out' ></i>
+    </li>
+    </ul>
+    </div>
+    <section class="home-section">
+        <div class="home-content">
+        <i class='bx bx-menu' ></i>
+        </div>
         <?php
 
             $prenom =  $_SESSION["prenom"];
@@ -289,6 +348,22 @@
             }
             verification_message();
         </script>
+    </section>
+
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".bx-menu");
+        console.log(sidebarBtn);
+        sidebarBtn.addEventListener("click", ()=>{
+            sidebar.classList.toggle("close");
+        });
+    </script>
+
+
+
+
+
+        
         
     </body>
 </html>
