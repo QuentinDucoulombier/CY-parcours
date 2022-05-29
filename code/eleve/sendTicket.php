@@ -16,6 +16,7 @@
 
      </head>
      <body>
+       <?php include "../menu.php"; ?>
        <div id=profil>
 
        </div>
@@ -28,6 +29,5 @@
            </div>
        </div>
 
-       <a href="accueilEleves.php">Retour</a>
      </body>
 </html>
