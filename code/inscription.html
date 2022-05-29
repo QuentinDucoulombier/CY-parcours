@@ -23,11 +23,11 @@
        </div>
         <form action="enregistrer.php" method="POST">
           <div class="input-container ic1">
-            <input list="Statut" name="statut" id="statut" class="input" placeholder=" " required/>
-            <datalist id="Statut">
-              <option value="Profs">
-              <option value="Admin">
-            </datalist>
+            <select name="statut" id="statut" class="input" placeholder=" " required>
+              <option value="">Merci de choisir votre statut</option>
+              <option value="Profs">Responsable Admission</option>
+              <option value="Admin">Admin</option>
+            </select>
             <div class="cut"></div>
             <label for="statut" class="placeholder">Statut*</label>
           </div>

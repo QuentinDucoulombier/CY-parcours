@@ -75,8 +75,8 @@
 
       ?>
 <!-- TODO faire un menu changement info avec 2 possibilite (via la pp et via le menu dans la pp peut etre aussi mettre la deconnexion) -->
-<div id=menu>
- Menu <br>
+<div id=infosData>
+<h2>Vos Datas</h2>
  <ul>
      <li>Votre moyenne : <span><?php echo $moyenne; ?></span></li>
      <li>Vos ECTS : <span><?php echo $ects; ?></span></li>
@@ -90,6 +90,42 @@
      </ul>
    </li>
  </ul>
+</div>
+
+<div id=resultat>
+    
+    <?php
+        function affichOption($fichier, $prenom, $nom)
+        {
+            $nomJson = $prenom."_".$nom;
+            $data = file_get_contents($fichier);
+            $data_json = json_decode($data,TRUE);
+            for ($i=0; $i < count($data_json); $i++) { 
+                if ($data_json[$i]['eleve'] == $nomJson) {
+                    echo "<p><strong>Felicitation, vous avez etait accepté dans l'option : ".$data_json[$i]['option'][0]." !!</strong></p>";
+                }
+            }
+        }
+
+
+
+        if(file_exists("../../data/confirmation.txt"))
+        {
+            echo "<h2>Vos resultats</h2>";
+            if ($filiere == 'GSI') {
+                affichOption("../../data/resultat1.json", $prenom, $nom);
+            }
+            elseif ($filiere == 'MI') {
+                affichOption("../../data/resultat2.json", $prenom, $nom);
+            }
+            elseif ($filiere == 'MF') {
+                affichOption("../../data/resultat3.json", $prenom, $nom);
+            }
+            else {
+                echo "<p id ='etatB'>Erreur</p>";
+            }
+        }
+    ?>
 </div>
 
 <div id=ticket>
