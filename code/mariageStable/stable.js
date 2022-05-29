@@ -90,6 +90,12 @@ function doMarriage(filiere) {
       if (this.readyState == 4 && this.status == 200) {
           var data = JSON.parse(this.responseText);
 
+          data.sort((a,b)=>{
+            return  parseFloat(a["moyenne"].replace(",",".")) - parseFloat(b["moyenne"].replace(",","."));
+          });
+          data.reverse();
+
+
 
           create_array_spe(filiere, function(text,filiere){
             var data_spe = [];
