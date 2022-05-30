@@ -56,13 +56,13 @@
 
                 }
                 fclose($file);
-                echo "Le fichier a etait cree avec succès !";
+                echo "Le fichier a été créé avec succès !";
                 exit();
             }
         }
         else
         {
-            echo "Le fichier existe deja !";
+            echo "Le fichier existe déjà !";
             exit();
         }
     }

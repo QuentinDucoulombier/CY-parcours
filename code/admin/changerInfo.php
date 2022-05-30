@@ -21,9 +21,9 @@
 
     </head>
     <body>
-      
+
       <div class="form">
-        <h1>Modifer votre profil</h1>
+        <h1>Modifier votre profil</h1>
         <div class="small-12 medium-2 large-2 columns">
        <?php
             echo "<div class='circle'>";
@@ -31,8 +31,7 @@
             echo "</div>";
         ?>
       </div>
-        <form action="enregistrerInfo.php" method="POST">       <!--TODO faire que l'on ne puisse pas modifier le nom et mail (et peut etre prenom si vous trouver ca mieux)-->
-          <div class="input-container ic1">
+        <form action="enregistrerInfo.php" method="POST">
             <?php
                 echo "<input type='text' id='prenom' name='prenom' readonly class='input' value=$prenom>";
             ?>
@@ -74,7 +73,7 @@
                 ?>
                 <div class="cut"></div>
                 <label for="pp" class="placeholder">Photo de profil</label>
-              
+
               <script type="text/javascript" src="photoModi.js"></script>
             </div>
             <p><input type="submit" value="Modifier" class="submit" required></p>

@@ -22,9 +22,9 @@
 
     </head>
     <body>
-        
+
       <div class="form">
-        <h1>Modifer votre profil</h1>
+        <h1>Modifier votre profil</h1>
         <div class="small-12 medium-2 large-2 columns">
        <?php
             echo "<div class='circle'>";
@@ -78,7 +78,7 @@
                 ?>
                 <div class="cut"></div>
                 <label for="pp" class="placeholder">Photo de profil</label>
-              
+
               <script type="text/javascript" src="photoModi.js"></script>
             </div>
             <p><input type="submit" value="Modifier" class="submit" required></p>

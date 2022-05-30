@@ -8,12 +8,12 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Acceuil</title> 
+        <title>Acceuil</title>
         <link rel="icon" type="image/png" href="../favicon.png"/>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script type="text/javascript" src="admin.js"></script>
 
-        
+
     </head>
     <body>
 
@@ -39,18 +39,17 @@
             }';
 
 
-            echo "<h1>Bienvenue $prenom $nom vous etes $status</h1>";
+            echo "<h1>Bienvenue $prenom $nom</h1>";
             echo "<a href=changerInfo.php><img class='pp' src=$img></img></a>";
 
         ?>
-        <!-- TODO faire un menu changement info avec 2 possibilite (via la pp et via le menu dans la pp peut etre aussi mettre la deconnexion) -->
 
 
         <div id=createProfilEleve>
-            <h2>Cree les profil eleves</h2>
+            <h2>Créer les profils des élèves</h2>
             <button class="bouton"  type="button" id="CreateEleve" onclick=test() >Lancer le programme</button>
             <div id=loading class="hidden">
-                <p>Chargement merci de patienter ...</p>
+                <p>Chargement, merci de patienter ...</p>
                 En attendant vous pouvez rigoler ici :<button onclick="popup()">Fun</button><br />
                 <div class="loadingio-spinner-double-ring-lroiipoijrl"><div class="ldio-ys48lrawjtg">
                 <div></div>
@@ -77,7 +76,7 @@
                         {
                             echo "<thead>";
                             echo "<tr>";
-                            echo "<th>Numero</th>";
+                            echo "<th>Numéro</th>";
                             for ($c=0; $c < $num; $c++) {
                                 echo "<th>$data[$c]</th>";
                             }
@@ -104,15 +103,15 @@
                 echo "</div>";
                 echo "</div>";
             ?>
-            
-            Ticket resolu :
-            
+
+            Ticket résolu :
+
             <?php
                 echo "<select name='bug' id='bug'>";
                 echo "<option value=''>Ticket à supprimer</option>";
                 $row=0;
                 if (($handle = fopen("../../data/error.csv", "r")) !== FALSE) {
-                    
+
                     while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
                         $num = count($data);
                         if($row > 0)
@@ -122,7 +121,7 @@
                         $row++;
                     }
                     fclose($handle);
-                    
+
                 }
                 echo "</select>";
             ?>
@@ -174,7 +173,7 @@
                     echo "</table>";
                     echo "</tab>";
                 }
-                
+
             ?>
             </div>
         </div>
@@ -182,12 +181,12 @@
         <div id="report">
             <h3>Signalement messagerie</h3>
             <?php
-                
-               
+
+
                 $data = file_get_contents("../messagerie/logs/ticket_message.json");
                 $data_json = json_decode($data,TRUE);
                 $taille = $data_json["nb_ticket"];
-                
+
                 echo "<div class='table-wrapper'>";
                 echo "<table class='fl-table'>";
                 echo "<thead>";
@@ -200,7 +199,7 @@
                 echo "</tr>";
                 echo "</thead>";
 
-                for ($i=0; $i < $taille ; $i++) { 
+                for ($i=0; $i < $taille ; $i++) {
                     echo "<tbody>";
                     echo "<tr>";
                     echo "<td>".$data_json['tickets'][$i]['message']['infos']['date']." ".$data_json['tickets'][$i]['message']['infos']['heure']."</td>";
@@ -212,12 +211,12 @@
                     echo "</tbody>";
                 }
                 echo "</table>";
-                echo "</tab>";                
-                   
+                echo "</tab>";
+
             ?>
 
         </div>
-     
-        
+
+
     </body>
 </html>

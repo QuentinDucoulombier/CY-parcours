@@ -8,7 +8,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Acceuil</title>
+        <title>Accueil</title>
         <link rel="stylesheet" type="text/css" href="../styleAcceuil.css"/>
         <link rel="icon" type="image/png" href="../favicon.png"/>
 
@@ -34,8 +34,8 @@
                 "adresse_mail":"Lajeunesse@cytech.fr",
                 "statut":"eleve"
             }';
-            
-            echo "<h1>Bienvenue $prenom $nom vous êtes $status</h1>";
+
+            echo "<h1>Bienvenue $prenom $nom</h1>";
             echo "<a href=changerInfo.php><img class='pp' src=$img></img></a>";
 
 
@@ -73,7 +73,7 @@
       ?>
 <!-- TODO faire un menu changement info avec 2 possibilite (via la pp et via le menu dans la pp peut etre aussi mettre la deconnexion) -->
 <div id=infosData>
-<h2>Vos Datas : </h2>
+<h2>Vos infos : </h2>
  <ul>
      <li>Votre moyenne : <span><?php echo $moyenne; ?></span></li>
      <li>Vos ECTS : <span><?php echo $ects; ?></span></li>
@@ -89,6 +89,6 @@
  </ul>
 </div>
 
-        
+
     </body>
 </html>

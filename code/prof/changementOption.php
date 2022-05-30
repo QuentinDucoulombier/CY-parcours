@@ -9,14 +9,14 @@ session_start();
     {
         $data = file_get_contents($fichier);
         $data_json = json_decode($data,TRUE);
-        for ($i=0; $i < count($data_json); $i++) { 
+        for ($i=0; $i < count($data_json); $i++) {
             if ($data_json[$i]['eleve'] == $eleve) {
                 $oldOption = $data_json[$i]['option'][0];
                 if($data_json[$i]['option'][0] != $option)
                 {
-                    
+
                     $fichiercsv = "../../data/logOption.csv";
-                    $date = date("F j, Y, g:i:s a"); 
+                    $date = date("F j, Y, g:i:s a");
                     if(!file_exists($fichiercsv))
                     {
                         $file = fopen($fichiercsv,"w");
@@ -31,11 +31,11 @@ session_start();
                     fputcsv($file, $list, ";");
                     fclose($file);
                     $data_json[$i]['option'][0] = $option;
-                    echo "<p id=etatG>L'éleves a bien changé d'option</p>";
+                    echo "<p id=etatG>L'élève a bien changé d'option</p>";
                 }
                 else
                 {
-                    echo "<p id=etatB>L'éleves est deja dans cette option</p>";
+                    echo "<p id=etatB>L'élève est déjà dans cette option</p>";
                 }
             }
 

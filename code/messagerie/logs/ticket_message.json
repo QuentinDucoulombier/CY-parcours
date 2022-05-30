@@ -1,1 +1,1 @@
-{"nb_ticket":0,"tickets":[]}
+{"nb_ticket":1,"tickets":[{"message":{"id":1,"infos":{"date":"30\/05\/2022","heure":"14:51:51"},"auteur":{"nom":"Dupre","prenom":"Gabriel-Victor","adresse_mail":"Gabriel-VictorDupre@cy-tech.fr","statut":"eleves"},"destinataire":{"nom":"Dauphin","prenom":"Christophe","adresse_mail":"dauphin@cy-tech.fr","statut":"Admin"},"message":"BONJOUR","supprime":false},"motif":"Autre","description":"il a dit bonjour"}]}

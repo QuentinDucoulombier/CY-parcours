@@ -1,8 +1,8 @@
 <?php
 session_start();
 $fichier = "../../data/error.csv";
-$date = date("F j, Y, g:i:s a"); 
-  
+$date = date("F j, Y, g:i:s a");
+
 if(!file_exists($fichier))
 {
     $file = fopen($fichier,"w");
@@ -18,5 +18,5 @@ $file = fopen($fichier,"a");
 $list = array($date, $_SESSION["prenom"], $_SESSION["nom"], $titre, $_POST['description']);
 fputcsv($file, $list, ";");
 fclose($file);
-echo "<p id='etatG'>Ticket envoyer avec succes !</p>";
+echo "<p id='etatG'>Ticket envoyé avec succès !</p>";
 ?>
