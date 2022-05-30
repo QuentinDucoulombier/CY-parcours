@@ -144,7 +144,7 @@ function afficher_voeux($fichier, $filiere, $option){
             }
         }
     }
-    print_r($tab_mi);
+
     if ($filiere == 'GSI') {
         echo "Le nombre d'étudiants ayant eu " . $option . " en premier voeux est " . $tab_gsi[$option][1] . "<br>";
         echo "Le nombre d'étudiants ayant eu " . $option . " en deuxième voeux est " . $tab_gsi[$option][2] . "<br>";
