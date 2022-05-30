@@ -71,7 +71,7 @@ function moyenne_des_moyennes($fichier, $filiere, $option){
     $data = file_get_contents($fichier);
     $data_json = json_decode($data,TRUE);
 
-    for ($i=0; $i < count($data_json); $i++) { 
+    for ($i=0; $i < count($data_json); $i++) {
         if ($data_json[$i]['option'][0] == $option) {
             $dividende = $dividende + floatval(str_replace(',','.',$data_json[$i]['moyenne']));
             $diviseur++;
@@ -104,46 +104,47 @@ function afficher_voeux($fichier, $filiere, $option){
                 while (($l = fgetcsv($eleve, 1024, ";")) !== (FALSE)) {
                     if($email == $l[2]){
                         $voeux = 0;
-                        for ($j=0; $j < 8; $j++) { 
+                        for ($j=0; $j < 8; $j++) {
                             if ($option == explode(" ",$l[$j+5])[0]) {
                                 $voeux = $j+1;
                             }
                         }
                         $tab_gsi[$option][$voeux]++;
                     }
-                    
+
                 }
             }
-            elseif (($eleve = fopen('../../data/choixEtudiantsParcours1.csv','r')) && ($filiere == "MI")) {
+            elseif (($eleve = fopen('../../data/choixEtudiantsParcours3.csv','r')) && ($filiere == "MI")) {
                 while (($l = fgetcsv($eleve, 1024, ";")) !== (FALSE)) {
                     if($email == $l[2]){
                         $voeux = 0;
-                        for ($j=0; $j < 6; $j++) { 
+                        for ($j=0; $j < 6; $j++) {
                             if ($option == explode(" ",$l[$j+5])[0]) {
                                 $voeux = $j+1;
                             }
                         }
                         $tab_mi[$option][$voeux]++;
                     }
-                    
+
                 }
             }
-            elseif (($eleve = fopen('../../data/choixEtudiantsParcours1.csv','r')) && ($filiere == "MF")) {
+            elseif (($eleve = fopen('../../data/choixEtudiantsParcours2.csv','r')) && ($filiere == "MF")) {
                 while (($l = fgetcsv($eleve, 1024, ";")) !== (FALSE)) {
                     if($email == $l[2]){
                         $voeux = 0;
-                        for ($j=0; $j < 2; $j++) { 
+                        for ($j=0; $j < 2; $j++) {
                             if ($option == explode(" ",$l[$j+5])[0]) {
                                 $voeux = $j+1;
                             }
                         }
                         $tab_mf[$option][$voeux]++;
                     }
-                    
+
                 }
             }
         }
     }
+    print_r($tab_mi);
     if ($filiere == 'GSI') {
         echo "Le nombre d'étudiants ayant eu " . $option . " en premier voeux est " . $tab_gsi[$option][1] . "<br>";
         echo "Le nombre d'étudiants ayant eu " . $option . " en deuxième voeux est " . $tab_gsi[$option][2] . "<br>";
