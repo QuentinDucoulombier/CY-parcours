@@ -21,8 +21,8 @@ localhost:8080/code/connexion.php
 Vous pouvez ensuite créer un compte administrateur pour créer les identifiants des éleves, ou un compte responsable admission.
 Une fois le(s) compte(s) créer vous pouvez connecter, et utiliser les fonctionalités uniques pour chaques types d'utilisateurs :
 
--Pour les admins :
+- Pour les admins :
 
--Pour les responsables admission :
+- Pour les responsables admission :
 
--Pour les élèves :
+- Pour les élèves :
