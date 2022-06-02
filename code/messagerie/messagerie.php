@@ -36,8 +36,8 @@
 
     <div id="messagerie-container">
             <div id="option-plus"  class="hidden">
-                <div id="supprimer" class="">Suprimer</div>
-                <div id="signaler" class="hidden">Signaler</div>
+                <div id="supprimer" class="b">Suprimer</div>
+                <div id="signaler" class="hidden b">Signaler</div>
             </div>
 
             <form id="signalement" class="hidden">
@@ -50,7 +50,7 @@
                 <p>Descrition du signalement(facultatif):</p>
                 <textarea id="description" rows="5" cols="33"></textarea>
                 <div id="les-boutons">
-                    <div>Signaler</div> <div onclick="annuler_signal()">Annuler</div>
+                    <div class="b">Signaler</div> <div class="b" onclick="annuler_signal()">Annuler</div>
                 </div>
             </form>
 
@@ -118,17 +118,16 @@
                         <input id="message-text" type="text" value="">
                         <button onclick="nouveau_message()">Envoyer</button>
                     </div>
-                    <div class="button-bloque-debloque" id="button-bloque" onclick="bloquer_utilisateur()">
+                    <div class="button-bloque-debloque b" id="button-bloque" onclick="bloquer_utilisateur()">
                         Bloquer l'utilisateur
                     </div>
-                    <div class="button-bloque-debloque hidden" id="button-debloque" onclick="debloquer_utilisateur()">
+                    <div class="button-bloque-debloque hidden b" id="button-debloque" onclick="debloquer_utilisateur()">
                         Débloquer l'utilisateur
                     </div>
                 </div>
             </div>
         </div>
 
-        <button id="aaaeaeae" onclick="window.location.href='../acceuil.php'">Retour</button>
 </body>
 
 

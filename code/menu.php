@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
     <script type="text/javascript" src="admin.js"></script>
-    <link rel="stylesheet" type="text/css" href="../styleAcceuil.css"/> 
+    <link rel="stylesheet" type="text/css" href="../styleAcceuil.css"/>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    
+
     <?php
         session_start();
         $status = $_SESSION["status"];
@@ -31,12 +31,12 @@
             <li><a class="link_name" href="../acceuil.php">Tableau de bord</a></li>
             </ul>
         </li>
-        
+
         <li>
             <div class="iocn-link">
             <a href="#">
-            <i class='bx bx-user' onclick="window.location.href='changerInfo.php';"></i>
-            <span class="link_name" onclick="window.location.href='changerInfo.php';">Profils</span>
+            <i class='bx bx-user' onclick="window.location.href='../admin/changerInfo.php';"></i>
+            <span class="link_name" onclick="window.location.href='../admin/changerInfo.php';">Profils</span>
             </a>
             </div>
             <ul class="sub-menu">
@@ -52,8 +52,8 @@
             <li><a class="link_name" href="../messagerie/messagerie.php">Messagerie</a></li>
             </ul>
         </li>
-        
-       
+
+
         <li>
             <div class="profile-details">
             <div class="profile-content">
@@ -66,7 +66,7 @@
             <ul class="sub-menu blank">
             <li><a class="link_name" href="#">Déconnexion</a></li>
             </ul>
-            
+
         </li>
         </ul>
         </div>
@@ -95,7 +95,7 @@
             <li><a class="link_name" href="../acceuil.php">Tableau de bord</a></li>
             </ul>
         </li>
-        
+
         <li>
             <div class="iocn-link">
             <a href="#">
@@ -129,8 +129,8 @@
             <li><a class="link_name" href="../messagerie/messagerie.php">Messagerie</a></li>
             </ul>
         </li>
-        
-       
+
+
         <li>
             <div class="profile-details">
             <div class="profile-content">
@@ -140,8 +140,8 @@
             <input class="bouton" type="submit" name="OUT" value="Deconnexion"/>
             </form></span>
             </a>
-            
-            
+
+
         </li>
         </ul>
         </div>
@@ -214,8 +214,8 @@
             <li><a class="link_name" href="../messagerie/messagerie.php">Messagerie</a></li>
             </ul>
         </li>
-        
-       
+
+
         <li>
             <div class="profile-details">
             <div class="profile-content">
@@ -225,8 +225,8 @@
             <input class="bouton" type="submit" name="OUT" value="Deconnexion"/>
             </form></span>
             </a>
-            
-            
+
+
         </li>
         </ul>
         </div>
@@ -244,6 +244,6 @@
             sidebar.classList.toggle("close");
         });
     </script>
-    
+
 </body>
 </html>

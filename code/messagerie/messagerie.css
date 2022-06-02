@@ -115,6 +115,12 @@ body{
     width: 1.4em;
     background:  grey;
     border-radius: 100%;
+    border: 1px solid black;
+
+    transition: 300ms ease-in-out;
+}
+.plus:hover{
+  transform: scale(110%);
 }
 
 .plus div{
@@ -181,6 +187,9 @@ body{
     padding: 2px;
     background: burlywood;
 
+}
+.b:hover{
+  text-decoration:  underline black;
 }
 
 #signalement{
