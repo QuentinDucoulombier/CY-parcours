@@ -80,3 +80,5 @@
             <a href="accueilProf.php">Retour</a>
         </form>
       </div>
+    </body>
+</html>  

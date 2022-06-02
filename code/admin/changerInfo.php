@@ -21,62 +21,65 @@
 
     </head>
     <body>
+      <div class="small-12 medium-2 large-2 columns">
+        <div class="form">
+          <h1>Modifier votre profil</h1>
+          <div class="small-12 medium-2 large-2 columns">
+         <?php
+              echo "<div class='circle'>";
+              echo "<img class='profile-pic' src=$image>";
+              echo "</div>";
+          ?>
 
-      <div class="form">
-        <h1>Modifier votre profil</h1>
-        <div class="small-12 medium-2 large-2 columns">
-       <?php
-            echo "<div class='circle'>";
-            echo "<img class='profile-pic' src=$image>";
-            echo "</div>";
-        ?>
-      </div>
-        <form action="enregistrerInfo.php" method="POST">
-            <?php
-                echo "<input type='text' id='prenom' name='prenom' readonly class='input' value=$prenom>";
-            ?>
-            <div class="cut"></div>
-            <label for="prenom" class="placeholder">Prénom</label>
-            </div>
-            <div class="input-container ic2">
-            <?php
-              echo "<input  type='text' id='nom' name='nom' class='input' value=$nom readonly placeholder=' '/>";
-            ?>
+          <form action="enregistrerInfo.php" method="POST">
+              <?php
+                  echo "<input type='text' id='prenom' name='prenom' readonly class='input' value=$prenom>";
+              ?>
               <div class="cut"></div>
-              <label for="nom" class="placeholder">Nom</label>
-            </div>
-            <div class="input-container ic2">
-            <?php
-              echo "<input  type='email' id='email' name='email' pattern='.+@cy-tech.fr' size='30' readonly class='input' value=$email placeholder=' '/>";
-            ?>
-              <div class="cut"></div>
-              <label for="email" class="placeholder">Email CY</label>
-            </div>
-            <div class="input-container ic2">
-            <?php
-              echo "<input  type='text' id='pseudo' name='pseudo' class='input' value=$pseudo placeholder=' '/>";
-            ?>
-              <div class="cut"></div>
-                <label for="pseudo" class="placeholder">Pseudo</label>
-            </div>
-            <div class="input-container ic2">
-            <?php
-              echo "<input  type='password' id='password' name='password' class='input' required placeholder=' '/>";
-            ?>
-              <div class="cut"></div>
-              <label for="password" class="placeholder">Mot de passe*</label>
-            </div>
-            <div class="input-container ic2">
-                <?php
-
-                    echo "<input  type='file' id='pp' name='pp' class='input' accept='image/*' placeholder=' '/>";
-                ?>
+              <label for="prenom" class="placeholder">Prénom</label>
+              </div>
+              <div class="input-container ic2">
+              <?php
+                echo "<input  type='text' id='nom' name='nom' class='input' value=$nom readonly placeholder=' '/>";
+              ?>
                 <div class="cut"></div>
-                <label for="pp" class="placeholder">Photo de profil</label>
+                <label for="nom" class="placeholder">Nom</label>
+              </div>
+              <div class="input-container ic2">
+              <?php
+                echo "<input  type='email' id='email' name='email' pattern='.+@cy-tech.fr' size='30' readonly class='input' value=$email placeholder=' '/>";
+              ?>
+                <div class="cut"></div>
+                <label for="email" class="placeholder">Email CY</label>
+              </div>
+              <div class="input-container ic2">
+              <?php
+                echo "<input  type='text' id='pseudo' name='pseudo' class='input' value=$pseudo placeholder=' '/>";
+              ?>
+                <div class="cut"></div>
+                  <label for="pseudo" class="placeholder">Pseudo</label>
+              </div>
+              <div class="input-container ic2">
+              <?php
+                echo "<input  type='password' id='password' name='password' class='input' required placeholder=' '/>";
+              ?>
+                <div class="cut"></div>
+                <label for="password" class="placeholder">Mot de passe*</label>
+              </div>
+              <div class="input-container ic2">
+                  <?php
 
-              <script type="text/javascript" src="photoModi.js"></script>
-            </div>
-            <p><input type="submit" value="Modifier" class="submit" required></p>
-            <a href="accueilAdmin.php">Retour</a>
-        </form>
+                      echo "<input  type='file' id='pp' name='pp' class='input' accept='image/*' placeholder=' '/>";
+                  ?>
+                  <div class="cut"></div>
+                  <label for="pp" class="placeholder">Photo de profil</label>
+
+                <script type="text/javascript" src="photoModi.js"></script>
+              </div>
+              <p><input type="submit" value="Modifier" class="submit" required></p>
+              <a href="accueilAdmin.php">Retour</a>
+          </form>
+        </div>
       </div>
+    </body>
+</html>

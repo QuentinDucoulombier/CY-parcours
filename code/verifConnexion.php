@@ -62,4 +62,5 @@ if(file_exists($eleve))
 }
 connexAutre("../data/loginProf.csv");
 connexAutre("../data/loginAdmin.csv");
+header('Location: connexion.php');
 ?>

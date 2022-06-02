@@ -85,3 +85,5 @@
             <a href="accueilEleves.php">Retour</a>
         </form>
       </div>
+    </body>
+</html>

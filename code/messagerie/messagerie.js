@@ -35,23 +35,24 @@ const envoyer_signal = (e) => {
 const plus_menu = (obj) =>{
     obj.stopPropagation();
 
-    var clicked_button_message = obj.composedPath().reverse()[7] ;
+    var clicked_button_message = obj.composedPath().reverse()[8] ;
+
+
     var clicked_button_message_id = clicked_button_message.children[3].innerHTML;
 
 
     var signalement = document.getElementById("signalement");
     var option_plus = document.getElementById("option-plus");
+
     var supp_button = option_plus.children[0];
     var signal_button = option_plus.children[1];
 
-    let posx = obj.layerX //clicked_button.getBoundingClientRect().left;
-    let posy = obj.layerY     //clicked_button.getBoundingClientRect().top;
-
-    console.log(obj);
+    let posx = obj.x //clicked_button.getBoundingClientRect().left;
+    let posy = obj.y     //clicked_button.getBoundingClientRect().top;
 
     option_plus.classList.remove("hidden");
-    option_plus.style.left = posx + "px";
-    option_plus.style.top = posy + "px";
+    option_plus.style.left = (posx-77) +"px";
+    option_plus.style.top = posy+"px";
 
     function supp_button_event(e){
 

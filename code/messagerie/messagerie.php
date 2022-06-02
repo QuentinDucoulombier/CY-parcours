@@ -9,6 +9,8 @@
     <script src="../messagerie/messagerie.js"></script>
 </head>
 <body>
+    <?php include "../menu.php"; ?>
+
     <?php
     session_start();
 
