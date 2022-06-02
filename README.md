@@ -28,4 +28,4 @@ Une fois le(s) compte(s) créer vous pouvez connecter, et utiliser les fonctiona
 
 - Pour les élèves : on peut également envoyer des tickets, afficher les résultats, afficher la moyenne et les voeux de l'étudiant.
 
-- On retrouve également des fonctionalités communes à tous les types d'utilisateurs, comme envoyer des messages ou modifier son profil.
+On retrouve également des fonctionalités communes à tous les types d'utilisateurs, comme envoyer des messages ou modifier son profil.
