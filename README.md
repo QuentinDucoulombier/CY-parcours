@@ -32,12 +32,12 @@ localhost:8080/code/connexion.php
   
 Vous pouvez ensuite créer un compte administrateur pour créer les identifiants des élèves, ou un compte responsable admission.
 Les logins des élèves avec les mots de passe non encryptés seront dans le fichier "loginElevesMail.csv".
-Une fois le(s) compte(s) créer vous pouvez connecter, et utiliser les fonctionalités uniques pour chaque type d'utilisateur :
+Une fois le(s) compte(s) créer vous pouvez connecter, et utiliser les fonctionnalités uniques pour chaque type d'utilisateur :
 
 - Pour les admins : générer les logins des élèves, afficher l'historique des changements d'option effectués par les responsables d'admission.
 
 - Pour les responsables admission : envoyer des tickets à l'administrateur, lancer le mariage stable, changer les filières des étudiants une fois le mariage stable effectué ou encore afficher les statistiques de chaque option.
 
-- Pour les élèves : on peut également envoyer des tickets, afficher les résultats, afficher la moyenne et les voeux de l'étudiant. De plus, une fois le mariage stable effectué et valider l'etudiant peut consulter sa futur option.
+- Pour les élèves : on peut également envoyer des tickets, afficher les résultats, afficher la moyenne et les voeux de l'étudiant. De plus, une fois le mariage stable effectué et valider l'étudiant peut consulter sa future option.
 
-On retrouve également des fonctionalités communes à tous les types d'utilisateurs, comme envoyer des messages ou modifier son profil.
+On retrouve également des fonctionnalités communes à tous les types d'utilisateurs, comme envoyer des messages ou modifier son profil.
