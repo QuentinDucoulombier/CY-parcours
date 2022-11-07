@@ -15,9 +15,9 @@ C'est en répondant a cette problématique qu'a été créé **CY Parcours**, ce
 
 Exemple de menu:  
 <p>
-<img src="./data/screen/Acceuil%20prof.png" alt="Acceuil des responsables" admission width="700">
-<img src="./data/screen/profil.png" alt="Modification du profil" admission width="200" align="right">
-<img src="./data/screen/resultat.png" alt="Resultat des l'option" admission width="700">
+<img src="./data/screen/Acceuil%20prof.png" alt="Acceuil des responsables" admission width="650">
+<img src="./data/screen/profil.png" alt="Modification du profil" admission width="160" align="right">
+<img src="./data/screen/resultat.png" alt="Resultat des l'option" admission width="650">
 </p>
 
 ## Mise en place du serveur
