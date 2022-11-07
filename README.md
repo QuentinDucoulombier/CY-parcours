@@ -13,6 +13,12 @@ Au cours de la deuxieme année du cycle ingénieur à CY Tech, les étudiants pr
 Chaque option possède cependant un nombre limité de places, elles ne peuvent pas systématiquement accueillir tous les étudiants souhaitant la rejoindre. Aussi, certains étudiants souhaitent faire une option particulière mais n’ont malheureusement pas les résultats suffisants pour pouvoir réussir dans de bonnes conditions. Dès lors, il a été défini des critères de mérite permettant de classer les étudiants sur un vœu d’option. Chaque étudiant devra alors classer les options disponibles au bout de son parcours par ordre de préférence.  
 C'est en répondant a cette problématique qu'a été créé **CY Parcours**, ce site web utilise un algorithme plaçant les étudiants dans chaque option en harmonisant selon les choix, tout en respectant les critères de mérite de l’option. Pour cela, **CY Parcours** utilise notamment [l’algorithme des “mariages stables”](https://fr.wikipedia.org/wiki/Algorithme_de_Gale_et_Shapley). Ce site bénificie également d'une interface facile d'utilisation pour tous les types d'utilisateurs (étudiants, responsables administratifs ou encore administrateurs).
 
+Exemple de menu:  
+<p>
+<img src="./data/screen/Acceuil%20prof.png" alt="Acceuil des responsables" admission width="700">
+<img src="./data/screen/profil.png" alt="Modification du profil" admission width="200" align="right">
+<img src="./data/screen/resultat.png" alt="Resultat des l'option" admission width="700">
+</p>
 
 ## Mise en place du serveur
 
