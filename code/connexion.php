@@ -11,8 +11,6 @@
 
     </head>
     <body>
-      <!-- j'ai fait ca vitef avec une template d'internet modifier pour adapter a notre situation -->
-
       <div class="form">
         <h1 id="titre">Bienvenue </h1>
         <h2 id="titreSecondaire">Connectez-vous</h2>
@@ -29,10 +27,6 @@
           </div>
           <p><input type="submit" value="Valider" class="submit" required></p>
 
-
-          <!-- <p> Pseudo : <input type="text" name="pseudo"></p>
-          <p> Password : <input type="password" name="password"></p>-
-          <p><input type="submit" value="Valider" required></p>-->
         </form>
         <p><a href="inscription.html">Créer un nouveau compte</a></p>
 
